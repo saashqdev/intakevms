@@ -1,15 +1,9 @@
 # inTakevms
 
-## 🌍 Translations
-
-- [Русский](README.ru.md)
-
 ## 📖 Project Description
 
-**inTakevms** is a lightweight solution based on the **vAIR** project,
-designed for use as a development environment and virtualization system. The
-program operates in interactive mode, providing a flexible and convenient
-tool for managing virtual infrastructure.
+**inTakevms** is a lightweight solution designed for use as a development environment and virtualization system. The
+program operates in interactive mode, providing a flexible and convenient tool for managing virtual infrastructure.
 
 ![](.assets/dashboard.gif)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
@@ -30,8 +24,8 @@ tool for managing virtual infrastructure.
 ## 📦 Installation
 
 To install **inTakevms** on a clean Linux system, follow these steps. It is
-recommended to use **Ubuntu 20.04**, which is the most tested version.
-**Ubuntu 22.04** is also supported.
+recommended to use **Ubuntu 22.04**, which is the most tested version.
+**Ubuntu 24.04** is also supported.
 
 ### ☑️ Preparation for Project Installation
 
@@ -188,10 +182,10 @@ sudo systemctl status storage-domain.service
 * Code convention: [code-convention](CODE_CONVENTION.md).
 
 ### 🔗 Frontend of the project
-* To work with the user interface (Frontend), use the repository [inTakevms UI](https://github.com/saashqdev/Open-vAIR-UI).
+* To work with the user interface (Frontend), use the repository [inTakevms UI](https://github.com/saashqdev/intakevms-ui).
 
 ### 🔗 Documentation of the project
-* To work with the documentation, use the repository [inTakevms docs](https://github.com/saashqdev/Open-vAIR-docs).
+* To work with the documentation, use the repository [inTakevms docs](https://github.com/saashqdev/intakevms-docs).
 
 ### 🔗 Useful Links
 * [Telegram-channel](https://t.me/inTakevms)
