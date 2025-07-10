@@ -1,13 +1,13 @@
-# Инструкция по созданию новых таблиц в проекте с использованием Alembic
+# Instructions for creating new tables in a project using Alembic
 
-В данном файле представлена вспомогательная информация при работе над проектом. 
-Для полной информации по работе с Alembic, следует обращаться к [официальной документации](https://alembic.sqlalchemy.org/).
+This file provides auxiliary information when working on the project. 
+For complete information on working with Alembic, please refer to the [official documentation](https://alembic.sqlalchemy.org/).
 
-## Шаг 1: Создание ORM модели
+## Step 1: Creating an ORM model
 
-После разработки новой ORM модели с использованием SQLAlchemy, например:
+After developing a new ORM model using SQLAlchemy, for example:
 
-Файл: `intakevms/modules/block_device/adapters/orm.py`
+File: `intakevms/modules/block_device/adapters/orm.py`
 
 ```python
 """ORM models of the block device module"""
@@ -48,15 +48,15 @@ def start_mappers() -> None:
     mapper_registry.map_imperatively(ISCSIInterface, iscsi_interfaces)
 ```
 
-## Шаг 2: Добавление модели в конфигурацию Alembic
-Для того чтобы Alembic мог отслеживать изменения в новой модели, необходимо импортировать соответствующий ORM модуль в скрипт intakevms/alembic/env.py и добавить его метаданные в target_metadata.
+## Step 2: Adding a model to an Alembic configuration
+In order for Alembic to track changes in the new model, it is necessary to import the corresponding ORM module into the script `intakevms/alembic/env.py` and add its metadata to target_metadata.
 
-В скрипт env.py добавляем следующие строки:
+Add the following lines to the env.py script:
 
 ```python
 from intakevms.modules.block_device.adapters import orm as orm_block_device
 ```
-Также в массив target_metadata добавляем метаданные нового модуля:
+We also add the metadata of the new module to the target_metadata array:
 
 ```python
 target_metadata = [
@@ -65,22 +65,22 @@ target_metadata = [
 ]
 ```
 
-## Шаг 3: Генерация миграции
-Для создания новой миграции с помощью Alembic, необходимо выполнить следующую команду в терминале, при активированной виртуальной среде проекта:
+## Step 3: Migration generation
+To create a new migration using Alembic, you need to run the following command in the terminal, with the project virtual environment activated:
 
 ```bash
 ~/intakevms$ alembic revision -m "create_block_device" --rev-id 2 --autogenerate
 ```
 
-- Флаг -m отвечает за имя python скрипта создания и удаления таблицы
-- Флаг --rev-id за идентификатор номера миграции. В проекте принято их нумеровать последовательно, начиная с еденицы. Соответственно если актуальный id миграции например 4, то в --rev-id передаём 5.
-- Флаг --autogenerate обеспечивает что Alembic генерирует скрипт для создания и удаления таблицы самостоятельно, сверяясь с orm.py файлами проекта. Без него, функции внутри создаваемого скрипта будут не реалзованы и содержать в своём теле pass
+- The -m flag is responsible for the name of the python script for creating and deleting the table.
+- The --rev-id flag is for the migration number identifier. The project usually numbers them sequentially, starting with one. Accordingly, if the current migration id is, for example, 4, then we pass 5 to --rev-id.
+- The --autogenerate flag ensures that Alembic generates a script for creating and deleting a table itself, checking against the orm.py files of the project. Without it, the functions inside the generated script will not be implemented and will contain pass in their body.
 
-После успешного выполнения команды будет создан файл миграции intakevms/alembic/versions/2_create_block_device.py, который будет содержать все изменения в ORM моделях, которые указаны в target_metadata файла env.py. В данном случае изменения касаются только новой таблицы для модуля блочных устройств.
+After the command is successfully executed, the migration file intakevms/alembic/versions/2_create_block_device.py will be created, which will contain all the changes in the ORM models specified in the target_metadata of the env.py file. In this case, the changes concern only the new table for the block device module.
 
-Важно убедиться что функции сгенерировались корректно содержат в себе актуальные изменения связанные с таблицей
+It is important to ensure that the functions are generated correctly and contain the current changes associated with the table.
 
-Пример:
+An example:
 ```python
 """create_block_device
 
@@ -121,22 +121,22 @@ def downgrade() -> None:
 
 ```
 
-## Шаг 4: Применение миграции
-Для применения новой миграции выполните команду:
+## Step 4: Applying migration
+To apply the new migration, run the command:
 
 ```bash
 ~/intakevms$ alembic upgrade head
 ```
 
-Эта команда применит все актуальные изменения к базе данных. Alembic обновит идентификатор ревизии в таблице Alembic и выполнит скрипт создания новой таблицы.
+This command will apply all the current changes to the database. Alembic will update the revision ID in the Alembic table and execute the script to create the new table.
 
-## Важные замечания
+## Important Notes
 
-- **Добавление модели в env.py:** При создании нового модуля, важно сразу же после создания файла orm.py добавить его в env.py. Только после этого можно выполнять команды Alembic для генерации и применения миграций.
-- **Избегайте ручного создания таблиц:** Никогда не создавайте таблицы вручную, если в этом нет крайней необходимости. В случае особенностей таблиц, убедитесь, что модель базы данных спроектирована корректно. Ручное создание таблиц может привести к несоответствию между ORM моделью и реальной структурой базы данных, что может вызвать ошибки при дальнейшем использовании Alembic.
-- **Итоговое состояние новой таблицы приводите к одному файлу:** В ходе разработки модуля, возникает необходимость добавления или удаления полей. Пока функционал находится и разрабатывается в отдельной ветке, решение о том как изменять структуру таблицы остаётся за разработчиком. Но при подготовке к слиянию с основными ветками проекта разработчик должен с нуля создать скрипт миграции(следуя данной инструкции), основываясь на итоговом состоянии orm модели. И уже в итоговом виде оформлять pull request
+- **Adding a model to env.py:** When creating a new module, it is important to add the orm.py file to env.py immediately after creating it.. Only then can you run Alembic commands to generate and apply migrations.
+- **Avoid creating tables manually:** Never create tables manually unless absolutely necessary. In case of table features, make sure that the database model is designed correctly. Manual creation of tables can lead to a discrepancy between the ORM model and the real database structure, which can cause errors when using Alembic further.
+- **The final state of the new table is brought to one file:** During the development of the module, there is a need to add or remove fields. While the functionality is located and developed in a separate branch, the decision on how to change the table structure remains with the developer. But when preparing to merge with the main branches of the project, the developer must create a migration script from scratch (following this instruction), based on the final state of the orm model. And then in the final stage, create a pull request
 
-Следование данным рекомендациям поможет избежать ошибок при работе с миграциями и обеспечит целостность и актуальность структуры базы данных.
+Following these guidelines will help you avoid mistakes when working with migrations and ensure the integrity and relevance of your database structure.
 
 
 

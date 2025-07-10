@@ -246,18 +246,18 @@ PROMETHEUS_QUERIES = {
     'size-total': {
         # 'query': 'sum(node_filesystem_size_bytes)',
         # # hard disc
-        'query': 'sum(node_filesystem_size_bytes{mountpoint=~"/opt/aero/intakevms/data/mnt.*"})',  # NFS  # noqa: E501
+        'query': 'sum(node_filesystem_size_bytes{mountpoint=~"/opt/virtman/intakevms/data/mnt.*"})',  # NFS  # noqa: E501
         'unit': 'B',
     },
     'size-used': {
         # 'query': 'sum(node_filesystem_size_bytes)-sum(node_filesystem_avail_bytes)',  # hard disc  # noqa: E501, W505
-        'query': 'sum(node_filesystem_size_bytes{mountpoint=~"/opt/aero/intakevms/data/mnt.*"})'  # NFS + localfs  # noqa: E501
-        '-sum(node_filesystem_avail_bytes{mountpoint=~"/opt/aero/intakevms/data/mnt.*"})',
+        'query': 'sum(node_filesystem_size_bytes{mountpoint=~"/opt/virtman/intakevms/data/mnt.*"})'  # NFS + localfs  # noqa: E501
+        '-sum(node_filesystem_avail_bytes{mountpoint=~"/opt/virtman/intakevms/data/mnt.*"})',
         'unit': 'B',
     },
     'size-free': {
         # 'query': 'sum(node_filesystem_avail_bytes)',# hard disc
-        'query': 'sum(node_filesystem_avail_bytes{mountpoint=~"/opt/aero/intakevms/data/mnt.*"})',  # NFS + localfs  # noqa: E501
+        'query': 'sum(node_filesystem_avail_bytes{mountpoint=~"/opt/virtman/intakevms/data/mnt.*"})',  # NFS + localfs  # noqa: E501
         'unit': 'B',
     },
     'size-free-system': {

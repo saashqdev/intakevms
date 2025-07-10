@@ -5,7 +5,7 @@ API_SERVICE_LAYER_QUEUE_NAME: str = RPC_QUEUES.VMS.SERVICE_LAYER
 SERVICE_LAYER_DOMAIN_QUEUE_NAME: str = RPC_QUEUES.VMS.DOMAIN_LAYER
 VM_DRIVER = 'qemu-driver'
 TEMPLATES_PATH = (
-    '/opt/aero/intakevms/intakevms/modules/virtual_machines/domain/templates/'
+    '/opt/virtman/intakevms/intakevms/modules/virtual_machines/domain/templates/'
 )
 SERVER_IP = config.data.get('web_app', {}).get('host', 'localhost')
 

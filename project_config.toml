@@ -1,6 +1,6 @@
 [database]
-user = 'aero'
-password = 'aero'
+user = 'virtman'
+password = 'virtman'
 host = '0.0.0.0'
 port = 5432
 db_name = 'intakevms'
@@ -15,7 +15,7 @@ port = 5672
 db_container = 'postgres'
 
 [storage]
-data_path = '/opt/aero/intakevms/data'
+data_path = '/opt/virtman/intakevms/data'
 
 [jwt]
 algorithm = 'HS256'

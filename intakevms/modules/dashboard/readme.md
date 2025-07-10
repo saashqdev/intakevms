@@ -37,9 +37,9 @@
     sudo mv prometheus.yml /etc/prometheus/
     ```
 
-8. Добавляем права на папку для нашего юзера aero
+8. Добавляем права на папку для нашего юзера virtman
     ```bash
-    sudo chown -R aero:aero /etc/prometheus/ /var/db/prometheus 
+    sudo chown -R virtman:virtman /etc/prometheus/ /var/db/prometheus 
     ```
 
 9. Архив и распакованную папку можно удалить:
@@ -69,8 +69,8 @@ StartLimitIntervalSec=500
 StartLimitBurst=5
 
 [Service]
-User=aero
-group=aero
+User=virtman
+group=virtman
 Type=simple
 Restart=on-failure
 RestartSec=5s
@@ -147,8 +147,8 @@ StartLimitIntervalSec=500
 StartLimitBurst=5
 
 [Service]
-User=aero
-group=aero
+User=virtman
+group=virtman
 Type=simple
 Restart=on-failure
 RestartSec=5s

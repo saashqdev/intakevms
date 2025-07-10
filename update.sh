@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER=aero
+USER=virtman
 OS=$(cat /etc/issue)
 ARCH=$(arch)
 

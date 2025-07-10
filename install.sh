@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # User settings
-USER=aero
+USER=virtman
 OS=$(lsb_release -i | awk '{print tolower($3)}')
 ARCH=$(uname -m)
 PROJECT_NAME=intakevms
@@ -537,8 +537,8 @@ StartLimitIntervalSec=500
 StartLimitBurst=5
 
 [Service]
-User=aero
-Group=aero
+User=virtman
+Group=virtman
 Type=simple
 Restart=on-failure
 RestartSec=5s
@@ -595,8 +595,8 @@ StartLimitIntervalSec=500
 StartLimitBurst=5
 
 [Service]
-User=aero
-Group=aero
+User=virtman
+Group=virtman
 Type=simple
 Restart=on-failure
 RestartSec=5s

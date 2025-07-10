@@ -7,7 +7,7 @@ via an RPC interface. It initializes a messaging server using the
 The script is designed to run as a systemd service. During installation,
 a setup script automatically registers and starts the corresponding
 `.service` file located at:
-    /opt/aero/intakevms/intakevms/modules/backup/service_layer/backup-service-layer.service
+    /opt/virtman/intakevms/intakevms/modules/backup/service_layer/backup-service-layer.service
 
 Usage:
     Manual management of the service:

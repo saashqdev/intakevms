@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-USER=aero
+USER=virtman
 DOCS_PROJECT_NAME=intakevms-docs
 USER_PATH=/opt/$USER
 FOLDER_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -173,7 +173,7 @@ disable_service "node_exporter.service"
 remove_service "node_exporter.service"
 
 remove_novnc_folder(){
-  sudo rm -rf /opt/aero/intakevms/intakevms/libs/noVNC || { printf ">>>>>> ${RED}FAILURE IN REMOVING NOVNC FOLDER${NC}\n"; return; }
+  sudo rm -rf /opt/virtman/intakevms/intakevms/libs/noVNC || { printf ">>>>>> ${RED}FAILURE IN REMOVING NOVNC FOLDER${NC}\n"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY REMOVED NOVNC FOLDER${NC}\n"
 }
 remove_novnc_folder
@@ -199,7 +199,7 @@ remove_nodejs_folders
 
 # ========= Unmount directories =========
 umount_project_paths(){
-  sudo umount -l /opt/aero/intakevms/data/mnt/*
+  sudo umount -l /opt/virtman/intakevms/data/mnt/*
 }
 umount_project_paths
 

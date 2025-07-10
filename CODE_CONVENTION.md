@@ -1,55 +1,53 @@
-# Code convention и конфигурация линтеров Ruff и mypy
+# Code convention and configuration linter Ruff and mypy
 
-## Введение
-Этот документ определяет стандарты написания кода для нашего проекта. Его цель - обеспечить единообразие, читаемость и поддерживаемость кодовой базы. Все участники проекта должны следовать этим правилам при написании нового кода и при рефакторинге существующего.
+## Introduction
+This document defines the coding standards for our project. Its purpose is to ensure uniformity, readability, and maintainability of the code base. All project participants must follow these rules when writing new code and refactoring existing code.
 
-Основой нашего стиля кодирования является Google Python Style Guide. Если конкретная особенность не описана в данном документе, то ориентироваться следует на линтер Ruff. Если линтер не учитывает ситуацию, вызывающую вопросы, следует обратиться к [руководству Google](https://google.github.io/styleguide/pyguide.html).
+The basis of our coding style is the Google Python Style Guide. If a specific feature is not described in this document, then the Ruff linter should be used as a guide. If the linter does not take into account the situation that raises questions, you should refer to [Google style management](https://google.github.io/styleguide/pyguide.html).
 
-Рекомендации в этом документе являются обязательными. Если они противоречат руководству Google, приоритет имеют правила, описанные здесь.
+The guidelines in this document are mandatory. If they conflict with Google's guidelines, the rules described here take precedence.
 
+### Plugins
+When developing, it is strongly recommended to use plugins of the corresponding tools in your IDE. Information on their installation is provided in the description of the corresponding tool.
 
-### Плагины
-При разработке, настоятельно рекомендуется использование плагинов соответствующих инструментов в Вашей IDE. Информация по их установке указана в описании соответствующего инструмента.
+## Ruff Configuration
+We use Ruff as our primary tool for linting and formatting code. Ruff's basic settings include:
 
-## Конфигурация Ruff
-Мы используем Ruff в качестве основного инструмента для линтинга и форматирования кода. Основные настройки Ruff включают:
+- Target version Python: 3.12
+- Line length: 80 characters
+- Indent width: 4 spaces
+- Quote style: single quotes
+- Indentation style: spaces
+- Automatic line ending detection
 
-- Целевая версия Python: 3.8
-- Длина строки: 80 символов
-- Ширина отступа: 4 пробела
-- Стиль кавычек: одинарные кавычки
-- Стиль отступов: пробелы
-- Автоматическое определение окончания строки
+Ruff is configured to check a wide range of rules, including standard PEP 8 checks, import checks, documentation, type annotations, security, and various style checks.
 
-Ruff настроен на проверку широкого спектра правил, включая стандартные проверки PEP 8, проверки импортов, документации, аннотаций типов, безопасности и различные стилистические проверки.
-
-Для запуска проверки кода с помощью Ruff используйте следующую команду:
+To run a code review with Ruff, use the following command:
 ```bash 
 ruff check .
 ```
 
-
-Для автоматического исправления некоторых ошибок используйте:
+To automatically correct some errors, use:
 ```
 ruff check --fix .
 ```
 
-Для подробного ознакомление с функционалом Ruff и как работают его команды, можно ознакомиться на странице [официальной документации Ruff](https://docs.astral.sh/ruff/)
+For a detailed introduction to Ruff's functionality and how its commands work, please visit the page [official Ruff documentation](https://docs.astral.sh/ruff/)
 
-### Плагины для популярных IDE
-Для удобства проверки при написании кода, рекомендуем использовать плагины, которые для официальных IDE, предварительно настроив их. 
-Список поддерживаемых сред разработки и их конфигурации описана на [официальной странице](https://docs.astral.sh/ruff/integrations/)
+### Plugins for popular IDEs
+or ease of checking when writing code, we recommend using plugins for official IDEs, having previously configured them. 
+The list of supported development environments and their configurations is described on [official page](https://docs.astral.sh/ruff/integrations/)
 
 
-### Справка по правилам линтера
-Справку по каждому из правил, с которыми работает Ruff можно найти на [этой странице](https://docs.astral.sh/ruff/rules/)
+### Help on linter rules
+Help for each of the rules that Ruff works with can be found at [this page](https://docs.astral.sh/ruff/rules/)
 
-### Игнорирование предупреждений линтера
-Игнорирование предупреждений линтера допустимо в следующих случаях:
+### Ignoring linter warnings
+Ignoring linter warnings is acceptable in the following cases:
 
-- Когда следование правилу ухудшает читаемость кода или превышена длина первой строки докуаментации, а описать локаничнее не удаётся.
+- When following a rule makes the code less readable or the first line of documentation is longer than it should be and there is no way to describe it more concisely.
 
-Например для документации для этого в конце docstring используются аннотации:
+For example, for documentation, annotations are used at the end of the docstring for this:
 noqa: E501, W505
 
 E501 - line-too-long 
@@ -69,31 +67,31 @@ W505 - doc-line-too-long
         """  # noqa: E501, W505 It is not possible to describe the operation of this method more concisely
 ```
 
-- Когда правило не применимо в конкретном контексте.
-- Когда с точки зрения здравого смысла это имеет значение, либо этого требует конкретная реализация.
+- When a rule does not apply in a particular context.
+- When it makes sense to do so, or when a specific implementation requires it.
 
-Всегда добавляйте комментарий, объясняющий, почему вы игнорируете предупреждение:
+Always add a comment explaining why you are ignoring the warning:
 
 ```python
 # Ignoring the warning about an unused variable, as it is needed for API compatibility
 unused_variable = some_function()  # noqa: F841
 ```
 
-### Процесс обсуждения и изменения правил линтера
-Если вы считаете, что какое-то правило линтера неуместно или требует изменения, следуйте этому процессу:
+### The process of discussing and changing linter rules
+If you feel that a linter rule is inappropriate or needs to be changed, follow this process:
 
-1. Создайте issue в репозитории проекта с описанием проблемы и предлагаемым решением.
-2. Приведите примеры кода, демонстрирующие проблему.
-3. Объясните, почему изменение правила улучшит кодовую базу.
-4. Дождитесь обсуждения и консенсуса команды.
-5. После одобрения, внесите изменения в конфигурацию Ruff и обновите этот документ.
+1. Create an issue in the project repository describing the problem and a proposed solution.
+2. Provide code examples that demonstrate the problem.
+3. Explain why changing the rule will improve the codebase.
+4. Wait for the team to discuss and reach consensus.
+5. Once approved, make your changes to the Ruff configuration and update this document.
 
 ---
-## Конфигурация mypy
-```mypy``` – это статический анализатор типов для Python, который помогает выявлять ошибки, связанные с несовместимостью типов, до выполнения кода. Мы используем mypy для строгого контроля типизации и повышения качества кода. Ниже приведены настройки mypy, используемые в проекте:
+## mypy configuration
+```mypy``` – is a static type analyzer for Python that helps identify type incompatibility errors before executing your code. We use mypy for strict typing and code quality. Below are the mypy settings used in the project:
 
-### Основные настройки
-Конфигурация mypy находится в файле mypy.ini в корневом каталоге проекта и содержит следующие параметры:
+### Basic settings
+The mypy configuration is located in the mypy.ini file in the project root directory and contains the following parameters:
 
 ```ini
 [mypy]
@@ -110,76 +108,76 @@ warn_unused_ignores = True
 exclude = venv|data|intakevms/libs/messaging/protocol\.py
 ```
 
-### Описание основных опций
-**warn_return_any** = True: Предупреждает, если функция объявлена как возвращающая значение любого типа (Any). Это помогает идентифицировать места в коде, где типизация возвращаемого значения недостаточно строгая.
+### Description of main options
+**warn_return_any** = True: Warns if a function is declared to return a value of any type (Any). This helps identify places in the code where the typing of the return value is not strong enough.
 
-**warn_unused_configs** = True: Предупреждает о неиспользуемых или неправильных настройках в конфигурационном файле. Этот параметр помогает следить за чистотой и корректностью конфигурации.
+**warn_unused_configs** = True: Warns about unused or incorrect settings in the configuration file. This parameter helps to keep the configuration clean and correct.
 
-**strict_optional** = True: Включает строгую проверку использования типов, которые могут быть None. Это гарантирует, что возможное значение None в типах будет корректно обрабатываться, что позволяет избежать потенциальных ошибок, связанных с несоответствием типов.
+**strict_optional** = True: Enables strict checking of the use of types that can be None. This ensures that the possible None value in types is handled correctly, avoiding potential errors related to type mismatches.
 
-**ignore_missing_imports** = True: Игнорирует ошибки, связанные с отсутствием аннотаций типов в сторонних библиотеках. Это полезно, если проект использует библиотеки, не содержащие встроенных типов, и позволяет избежать ложных предупреждений.
+**ignore_missing_imports** = True: Ignores errors related to missing type annotations in third-party libraries. This is useful if the project uses libraries that do not contain built-in types, and avoids false warnings.
 
-**disallow_any_unimported** = True: Запрещает использование значений типа Any, импортированных из модулей, для которых отсутствует информация о типах. Это помогает сделать код более надежным и минимизировать риск ошибок, связанных с неопределенными типами.
+**disallow_any_unimported** = True: Prevents the use of Any values ​​imported from modules that lack type information. This helps make your code more robust and minimizes the risk of errors due to undefined types.
 
-**check_untyped_defs** = True: Анализирует функции и методы без аннотаций типов, выявляя возможные проблемы в них. Этот параметр позволяет обнаруживать ошибки в коде, даже если для некоторых функций не указаны аннотации типов.
+**check_untyped_defs** = True: Analyzes functions and methods without type annotations, identifying possible problems in them. This option allows you to detect errors in code even if some functions do not have type annotations.
 
-**disallow_untyped_defs** = True: Запрещает объявления функций и методов без аннотаций типов. Это одно из ключевых правил, направленное на обеспечение строгой типизации всего кода, что значительно повышает его надежность и читаемость.
+**disallow_untyped_defs** = True: Prohibits declarations of functions and methods without type annotations. This is one of the key rules aimed at ensuring strict typing of all code, which significantly increases its reliability and readability.
 
-**no_implicit_optional** = True: Запрещает неявное использование Optional для аргументов, которые могут быть None. Вместо этого необходимо явно указывать Optional, что делает код более читаемым и понятным.
+**no_implicit_optional** = True: Prevents implicit use of Optional for arguments that may be None. Instead, you must explicitly specify Optional, which makes the code more readable and understandable.
 
-**show_error_codes** = True: Показывает коды ошибок вместе с сообщениями mypy. Это позволяет быстро найти подробную информацию об ошибке и понять, как ее исправить, ссылаясь на официальную документацию mypy.
+**show_error_codes** = True: Shows error codes along with mypy messages. This allows you to quickly find detailed information about the error and understand how to fix it by referring to the official mypy documentation.
 
-**warn_unused_ignores** = True: Предупреждает, если комментарии # type: ignore используются без необходимости. Это помогает поддерживать чистоту в коде и избегать ненужных исключений из проверки типов.
+**warn_unused_ignores** = True: Warns if # type: ignore comments are used unnecessarily. This helps keep your code clean and avoid unnecessary type checking exceptions.
 
-**exclude = venv|data|intakevms/libs/messaging/protocol\.py:** Исключает из проверки определенные файлы и каталоги, такие как виртуальное окружение (venv), данные (data) и конкретный файл (intakevms/libs/messaging/protocol.py). Это позволяет сосредоточиться на проверке только тех частей кода, которые имеют значение для проекта и исключить проверку, частей, требующих рефакторинга или где динамическая типизация оправдана.
+**exclude = venv|data|intakevms/libs/messaging/protocol\.py:** Excludes certain files and directories from checking, such as the virtual environment (venv), data (data), and a specific file (intakevms/libs/messaging/protocol.py). This allows you to focus on checking only those parts of the code that are important to the project and exclude parts that require refactoring or where dynamic typing is justified.
 
-### Запуск mypy
+### Starting mypy
 
-Для запуска проверки кода с использованием настроек, описанных выше, активируйте venv проекта и выполните команду:
+To run code review using the settings described above, activate the project's venv and run the command:
 
 ```
 mypy .
 ```
 
-### Игнорирование ошибок типов
-Иногда необходимо игнорировать некоторые предупреждения mypy, например, при работе с кодом сторонних библиотек или в случаях использования динамических типов. Для этого можно использовать комментарий # type: ignore:
+### Ignoring type errors
+Sometimes you need to ignore some mypy warnings, for example when working with third-party library code or when using dynamic types. You can use the # type: ignore comment for this:
 
 ```python
 from external_module import some_function  # type: ignore
 
-result = some_function()  # Игнорируем предупреждение об отсутствии аннотаций типов
+result = some_function()  # Ignore the warning about missing type annotations
 ```
 
-Если вы игнорируете конкретное предупреждение, всегда добавляйте пояснение к комментарию:
+If you ignore a specific warning, always add an explanation to the comment:
 
 ```python
-from external_module import some_function  # type: ignore[attr-defined]  # Игнорируем, так как библиотека не предоставляет аннотацию типа
+from external_module import some_function  # type: ignore[attr-defined]  # Ignore as the library does not provide a type annotation
 ```
 
-### Дополнительные настройки и плагины
-Для удобства использования mypy можно интегрировать его с различными средами разработки (IDE), такими как PyCharm или VSCode. Это позволяет автоматически проверять типы при написании кода. Подробную информацию по интеграции можно найти в [официальной документации mypy](https://mypy.readthedocs.io/en/stable/config_file.html).
+### Additional settings and plugins
+ДFor ease of use, mypy can be integrated with various development environments (IDEs), such as PyCharm or VSCode. This allows for automatic type checking as you write code. Detailed information on integration can be found in [official mypy documentation](https://mypy.readthedocs.io/en/stable/config_file.html).
 
-### Обсуждение и изменение правил
-Если вы считаете, что какое-то правило или настройка mypy неуместны для проекта, следуйте процессу обсуждения, аналогичному тому, что используется для линтера Ruff:
+### Discussion and change of rules
+If you feel that a mypy rule or setting is inappropriate for a project, follow a discussion process similar to that used for the Ruff linter.:
 
-Создайте issue в репозитории проекта с описанием проблемы и предложением изменения.
-Приведите примеры кода, демонстрирующие проблему.
-Объясните, почему изменение конфигурации mypy улучшит кодовую базу.
-Дождитесь обсуждения и консенсуса команды.
-После одобрения внесите изменения в конфигурацию mypy и обновите этот документ.
+Create an issue in the project repository describing the problem and proposing a change.
+Provide code examples that demonstrate the problem.
+Explain why changing the mypy configuration will improve the codebase.
+Wait for the team to discuss and reach consensus.
+Once approved, make changes to the mypy configuration and update this document.
 
 ---
 ---
 
-# Code convention и общие правила форматирования
+# Code convention and general formatting rules
 
-## Длина строк и переносы
+## Line length and hyphenation
 
-Максимальная длина строки - 80 символов. Это правило помогает сохранять код читаемым и удобным для просмотра на большинстве экранов.
+The maximum line length is 80 characters. This rule helps keep the code readable and easy to view on most screens.
 
-Если строка превышает этот лимит, используйте переносы. Предпочтительно использовать круглые скобки для переноса строк.
+If the line exceeds this limit, use line breaks. It is preferable to use parentheses for line breaks.
 
-Пример правильного переноса:
+An example of correct transference:
 
 ```python
 message = (
@@ -188,21 +186,20 @@ message = (
 )
 ```
 
-В некоторых случаях допустимо игнорировать это правило:
+In some cases it is acceptable to ignore this rule:
 
-Для длинных строк с URL или путями к файлам.
-Для строк в многострочных строковых литералах (docstrings или комментарии).
-Если вы считаете, что строку нельзя разбить без потери читаемости, обсудите это с командой. В исключительных случаях можно использовать комментарий # noqa: E501 для игнорирования предупреждения линтера:
+For long strings with URLs or file paths.
+For strings in multi-line string literals (docstrings or comments).
+If you think a line can't be split without losing readability, discuss it with the team. In exceptional cases, you can use the # noqa:E501 comment to ignore the linter warning:
 ```python
 very_long_variable_name = some_long_function_call(arg1, arg2, ...)  # noqa: E501
 ```
 
-Помните, что злоупотребление игнорированием правил может привести к снижению качества кода. Всегда стремитесь к соблюдению ограничения в 80 символов, когда это возможно.
+Remember that excessive disregard of the rules can lead to lower code quality. Always strive to adhere to the 80 character limit whenever possible.
 
-## Отступы и пробелы
+## Indents and spaces
 
-Используйте 4 пробела для отступов. Не используйте табуляцию.
-
+ИUse 4 spaces for indentation. Do not use tabs.
 
 ```python
 def long_function_name(
@@ -213,7 +210,7 @@ def long_function_name(
     print(var_one)
 ```
 
-В случаае, если сигнатура метода не умещается в длину строки, то нужно использовать запятую после последнего аргумента и размещать каждый аргумент на новой строке:
+If the method signature does not fit into the line length, then you need to use a comma after the last argument and place each argument on a new line:
 
 ```python
 foo = long_function_name(
@@ -224,38 +221,39 @@ foo = long_function_name(
 ) -> None:
 ```
 
-## Правила импорта
-### Форматы импортов
-Импорты должны быть на отдельных строках:
+## Import rules
+### Import formats
+Imports must be on separate lines:
 
-```pyhon
-# Правильно:
+```python
+# Right:
 import os
 import sys
 
-# Неправильно:
+# Wrong:
 import os, sys
 ```
 
-Импорты всегда помещаются в начало файла, сразу после комментариев к модулю и docstrings, и перед глобальными переменными и константами.
+Imports are always placed at the top of the file, immediately after module comments and docstrings, and before global variables and constants.
 
-Импорты должны быть сгруппированы в следующем порядке:
+Imports should be grouped in the following order:
 
-Стандартные библиотеки
-Связанные сторонние импорты
-Локальные импорты приложения/библиотеки
-Вы должны поставить пустую строку между каждой группой импортов.
+Standard Libraries
+Related Third Party Imports
+Local application/library imports
+You must put a blank line between each group of imports.
 
-### Импорт исключений
-Исключения из текущего слоя (например, сервисного) импортируются как просто exceptions. Исключения из пакетов иного слоя или отдельной библиотеки должны получать псевдоним с суффиксом _exc:
+### Importing exceptions
+Exceptions from the current layer (e.g. service) are imported as just exceptions. Exceptions from packages in another layer or a separate library should be aliased with the _exc suffix:
 
-
+```python
 from intakevms.libs.messaging import exceptions as msg_exc
 from intakevms.modules.storage.service_layer import exceptions
+```
 
-### Импорт множества классов
+### Importing Multiple Classes
 
-Если из пакета импортируется множество классов, то перечисляйте их в круглых скобках, с новой строки после открытия скобки и закрытием после перечисления последнего класса:
+If you import multiple classes from a package, list them in parentheses, with a new line after the opening parenthesis and a closing line after listing the last class:
 
 ```python
 from package import (
@@ -265,21 +263,21 @@ from package import (
 )
 ```
 
-## Синтаксические правила
-### Использование f-строк и r-строк
-Для форматирования строк используйте исключительно f-строки. Не используйте метод format() или форматирование через символ %.
+## Syntax rules
+### Using f-strings and r-strings
+Use f-strings exclusively for string formatting. Do not use the format() method or formatting via the % symbol.
 
 ```python
-# Правильно:
+# Right:
 name = "Alice"
 age = 30
 message = f"Hello, {name}! You are {age} years old."
 
-# Неправильно:
+# Wrong:
 message = "Hello, {}! You are {} years old.".format(name, age)
 message = "Hello, %s! You are %d years old." % (name, age)
 ```
-Для регулярных выражений используйте r-строки:
+For regular expressions, use r-strings:
 ```python
 import re
 
@@ -289,8 +287,8 @@ if re.match(pattern, ssn):
     print("Valid SSN format")
 ```
 
-### Реализация метода super()
-При вызове метода суперкласса используйте super() без передачи наименования класса:
+### Implementing the super() method
+When calling a superclass method, use super() without passing the class name:
 
 ```python
 class StorageServiceLayerManager(BackgroundTasks):
@@ -302,24 +300,24 @@ class BridgePortGroup(BasePortGroup):
         super().__init__(*args, **kwargs)
 
 ```
-### Типизация (Type hints)
-Обязательно используйте аннотации типов (type hints) для аргументов функций, методов и возвращаемых значений. Используйте библиотеку typing для сложных типов.
+### Typification (Type hints)
+Be sure to use type hints for function arguments, methods, and return values. Use the typing library for complex types.
 
-Для словарей и подобных структур не описывайте вложенные типы для входящих аргументов, но обязательно описывайте их для возвращаемых значений. Если могут быть разные типы данных, предусмотрите это в аннотации.
+For dictionaries and similar structures, do not declare nested types for input arguments, but do declare them for return values. If there may be different data types, provide for this in the annotation.
 
 ```python
 from typing import Dict, Union
 
 def create_partition(self, data: Dict) -> Dict[str, int]:
-    # Реализация метода
+    # Implementation method
 
 def process_data(self, data: Dict) -> Dict[str, Union[str, int]]:
-    # Реализация метода
+    # Implementation method
 ```
 
-## Правила нейминга
-### Классы
-Имена классов должны следовать соглашению CapWords (также известному как PascalCase):
+## Naming rules
+### Classes
+Class names must follow the CapWords convention (also known as PascalCase):
 
 ```python
 class MyClass:
@@ -328,9 +326,9 @@ class MyClass:
 class MyABCClass:
     pass
 ```
-### Методы и функции
+### Methods and functions
 
-Имена методов и функций должны быть написаны в нижнем регистре, с подчеркиваниями между словами:
+Method and function names must be written in lowercase, with underscores between words:
 
 ```python
 def my_function():
@@ -341,41 +339,41 @@ class MyClass:
         pass
 ```
 
-### Переменные
-Имена переменных также должны быть написаны в нижнем регистре, с подчеркиваниями между словами:
+### Variables
+Variable names should also be written in lowercase, with underscores between words:
 
 ```python
 my_variable = 5
 user_name = "John"
 ```
-### Константы
-Константы должны быть написаны заглавными буквами с подчеркиваниями между словами:
+### Constants
+Constants must be written in capital letters with underscores between words:
 
 ```python
 MAX_OVERFLOW = 100
 TOTAL = 0
 ```
 
-## Комментарии и документация
-Комментарии должны быть полными предложениями. Если комментарий - фраза или предложение, первое слово должно быть написано с заглавной буквы, если это не имя переменной, начинающееся с нижнего регистра.
+## Comments and documentation
+Comments must be complete sentences. If the comment is a phrase or sentence, the first word must be capitalized unless it is a variable name that begins with lowercase.
 
-## Формирование docstring
-Docstring в Python-модулях используется для документирования различных элементов: модулей, классов, функций и методов. Существуют определенные правила и рекомендации по их оформлению.
+## Formation docstring
+Docstring in Python modules is used to document various elements: modules, classes, functions and methods. There are certain rules and recommendations for their design.
 
-### Общие правила форматирования
-- Форматирование с использованием 4 пробелов для отступов.
+### General formatting rules
+- Formatting using 4 spaces for indentation.
 
 
-### Docstring модуля
-Docstring модуля (.py файл) должен находиться в самом начале файла. Он должен содержать:
+### Docstring of the module
+The module docstring (.py file) must be at the very beginning of the file. It must contain:
 
-- Краткое описание модуля и его назначение.
-- Подробное описание назначения модуля и особенностей его работы
-- Описание основных классов, перечислений и других сущностей, определенных в модуле.
+- Brief description of the module and its purpose.
+- Detailed description of the module's purpose and features of its operation
+- Description of the main classes, enumerations, and other entities defined in the module.
 
-При формировании docstring модуля, переносы строк должны быть сделаны таким образом, чтобы каждый абзац (логическая группа предложений) был на отдельной строке. В случае переноса содержание новой строки должно выделяться табуляцией
+When forming a module's docstring, line breaks should be made in such a way that each paragraph (logical group of sentences) is on a separate line. In the case of a break, the content of the new line should be separated by a tab.
 
-#### Пример docstring модуля:
+#### Example of module docstring:
 
 ```python
 """Module for managing the Block Devices Service Layer.
@@ -402,18 +400,18 @@ Classes:
 
 
 
-### Docstring классов, функций и методов
-Для классов, функций и методов docstring должен быть оформлен в соответствии с Google-стилем:
+### Docstring of classes, functions and methods
+For classes, functions and methods, the docstring should be formatted according to Google style:
 
-- Первая строка должна содержать краткое описание. Одной строкой, которая не превышает допустимую длинну строки. В случае если есть превышение на небольшое количесво символов, допустимо добавить данную строку в исключения для ruff. Но рекомендуется найти лаконичное описание для первой строки, чтобы она вписывалась в формат.
-- Далее следует более подробное описание. Необходимо придерживаться длины строки, если слово не умещается, то корректно его перенести на новую строку и продолжить описание там
-- Секция "Attributes" должна содержать описание атрибутов класса. Она должна быть отделена пустой строкой от предыдущего описания.
-- Секции "Args", "Returns" и "Raises" должны содержать описание аргументов, возвращаемого значения и исключений соответственно. Каждая секция должна быть отделена пустой строкой.
-- При описании атрибутов, аргументов и потенциальных исключений, обратите внимание на переносы, для удобства читаемости кода, перенесённая строка продолжающаяя описание конкретного элемента дополняется ещё одни отступом.
+- The first line should contain a short description. One line that does not exceed the allowed line length. If there is an excess of a small number of characters, it is permissible to add this line to the exceptions for ruff. But it is recommended to find a laconic description for the first line so that it fits into the format.
+- A more detailed description follows. It is necessary to adhere to the line length, if a word does not fit, then it is correct to move it to a new line and continue the description there.
+- The "Attributes" section should contain a description of the class attributes. It should be separated from the previous description by a blank line.
+- The "Args", "Returns" and "Raises" sections should contain a description of the arguments, return value and exceptions respectively. Each section should be separated by a blank line.
+- When describing attributes, arguments and potential exceptions, pay attention to the hyphens; for ease of code readability, a hyphenated line that continues the description of a specific element is supplemented with another indent.
 
-Пример:
+An example:
 ```python
-# Некорректно
+# Incorrect
 """
     ...
 
@@ -424,7 +422,7 @@ Classes:
         with the API service layer.
 
 """
-# Корректно
+# Correctly
 """
     ...
 
@@ -436,7 +434,7 @@ Classes:
 """
 ```
 
-#### Пример docstring класса:
+#### Example of class docstring:
 ```python
 class BlockDevicesServiceLayerManager(BackgroundTasks):
     """Manager class for handling block devices service layer operations.

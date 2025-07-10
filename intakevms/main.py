@@ -327,6 +327,6 @@ if __name__ == '__main__':
         backlog=65535,
         limit_concurrency=1000,
         limit_max_requests=10000,
-        ssl_keyfile='/opt/aero/intakevms/key.pem',
-        ssl_certfile='/opt/aero/intakevms/cert.pem',
+        ssl_keyfile='/opt/virtman/intakevms/key.pem',
+        ssl_certfile='/opt/virtman/intakevms/cert.pem',
     )

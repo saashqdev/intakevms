@@ -1,45 +1,38 @@
-Кодекс Поведения
+Code of Conduct
 ----------------
 
-### Наше обещание
-В интересах создания открытой и дружественной среды,
-мы как участники и поддерживающие стороны обязуемся сделать
-участие в нашем проекте и нашем сообществе свободным от
-доминирования и включения всех, независимо от возраста,
-телосложения, инвалидности, этнической принадлежности,
-гендерной идентичности и выражения, уровня опыта, образования,
-социального статуса, национальности, личной внешности, расы,
-религии или сексуальной ориентации.
+### Our promise
+In the interest of creating an open and friendly environment,
+we as participants and supporters commit to making
+participation in our project and our community free from
+domination and inclusion of all, regardless of age,
+body size, disability, ethnicity, gender identity and expression, 
+level of experience, education, social status, nationality, 
+personal appearance, race, religion or sexual orientation.
 
-### Наши стандарты
-Примеры поведения, которые способствуют созданию
-положительной среды включают:
+### Our standards
+Examples of behaviors that contribute to a positive environment include:
 
-* Использование дружелюбного языка,
-* Уважительное отношение к различным точкам зрения и опыту,
-* Принятие конструктивной критики,
-* Фокусирование на том, что лучше для сообщества,
-* Показ примера другим членам сообщества.
+* Using Friendly Language,
+* Respect for different points of view and experiences,
+* Accepting constructive criticism,
+* Focusing on what's best for the community,
+* Setting an example for other community members.
 
-Примеры неприемлемого поведения участников включают:
+Examples of unacceptable behavior by participants include:
 
-* Использование языка или изображений, которые
-некорректны или оскорбительны в отношении других участников,
-* Доминирование или оскорбление, переходящее в нападки
-на других участников,
-* Рассказывание о персональных историях, которые не имеют
-отношения к проекту,
-* Публичное или частное домогательство,
-* Публикация личной информации других участников без их
-явного согласия.
+* Using language or images that are inappropriate or offensive to other participants,
+* Dominance or insults that escalate into attacks on other participants,
+* Sharing personal stories that are not related to the project,
+* Public or private harassment,
+* Posting personal information of other participants without their express consent.
 
-### Наши обязательства
-В качестве поддерживающих сторон, мы ответственны за ясное
-создание приветствующей среды и за принятие мер в отношении
-неприемлемого поведения. Мы имеем право и обязаны удалять,
-редактировать или отклонять комментарии, коммиты, код,
-изменения wiki, вопросы и другие вклады, которые не
-соответствуют настоящему Кодексу поведения, или
-заблокировать временно, или окончательно любого
-участника за другое поведение, которое считается
-неприемлемым, угрожающим, оскорбительным или вредным.
+### Our Commitments
+As maintainers, we are responsible for clearly
+creating a welcoming environment and taking action against 
+inappropriate behavior. We have the right and responsibility 
+to remove, edit, or reject comments, commits, code,
+wiki changes, questions and other contributions that do not 
+comply with this Code of Conduct, or ban, temporarily or 
+permanently, any participant for other conduct that is 
+considered inappropriate, threatening, offensive or harmful.
