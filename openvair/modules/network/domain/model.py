@@ -13,9 +13,9 @@ Classes:
 import abc
 from typing import Dict, Type, ClassVar
 
-from openvair.modules.network.domain.base import BaseInterface
-from openvair.modules.network.domain.bridges import netplan, ovs_bridge
-from openvair.modules.network.domain.interfaces import virtual, physical
+from intakevms.modules.network.domain.base import BaseInterface
+from intakevms.modules.network.domain.bridges import netplan, ovs_bridge
+from intakevms.modules.network.domain.interfaces import virtual, physical
 
 
 class AbstractInterfaceFactory(metaclass=abc.ABCMeta):

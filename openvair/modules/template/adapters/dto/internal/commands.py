@@ -4,7 +4,7 @@ from pathlib import Path
 
 from pydantic import Field, BaseModel, ConfigDict
 
-from openvair.common.configs.pydantic_config import (
+from intakevms.common.configs.pydantic_config import (
     dto_config,
     lenient_dto_config,
 )

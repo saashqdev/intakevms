@@ -11,12 +11,12 @@ Classes:
 from typing import Any, Dict
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.modules.network.domain.base import BaseOVSBridge
-from openvair.modules.network.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.network.domain.base import BaseOVSBridge
+from intakevms.modules.network.domain.exceptions import (
     NetplanFileNotFoundException,
 )
-from openvair.modules.network.domain.utils.netplan_manager import (
+from intakevms.modules.network.domain.utils.netplan_manager import (
     NetplanManager,
 )
 

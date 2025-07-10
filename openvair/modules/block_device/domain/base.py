@@ -18,7 +18,7 @@ from __future__ import annotations
 import abc
 from typing import Any, Dict
 
-from openvair.libs.log import get_logger
+from intakevms.libs.log import get_logger
 
 LOG = get_logger(__name__)
 

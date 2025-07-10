@@ -17,8 +17,8 @@ from typing import TYPE_CHECKING, Any
 
 from typing_extensions import Self
 
-from openvair.modules.notification.config import DEFAULT_SESSION_FACTORY
-from openvair.modules.notification.adapters import repository
+from intakevms.modules.notification.config import DEFAULT_SESSION_FACTORY
+from intakevms.modules.notification.adapters import repository
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session, sessionmaker

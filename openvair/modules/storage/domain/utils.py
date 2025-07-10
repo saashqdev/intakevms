@@ -14,8 +14,8 @@ from typing import Dict, List, Tuple, Union, Literal, ClassVar
 
 from pydantic import BaseModel, field_validator
 
-from openvair.libs.log import get_logger
-from openvair.modules.storage.domain.exception import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.storage.domain.exception import (
     PartitionTableInfoNotFound,
     UnsupportedPartitionTableTypeError,
     NotFoundDataInPartitonInfoException,

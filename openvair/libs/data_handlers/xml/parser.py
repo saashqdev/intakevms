@@ -10,13 +10,13 @@ Functions:
 from typing import Any
 from pathlib import Path
 
-from openvair.libs.data_handlers.xml.exceptions import (
+from intakevms.libs.data_handlers.xml.exceptions import (
     XMLReadingError,
     XMLWritingError,
     XMLSerializationError,
     XMLDeserializationError,
 )
-from openvair.libs.data_handlers.xml.serializer import (
+from intakevms.libs.data_handlers.xml.serializer import (
     serialize_xml,
     deserialize_xml,
 )

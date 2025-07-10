@@ -16,7 +16,7 @@ from typing import Any, Optional
 import requests
 from requests.adapters import HTTPAdapter
 
-from openvair.libs.client.config import (
+from intakevms.libs.client.config import (
     get_web_app_url,
     get_default_user,
     get_prometheus_url,

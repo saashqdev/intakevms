@@ -3,7 +3,7 @@
 This module defines the `DashboardCrud` class, which is responsible for
 handling CRUD (Create, Read, Update, Delete) operations related to the
 Dashboard. The class uses the `Protocol` class from the
-`openvair.libs.messaging.protocol` module to communicate with the service layer
+`intakevms.libs.messaging.protocol` module to communicate with the service layer
 and perform the requested operations.
 
 The module includes methods for retrieving data from the dashboard.
@@ -14,10 +14,10 @@ Classes:
 
 from typing import Dict
 
-from openvair.libs.log import get_logger
-from openvair.modules.dashboard.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.dashboard.service_layer import services
+from intakevms.libs.log import get_logger
+from intakevms.modules.dashboard.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.dashboard.service_layer import services
 
 LOG = get_logger(__name__)
 

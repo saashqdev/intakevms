@@ -13,12 +13,12 @@ Functions:
         and sets up the RPC server for handling requests.
 """
 
-from openvair.libs.log import get_logger
-from openvair.libs.messaging.messaging_agents import MessagingServer
-from openvair.modules.virtual_machines.config import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.virtual_machines.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
 )
-from openvair.modules.virtual_machines.service_layer import services
+from intakevms.modules.virtual_machines.service_layer import services
 
 LOG = get_logger('service-layer-manager')
 

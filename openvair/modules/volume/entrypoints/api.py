@@ -27,11 +27,11 @@ from fastapi.responses import JSONResponse
 from fastapi_pagination import Page, paginate
 from starlette.concurrency import run_in_threadpool
 
-from openvair.libs.log import get_logger
-from openvair.libs.auth.jwt_utils import get_current_user
-from openvair.libs.validation.validators import Validator
-from openvair.modules.volume.entrypoints import schemas
-from openvair.modules.volume.entrypoints.crud import VolumeCrud
+from intakevms.libs.log import get_logger
+from intakevms.libs.auth.jwt_utils import get_current_user
+from intakevms.libs.validation.validators import Validator
+from intakevms.modules.volume.entrypoints import schemas
+from intakevms.modules.volume.entrypoints.crud import VolumeCrud
 
 LOG = get_logger(__name__)
 router = APIRouter(

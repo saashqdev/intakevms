@@ -10,10 +10,10 @@ Entrypoint:
         server, and begins consuming storage-related requests.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.storage.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.modules.storage.service_layer import services
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.storage.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.modules.storage.service_layer import services
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('service-layer-manager')
 

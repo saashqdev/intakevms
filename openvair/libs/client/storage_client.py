@@ -3,7 +3,7 @@
 # client functionality
 from typing import Optional
 
-from openvair.libs.client.base_client import BaseClient
+from intakevms.libs.client.base_client import BaseClient
 
 
 # Unuse in current version need to be implemented from service interfaces and

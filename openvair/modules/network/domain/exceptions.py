@@ -15,7 +15,7 @@ Classes:
 
 from typing import Any
 
-from openvair.abstracts.base_exception import BaseCustomException
+from intakevms.abstracts.base_exception import BaseCustomException
 
 
 class NetplanFileNotFoundException(BaseCustomException):

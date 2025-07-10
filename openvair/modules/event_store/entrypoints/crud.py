@@ -14,10 +14,10 @@ import uuid
 from typing import List
 from collections import namedtuple
 
-from openvair.libs.log import get_logger
-from openvair.libs.validation.validators import Validator
-from openvair.modules.event_store.entrypoints import schemas, unit_of_work
-from openvair.modules.event_store.adapters.serializer import DataSerializer
+from intakevms.libs.log import get_logger
+from intakevms.libs.validation.validators import Validator
+from intakevms.modules.event_store.entrypoints import schemas, unit_of_work
+from intakevms.modules.event_store.adapters.serializer import DataSerializer
 
 LOG = get_logger(__name__)
 

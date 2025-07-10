@@ -12,8 +12,8 @@ from typing import Dict, Type, cast
 from sqlalchemy import inspect
 from sqlalchemy.orm.mapper import Mapper
 
-from openvair.abstracts.serializer import AbstractDataSerializer
-from openvair.modules.event_store.adapters.orm import Events
+from intakevms.abstracts.serializer import AbstractDataSerializer
+from intakevms.modules.event_store.adapters.orm import Events
 
 
 class DataSerializer(AbstractDataSerializer):

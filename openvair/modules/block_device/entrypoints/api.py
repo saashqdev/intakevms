@@ -8,12 +8,12 @@ scan on Fibre Channel host adapters.
 
 The module uses the FastAPI framework to define the API routes and handle the
 requests. It also utilizes the `InterfaceCrud` class from the
-`openvair.modules.block_device.entrypoints.crud` module to perform the
+`intakevms.modules.block_device.entrypoints.crud` module to perform the
 necessary CRUD (Create, Read, Update, Delete) operations on the block device
 interfaces.
 
 The module includes several Pydantic data models defined in the
-`openvair.modules.block_device.entrypoints.schemas` module, which are used to
+`intakevms.modules.block_device.entrypoints.schemas` module, which are used to
 represent the various types of block device interfaces and their associated
 data.
 
@@ -30,10 +30,10 @@ from typing import Dict, List
 from fastapi import Depends, APIRouter, status
 from starlette.concurrency import run_in_threadpool
 
-from openvair.libs.log import get_logger
-from openvair.libs.auth.jwt_utils import get_current_user
-from openvair.modules.block_device.entrypoints import schemas
-from openvair.modules.block_device.entrypoints.crud import InterfaceCrud
+from intakevms.libs.log import get_logger
+from intakevms.libs.auth.jwt_utils import get_current_user
+from intakevms.modules.block_device.entrypoints import schemas
+from intakevms.modules.block_device.entrypoints.crud import InterfaceCrud
 
 LOG = get_logger(__name__)
 

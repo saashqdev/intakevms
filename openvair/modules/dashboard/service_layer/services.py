@@ -14,9 +14,9 @@ from __future__ import annotations
 
 from typing import Dict
 
-from openvair.libs.log import get_logger
-from openvair.modules.base_manager import BackgroundTasks
-from openvair.modules.dashboard.service_layer import unit_of_work
+from intakevms.libs.log import get_logger
+from intakevms.modules.base_manager import BackgroundTasks
+from intakevms.modules.dashboard.service_layer import unit_of_work
 
 LOG = get_logger(__name__)
 

@@ -17,10 +17,10 @@ The BlockDevicesServiceLayerManager service is responsible for handling the
 business logic and coordination of block device-related operations.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.block_device.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingServer
-from openvair.modules.block_device.service_layer import services
+from intakevms.libs.log import get_logger
+from intakevms.modules.block_device.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.block_device.service_layer import services
 
 LOG = get_logger('service-layer-manager')
 

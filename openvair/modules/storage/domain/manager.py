@@ -8,10 +8,10 @@ Functions:
     main: The main entry point to start the RPC server.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.storage.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
-from openvair.modules.storage.domain import model
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.storage.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
+from intakevms.modules.storage.domain import model
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('domain-manager')
 

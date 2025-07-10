@@ -1,4 +1,4 @@
-"""Unit tests for the `execute` function in the `openvair.libs.cli.executor`.
+"""Unit tests for the `execute` function in the `intakevms.libs.cli.executor`.
 
 This test suite verifies the behavior of the `execute` function under various
 conditions, including successful execution, errors, timeouts, and invalid
@@ -7,7 +7,7 @@ ensuring that tests are deterministic and safe.
 
 Usage:
 Run the tests using pytest:
-    pytest openvair/libs/cli/test_executor.py
+    pytest intakevms/libs/cli/test_executor.py
 """
 
 from typing import TYPE_CHECKING
@@ -16,15 +16,15 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import (
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import (
     ExecuteError,
     ExecuteTimeoutExpiredError,
 )
 
 if TYPE_CHECKING:
-    from openvair.libs.cli.models import ExecutionResult
+    from intakevms.libs.cli.models import ExecutionResult
 
 
 def test_execute_success() -> None:

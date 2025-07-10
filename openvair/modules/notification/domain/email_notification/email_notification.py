@@ -9,9 +9,9 @@ from typing import Any
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from openvair.libs.log import get_logger
-from openvair.modules.notification.domain.base import BaseEmailNotification
-from openvair.modules.notification.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.notification.domain.base import BaseEmailNotification
+from intakevms.modules.notification.domain.exceptions import (
     NotificationSMTPException,
     NoRecipientsSpecifiedForEmailNotification,
 )

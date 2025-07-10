@@ -18,9 +18,9 @@ jobs:
 
       - name: Add remotes
         run: |
-          git remote add gitflic https://aerodisk_open_vair:${{ secrets.GITFLIC_TOKEN }}@gitflic.ru/project/aerodisk_open_vair/openvair.git
-          git remote add gitlab https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@git.aerodisk.ru/openvair/openvair.git
-          git remote add gitverse https://Aerodisk:${{ secrets.GITVERSE_TOKEN }}@gitverse.ru/Aerodisk/openvair.git
+          git remote add gitflic https://aerodisk_open_vair:${{ secrets.GITFLIC_TOKEN }}@gitflic.ru/project/aerodisk_open_vair/intakevms.git
+          git remote add gitlab https://${{ secrets.GITLAB_USERNAME }}:${{ secrets.GITLAB_TOKEN }}@git.aerodisk.ru/intakevms/intakevms.git
+          git remote add gitverse https://Aerodisk:${{ secrets.GITVERSE_TOKEN }}@gitverse.ru/Aerodisk/intakevms.git
 
       - name: Fetch all branches
         run: git fetch --unshallow --tags || git fetch --all

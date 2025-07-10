@@ -11,10 +11,10 @@ Classes:
 
 from typing import Dict
 
-from openvair.libs.log import get_logger
-from openvair.modules.notification.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.notification.service_layer import services
+from intakevms.libs.log import get_logger
+from intakevms.modules.notification.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.notification.service_layer import services
 
 LOG = get_logger(__name__)
 

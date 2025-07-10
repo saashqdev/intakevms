@@ -12,8 +12,8 @@ Variables:
     DEFAULT_SESSION_FACTORY (sessionmaker): SQLAlchemy session factory.
 """
 
-from openvair import config
-from openvair.config import RPC_QUEUES, get_default_session_factory
+from intakevms import config
+from intakevms.config import RPC_QUEUES, get_default_session_factory
 
 USER_SERVICE_LAYER_QUEUE_NAME: str = RPC_QUEUES.User.SERVICE_LAYER
 

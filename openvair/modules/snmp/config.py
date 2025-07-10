@@ -1,3 +1,3 @@
-from openvair.config import RPC_QUEUES
+from intakevms.config import RPC_QUEUES
 
 API_SERVICE_LAYER_QUEUE_NAME: str = RPC_QUEUES.SNMP.SERVICE_LAYER

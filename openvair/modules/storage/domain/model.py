@@ -13,9 +13,9 @@ Classes:
 import abc
 from typing import Dict, ClassVar, cast
 
-from openvair.modules.storage.domain.base import BaseStorage
-from openvair.modules.storage.domain.remotefs import nfs
-from openvair.modules.storage.domain.physical_fs import localfs
+from intakevms.modules.storage.domain.base import BaseStorage
+from intakevms.modules.storage.domain.remotefs import nfs
+from intakevms.modules.storage.domain.physical_fs import localfs
 
 
 class AbstractStorageFactory(metaclass=abc.ABCMeta):

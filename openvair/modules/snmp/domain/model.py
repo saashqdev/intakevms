@@ -11,9 +11,9 @@ Classes:
 import abc
 from typing import ClassVar, cast
 
-from openvair.modules.snmp.domain.base import BaseSNMP
-from openvair.modules.snmp.domain.agentx import agentx
-from openvair.modules.snmp.domain.exceptions import SNMPAgentTypeError
+from intakevms.modules.snmp.domain.base import BaseSNMP
+from intakevms.modules.snmp.domain.agentx import agentx
+from intakevms.modules.snmp.domain.exceptions import SNMPAgentTypeError
 
 
 class AbstractSNMPFactory(metaclass=abc.ABCMeta):

@@ -20,8 +20,8 @@ from sqlalchemy import update
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import joinedload
 
-from openvair.abstracts.exceptions import DBCannotBeConnectedError
-from openvair.modules.image.adapters.orm import Image
+from intakevms.abstracts.exceptions import DBCannotBeConnectedError
+from intakevms.modules.image.adapters.orm import Image
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session

@@ -40,10 +40,10 @@ from fastapi import Depends, APIRouter, status
 from fastapi.responses import JSONResponse
 from starlette.concurrency import run_in_threadpool
 
-from openvair.libs.log import get_logger
-from openvair.libs.auth.jwt_utils import get_current_user
-from openvair.modules.virtual_network.entrypoints import schemas
-from openvair.modules.virtual_network.entrypoints.crud import VirtualNetworkCrud
+from intakevms.libs.log import get_logger
+from intakevms.libs.auth.jwt_utils import get_current_user
+from intakevms.modules.virtual_network.entrypoints import schemas
+from intakevms.modules.virtual_network.entrypoints.crud import VirtualNetworkCrud
 
 LOG = get_logger(__name__)
 

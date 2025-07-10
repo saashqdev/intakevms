@@ -12,12 +12,12 @@ Classes:
 from typing import Any, Dict
 from pathlib import Path
 
-from openvair.config import TMP_DIR
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.modules.image.domain.base import BaseRemoteFSImage
+from intakevms.config import TMP_DIR
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.modules.image.domain.base import BaseRemoteFSImage
 
 LOG = get_logger(__name__)
 

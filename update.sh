@@ -5,7 +5,7 @@ OS=$(cat /etc/issue)
 ARCH=$(arch)
 
 # Project settings
-PROJECT_NAME=openvair
+PROJECT_NAME=intakevms
 USER_PATH=/opt/$USER
 PROJECT_PATH="${USER_PATH}/${PROJECT_NAME}"
 DEPENDENCIES_FILE="${PROJECT_PATH}/third_party_requirements.txt"

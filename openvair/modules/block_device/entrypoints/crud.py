@@ -3,7 +3,7 @@
 This module defines the `InterfaceCrud` class, which is responsible for
 handling CRUD (Create, Read, Update, Delete) operations on block device
 interfaces, such as iSCSI and Fibre Channel. The class uses the `Protocol`
-class from the `openvair.libs.messaging.protocol` module to communicate with
+class from the `intakevms.libs.messaging.protocol` module to communicate with
 the service layer and perform the requested operations.
 
 The module includes methods for getting all iSCSI sessions, getting the current
@@ -16,10 +16,10 @@ Classes:
 
 from typing import Dict, List, cast
 
-from openvair.libs.log import get_logger
-from openvair.modules.block_device.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.block_device.service_layer import services
+from intakevms.libs.log import get_logger
+from intakevms.modules.block_device.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.block_device.service_layer import services
 
 LOG = get_logger(__name__)
 

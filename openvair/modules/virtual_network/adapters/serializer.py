@@ -14,11 +14,11 @@ from pydantic import BaseModel
 from sqlalchemy import inspect
 from sqlalchemy.orm.mapper import Mapper
 
-from openvair.libs.log import get_logger
-from openvair.abstracts.serializer import AbstractDataSerializer
-from openvair.modules.virtual_network.adapters import orm as db
-from openvair.modules.virtual_network.entrypoints import schemas as web
-from openvair.modules.virtual_network.domain.bridge_network.bridge_net import (
+from intakevms.libs.log import get_logger
+from intakevms.abstracts.serializer import AbstractDataSerializer
+from intakevms.modules.virtual_network.adapters import orm as db
+from intakevms.modules.virtual_network.entrypoints import schemas as web
+from intakevms.modules.virtual_network.domain.bridge_network.bridge_net import (
     BridgeNetwork,
     BridgePortGroup,
 )

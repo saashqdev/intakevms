@@ -20,7 +20,7 @@ from pathlib import Path
 
 from pydantic import Field, BaseModel, field_validator
 
-from openvair.libs.validation.validators import Validator
+from intakevms.libs.validation.validators import Validator
 
 
 class Attachment(BaseModel):

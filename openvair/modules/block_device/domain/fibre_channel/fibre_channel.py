@@ -15,10 +15,10 @@ Classes:
         devices.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.block_device.libs.utils import lip_scan as utils_lip_scan
-from openvair.modules.block_device.domain.base import BaseFibreChannel
-from openvair.modules.block_device.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.block_device.libs.utils import lip_scan as utils_lip_scan
+from intakevms.modules.block_device.domain.base import BaseFibreChannel
+from intakevms.modules.block_device.domain.exceptions import (
     LipScanError,
 )
 

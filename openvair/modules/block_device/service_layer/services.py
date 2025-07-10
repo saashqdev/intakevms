@@ -27,27 +27,27 @@ from collections import namedtuple
 
 from sqlalchemy.exc import SQLAlchemyError
 
-from openvair.libs.log import get_logger
-from openvair.modules.base_manager import BackgroundTasks
-from openvair.libs.messaging.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.base_manager import BackgroundTasks
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcCallTimeoutException,
 )
-from openvair.modules.block_device.config import (
+from intakevms.modules.block_device.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.block_device.domain.base import (
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.block_device.domain.base import (
     BaseISCSI,
     BaseFibreChannel,
 )
-from openvair.modules.block_device.service_layer import exceptions, unit_of_work
-from openvair.modules.event_store.entrypoints.crud import EventCrud
-from openvair.modules.block_device.adapters.serializer import DataSerializer
+from intakevms.modules.block_device.service_layer import exceptions, unit_of_work
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.modules.block_device.adapters.serializer import DataSerializer
 
 if TYPE_CHECKING:
-    from openvair.modules.block_device.adapters.orm import ISCSIInterface
+    from intakevms.modules.block_device.adapters.orm import ISCSIInterface
 
 LOG = get_logger(__name__)
 

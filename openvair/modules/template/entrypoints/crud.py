@@ -15,20 +15,20 @@ Dependencies:
 from uuid import UUID
 from typing import List
 
-from openvair.libs.log import get_logger
-from openvair.modules.template.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.template.service_layer.services import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.template.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.template.service_layer.services import (
     TemplateServiceLayerManager,
 )
-from openvair.modules.template.entrypoints.schemas.requests import (
+from intakevms.modules.template.entrypoints.schemas.requests import (
     RequestEditTemplate,
     RequestCreateTemplate,
 )
-from openvair.modules.template.entrypoints.schemas.responses import (
+from intakevms.modules.template.entrypoints.schemas.responses import (
     TemplateResponse,
 )
-from openvair.modules.template.adapters.dto.internal.commands import (
+from intakevms.modules.template.adapters.dto.internal.commands import (
     GetTemplateServiceCommandDTO,
     EditTemplateServiceCommandDTO,
     CreateTemplateServiceCommandDTO,

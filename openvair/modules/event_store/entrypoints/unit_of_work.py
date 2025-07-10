@@ -15,8 +15,8 @@ from __future__ import annotations
 import abc
 from typing import TYPE_CHECKING, Any
 
-from openvair.modules.event_store.config import DEFAULT_SESSION_FACTORY
-from openvair.modules.event_store.adapters import repository
+from intakevms.modules.event_store.config import DEFAULT_SESSION_FACTORY
+from intakevms.modules.event_store.adapters import repository
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session, sessionmaker

@@ -12,10 +12,10 @@ Dependencies:
         communication.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.template.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingServer
-from openvair.modules.template.service_layer.services import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.template.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.template.service_layer.services import (
     TemplateServiceLayerManager,
 )
 

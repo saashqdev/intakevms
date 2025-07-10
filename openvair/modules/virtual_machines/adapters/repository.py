@@ -24,8 +24,8 @@ from sqlalchemy import update
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import joinedload
 
-from openvair.abstracts.exceptions import DBCannotBeConnectedError
-from openvair.modules.virtual_machines.adapters.orm import (
+from intakevms.abstracts.exceptions import DBCannotBeConnectedError
+from intakevms.modules.virtual_machines.adapters.orm import (
     Disk,
     VirtualMachines,
     VirtualInterface,

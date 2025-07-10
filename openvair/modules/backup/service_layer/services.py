@@ -9,25 +9,25 @@ tasks via messaging and background processes.
 from typing import Any, Dict, List, Union
 from pathlib import Path
 
-from openvair.config import TMP_DIR, DB_CONTAINER, database as db_config
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.modules.base_manager import BackgroundTasks
-from openvair.modules.backup.config import (
+from intakevms.config import TMP_DIR, DB_CONTAINER, database as db_config
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.modules.base_manager import BackgroundTasks
+from intakevms.modules.backup.config import (
     STORAGE_DATA,
     BACKUPER_TYPE,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.modules.backup.schemas import DataForResticManager
-from openvair.modules.backup.domain.base import FSBackuper
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.event_store.entrypoints.crud import EventCrud
-from openvair.modules.backup.service_layer.exceptions import (
+from intakevms.modules.backup.schemas import DataForResticManager
+from intakevms.modules.backup.domain.base import FSBackuper
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.modules.backup.service_layer.exceptions import (
     WrongBackuperTypeError,
 )
-from openvair.modules.backup.service_layer.unit_of_work import (
+from intakevms.modules.backup.service_layer.unit_of_work import (
     SqlAlchemyUnitOfWork,
 )
 

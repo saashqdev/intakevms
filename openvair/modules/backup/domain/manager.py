@@ -7,7 +7,7 @@ via an RPC interface. It initializes a messaging server using the
 The script is designed to run as a systemd service. During installation,
 a setup script automatically registers and starts the corresponding
 `.service` file located at:
-    /opt/aero/openvair/openvair/modules/backup/domain/backup-domain.service
+    /opt/aero/intakevms/intakevms/modules/backup/domain/backup-domain.service
 
 Usage:
     Manual management of the service:
@@ -22,10 +22,10 @@ Usage:
         journalctl -u backup-domain.service
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.backup.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
-from openvair.modules.backup.domain.model import BackuperFactory
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.backup.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
+from intakevms.modules.backup.domain.model import BackuperFactory
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('domain-manager')
 

@@ -6,7 +6,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from openvair.modules.template.shared.enums import TemplateStatus
+from intakevms.modules.template.shared.enums import TemplateStatus
 
 
 class ApiDTO(BaseModel):  # noqa: D101

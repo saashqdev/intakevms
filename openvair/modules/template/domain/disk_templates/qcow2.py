@@ -7,15 +7,15 @@ QCOW2 disk images. It uses `qemu-img` operations to manage template files.
 from typing import Any, Dict, List, Optional
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.libs.qemu_img.exceptions import QemuImgError
-from openvair.modules.template.domain.base import BaseTemplate
-from openvair.modules.template.domain.exception import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.qemu_img.exceptions import QemuImgError
+from intakevms.modules.template.domain.base import BaseTemplate
+from intakevms.modules.template.domain.exception import (
     TemplateFileEditingException,
     TemplateFileCreatingException,
     TemplateFileDeletingException,
 )
-from openvair.modules.template.adapters.dto.internal.commands import (
+from intakevms.modules.template.adapters.dto.internal.commands import (
     EditTemplateDomainCommandDTO,
     CreateTemplateDomainCommandDTO,
 )

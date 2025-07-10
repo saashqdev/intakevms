@@ -17,11 +17,11 @@ Usage:
         snmpwalk -v2c -c public localhost 1.3.6.1.4.1.54641
 """  # noqa: E501, W505 because commands need to be inline for correct usage
 
-from openvair.libs.log import get_logger
-from openvair.libs.client.config import get_snmp_agent
-from openvair.modules.snmp.domain.base import BaseSNMP
-from openvair.modules.snmp.domain.model import SNMPFactory
-from openvair.modules.snmp.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.client.config import get_snmp_agent
+from intakevms.modules.snmp.domain.base import BaseSNMP
+from intakevms.modules.snmp.domain.model import SNMPFactory
+from intakevms.modules.snmp.domain.exceptions import (
     SNMPAgentStopError,
     SNMPAgentTypeError,
     SNMPAgentStartError,

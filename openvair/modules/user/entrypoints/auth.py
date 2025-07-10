@@ -22,15 +22,15 @@ import jwt
 from fastapi import Depends, APIRouter, HTTPException, status
 from fastapi.security import HTTPBearer, OAuth2PasswordRequestForm
 
-from openvair.libs.log import get_logger
-from openvair.libs.auth.jwt_utils import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.auth.jwt_utils import (
     create_tokens,
     create_access_token,
     create_refresh_token,
 )
-from openvair.modules.user.config import ALGORITHM, JWT_SECRET, TOKEN_TYPE
-from openvair.modules.user.entrypoints import schemas
-from openvair.modules.user.entrypoints.crud import UserCrud
+from intakevms.modules.user.config import ALGORITHM, JWT_SECRET, TOKEN_TYPE
+from intakevms.modules.user.entrypoints import schemas
+from intakevms.modules.user.entrypoints.crud import UserCrud
 
 LOG = get_logger(__name__)
 http_bearer = HTTPBearer(auto_error=False)

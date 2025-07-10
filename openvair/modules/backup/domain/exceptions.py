@@ -4,7 +4,7 @@ This module defines a hierarchy of custom exceptions for errors that may occur
 during backup and restore operations, specifically for backuper logic.
 """
 
-from openvair.abstracts.base_exception import BaseCustomException
+from intakevms.abstracts.base_exception import BaseCustomException
 
 
 class BaseBackuperError(BaseCustomException):

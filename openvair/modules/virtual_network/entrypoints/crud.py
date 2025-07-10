@@ -13,11 +13,11 @@ Classes:
 from uuid import UUID
 from typing import Dict
 
-from openvair.libs.log import get_logger
-from openvair.modules.virtual_network.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.virtual_network.entrypoints import schemas
-from openvair.modules.virtual_network.service_layer.services import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.virtual_network.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.virtual_network.entrypoints import schemas
+from intakevms.modules.virtual_network.service_layer.services import (
     VirtualNetworkServiceLayerManager,
 )
 

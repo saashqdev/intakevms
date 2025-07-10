@@ -12,14 +12,14 @@ Classes:
 from uuid import UUID
 from typing import Dict, List
 
-from openvair.libs.log import get_logger
-from openvair.libs.client.config import get_os_type
-from openvair.modules.network.config import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.client.config import get_os_type
+from intakevms.modules.network.config import (
     NETWORK_CONFIG_MANAGER,
     API_SERVICE_LAYER_QUEUE_NAME,
 )
-from openvair.modules.network.service_layer import services
-from openvair.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.network.service_layer import services
+from intakevms.libs.messaging.messaging_agents import MessagingClient
 
 LOG = get_logger(__name__)
 

@@ -15,7 +15,7 @@ from typing import TYPE_CHECKING, List
 
 from sqlalchemy import desc
 
-from openvair.modules.event_store.adapters.orm import Events
+from intakevms.modules.event_store.adapters.orm import Events
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session

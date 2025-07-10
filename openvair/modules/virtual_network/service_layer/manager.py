@@ -10,10 +10,10 @@ Classes:
         and their port groups.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.virtual_network.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingServer
-from openvair.modules.virtual_network.service_layer import services
+from intakevms.libs.log import get_logger
+from intakevms.modules.virtual_network.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.virtual_network.service_layer import services
 
 LOG = get_logger('service-layer-manager')
 

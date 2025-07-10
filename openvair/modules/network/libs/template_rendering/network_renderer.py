@@ -10,8 +10,8 @@ Classes:
 
 from typing import Any, Dict
 
-from openvair.libs.log import get_logger
-from openvair.libs.template_rendering.base_renderer import BaseTemplateRenderer
+from intakevms.libs.log import get_logger
+from intakevms.libs.template_rendering.base_renderer import BaseTemplateRenderer
 
 LOG = get_logger(__name__)
 

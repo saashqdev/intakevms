@@ -10,7 +10,7 @@ from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
-from openvair.common.orm_types import PathType
+from intakevms.common.orm_types import PathType
 
 # revision identifiers, used by Alembic.
 revision = '1'

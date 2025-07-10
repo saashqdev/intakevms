@@ -6,11 +6,11 @@ Classes:
     ExecuteError: General exception for command execution errors.
 
 Dependencies:
-    openvair.abstracts.base_exception: Provides the BaseCustomException class
+    intakevms.abstracts.base_exception: Provides the BaseCustomException class
         for creating custom exceptions.
 """
 
-from openvair.abstracts.base_exception import BaseCustomException
+from intakevms.abstracts.base_exception import BaseCustomException
 
 
 class ExecuteError(BaseCustomException):

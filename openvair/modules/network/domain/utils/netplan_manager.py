@@ -13,16 +13,16 @@ import shutil
 from typing import Any, Dict, Optional
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.modules.network.config import NETPLAN_DIR
-from openvair.libs.data_handlers.yaml.parser import read_yaml, write_yaml
-from openvair.modules.network.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.modules.network.config import NETPLAN_DIR
+from intakevms.libs.data_handlers.yaml.parser import read_yaml, write_yaml
+from intakevms.modules.network.domain.exceptions import (
     NetplanFileNotFoundException,
 )
-from openvair.libs.data_handlers.yaml.serializer import deserialize_yaml
-from openvair.modules.network.libs.template_rendering.network_renderer import (
+from intakevms.libs.data_handlers.yaml.serializer import deserialize_yaml
+from intakevms.modules.network.libs.template_rendering.network_renderer import (
     NetworkRenderer,
 )
 

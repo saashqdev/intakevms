@@ -12,9 +12,9 @@ from typing import Dict, List
 
 from requests import RequestException
 
-from openvair.libs.log import get_logger
-from openvair.libs.client.config import PROMETHEUS_QUERIES
-from openvair.libs.client.base_client import PrometheusBaseClient
+from intakevms.libs.log import get_logger
+from intakevms.libs.client.config import PROMETHEUS_QUERIES
+from intakevms.libs.client.base_client import PrometheusBaseClient
 
 LOG = get_logger(__name__)
 

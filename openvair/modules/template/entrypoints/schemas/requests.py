@@ -9,8 +9,8 @@ from typing import Literal, Optional
 
 from pydantic import Field
 
-# from openvair.modules.template.adapters.dto import CreateVolume
-from openvair.modules.template.entrypoints.schemas.base import (
+# from intakevms.modules.template.adapters.dto import CreateVolume
+from intakevms.modules.template.entrypoints.schemas.base import (
     APIConfigRequestModel,
 )
 

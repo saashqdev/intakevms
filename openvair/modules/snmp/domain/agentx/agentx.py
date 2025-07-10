@@ -12,18 +12,18 @@ from typing import NoReturn
 
 import pyagentx3 as pyagentx
 
-from openvair.libs.log import get_logger
-from openvair.modules.snmp.domain.base import BaseSNMP
-from openvair.modules.snmp.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.snmp.domain.base import BaseSNMP
+from intakevms.modules.snmp.domain.exceptions import (
     SNMPAgentStopError,
     SNMPAgentStartError,
     SNMPConnectionError,
     SNMPModuleRegistrationError,
 )
-from openvair.modules.snmp.domain.agentx.modules.cpu import Cpu
-from openvair.modules.snmp.domain.agentx.modules.ram import Ram
-from openvair.modules.snmp.domain.agentx.modules.disks import Disks
-from openvair.modules.snmp.domain.agentx.modules.network import Networks
+from intakevms.modules.snmp.domain.agentx.modules.cpu import Cpu
+from intakevms.modules.snmp.domain.agentx.modules.ram import Ram
+from intakevms.modules.snmp.domain.agentx.modules.disks import Disks
+from intakevms.modules.snmp.domain.agentx.modules.network import Networks
 
 LOG = get_logger('domain-manager')
 BASE_OID = '1.3.6.1.4.1.54641'

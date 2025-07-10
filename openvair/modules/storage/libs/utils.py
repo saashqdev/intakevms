@@ -18,10 +18,10 @@ from typing import (
     List,
 )
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.data_handlers.json.serializer import deserialize_json
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.data_handlers.json.serializer import deserialize_json
 
 LOG = get_logger(__name__)
 

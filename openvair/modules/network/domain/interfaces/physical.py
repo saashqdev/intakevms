@@ -10,10 +10,10 @@ Classes:
 
 from typing import Any
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.modules.network.domain.base import BaseInterface
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.modules.network.domain.base import BaseInterface
 
 LOG = get_logger(__name__)
 

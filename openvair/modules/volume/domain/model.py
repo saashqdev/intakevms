@@ -13,9 +13,9 @@ Classes:
 import abc
 from typing import Dict, ClassVar, cast
 
-from openvair.modules.volume.domain.base import BaseVolume
-from openvair.modules.volume.domain.remotefs import nfs
-from openvair.modules.volume.domain.physical_fs import localfs
+from intakevms.modules.volume.domain.base import BaseVolume
+from intakevms.modules.volume.domain.remotefs import nfs
+from intakevms.modules.volume.domain.physical_fs import localfs
 
 
 class AbstractVolumeFactory(metaclass=abc.ABCMeta):

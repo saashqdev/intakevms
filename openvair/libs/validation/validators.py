@@ -17,7 +17,7 @@ from pydantic import (
     ValidationError,
 )
 
-from openvair.libs.log import get_logger
+from intakevms.libs.log import get_logger
 
 LOG = get_logger(__name__)
 

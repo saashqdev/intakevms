@@ -9,8 +9,8 @@ import abc
 from typing import Any, Dict, List, Optional
 from pathlib import Path
 
-from openvair.libs.qemu_img.adapter import QemuImgAdapter
-from openvair.modules.template.adapters.dto.internal.models import DomainDTO
+from intakevms.libs.qemu_img.adapter import QemuImgAdapter
+from intakevms.modules.template.adapters.dto.internal.models import DomainDTO
 
 
 class BaseTemplate(metaclass=abc.ABCMeta):

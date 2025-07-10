@@ -17,14 +17,14 @@ import uuid
 from typing import Any, Dict, List, Optional
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.modules.storage.config import STORAGE_DATA
-from openvair.modules.storage.domain.utils import PartedParser
-from openvair.modules.storage.adapters.parted import PartedAdapter
-from openvair.modules.storage.domain.remotefs.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.modules.storage.config import STORAGE_DATA
+from intakevms.modules.storage.domain.utils import PartedParser
+from intakevms.modules.storage.adapters.parted import PartedAdapter
+from intakevms.modules.storage.domain.remotefs.exceptions import (
     PackageIsNotInstalled,
 )
 

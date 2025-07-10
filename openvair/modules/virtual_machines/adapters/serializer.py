@@ -13,9 +13,9 @@ from typing import Dict, Type, Union, cast
 from sqlalchemy import inspect
 from sqlalchemy.orm.mapper import Mapper
 
-from openvair.abstracts.serializer import AbstractDataSerializer
-from openvair.modules.virtual_machines.adapters import orm
-from openvair.libs.data_handlers.json.serializer import deserialize_json
+from intakevms.abstracts.serializer import AbstractDataSerializer
+from intakevms.modules.virtual_machines.adapters import orm
+from intakevms.libs.data_handlers.json.serializer import deserialize_json
 
 
 class DataSerializer(AbstractDataSerializer):

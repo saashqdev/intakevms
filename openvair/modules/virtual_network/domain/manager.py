@@ -14,12 +14,12 @@ Dependencies:
         communication.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.virtual_network.config import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.virtual_network.config import (
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.modules.virtual_network.domain import model
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.virtual_network.domain import model
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('domain-manager')
 

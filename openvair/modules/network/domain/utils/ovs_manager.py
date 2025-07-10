@@ -12,11 +12,11 @@ Classes:
 
 from typing import Dict, List, Optional
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.data_handlers.json.serializer import deserialize_json
-from openvair.modules.network.domain.utils.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.data_handlers.json.serializer import deserialize_json
+from intakevms.modules.network.domain.utils.exceptions import (
     OVSManagerException,
     BridgeNotFoundException,
     InterfaceNotFoundException,

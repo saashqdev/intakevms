@@ -12,7 +12,7 @@ from typing import Any
 
 import libvirt
 
-from openvair.libs.log import get_logger
+from intakevms.libs.log import get_logger
 
 LOG = get_logger(__name__)
 

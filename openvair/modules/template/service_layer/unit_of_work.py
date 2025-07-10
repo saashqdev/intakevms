@@ -9,9 +9,9 @@ Classes:
 
 from sqlalchemy.orm import sessionmaker
 
-from openvair.modules.storage.config import DEFAULT_SESSION_FACTORY
-from openvair.common.uow.base_sqlalchemy import BaseSqlAlchemyUnitOfWork
-from openvair.modules.template.adapters.repository import (
+from intakevms.modules.storage.config import DEFAULT_SESSION_FACTORY
+from intakevms.common.uow.base_sqlalchemy import BaseSqlAlchemyUnitOfWork
+from intakevms.modules.template.adapters.repository import (
     TemplateSqlAlchemyRepository,
 )
 

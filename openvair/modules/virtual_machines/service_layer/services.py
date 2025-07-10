@@ -36,29 +36,29 @@ from uuid import UUID, uuid4
 from typing import Dict, List, Optional, cast
 from collections import namedtuple
 
-from openvair.libs.log import get_logger
-from openvair.libs.libvirt.vm import get_vms_state
-from openvair.modules.base_manager import BackgroundTasks, periodic_task
-from openvair.libs.context_managers import synchronized_session
-from openvair.modules.virtual_machines import config
-from openvair.libs.messaging.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.libvirt.vm import get_vms_state
+from intakevms.modules.base_manager import BackgroundTasks, periodic_task
+from intakevms.libs.context_managers import synchronized_session
+from intakevms.modules.virtual_machines import config
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcServerInitializedException,
 )
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.virtual_machines.adapters import orm
-from openvair.libs.data_handlers.json.serializer import serialize_json
-from openvair.modules.event_store.entrypoints.crud import EventCrud
-from openvair.modules.virtual_machines.domain.base import BaseVMDriver
-from openvair.modules.virtual_machines.service_layer import (
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.virtual_machines.adapters import orm
+from intakevms.libs.data_handlers.json.serializer import serialize_json
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.modules.virtual_machines.domain.base import BaseVMDriver
+from intakevms.modules.virtual_machines.service_layer import (
     exceptions,
     unit_of_work,
 )
-from openvair.modules.virtual_machines.adapters.serializer import DataSerializer
-from openvair.libs.messaging.clients.rpc_clients.image_rpc_client import (
+from intakevms.modules.virtual_machines.adapters.serializer import DataSerializer
+from intakevms.libs.messaging.clients.rpc_clients.image_rpc_client import (
     ImageServiceLayerRPCClient,
 )
-from openvair.libs.messaging.clients.rpc_clients.volume_rpc_client import (
+from intakevms.libs.messaging.clients.rpc_clients.volume_rpc_client import (
     VolumeServiceLayerRPCClient,
 )
 

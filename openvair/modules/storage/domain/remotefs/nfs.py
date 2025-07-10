@@ -13,12 +13,12 @@ import os
 import re
 from typing import Any, Dict
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.modules.storage.domain.base import RemoteFSStorage
-from openvair.modules.storage.domain.remotefs.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.modules.storage.domain.base import RemoteFSStorage
+from intakevms.modules.storage.domain.remotefs.exceptions import (
     NFSCantBeMountError,
     GettinStorageInfoError,
     NfsIpIsNotAvailableError,

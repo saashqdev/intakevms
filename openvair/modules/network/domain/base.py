@@ -16,9 +16,9 @@ import abc
 import uuid
 from typing import Any, Dict, List
 
-from openvair.libs.log import get_logger
-from openvair.modules.network.domain.utils.ip_manager import IPManager
-from openvair.modules.network.domain.utils.ovs_manager import OVSManager
+from intakevms.libs.log import get_logger
+from intakevms.modules.network.domain.utils.ip_manager import IPManager
+from intakevms.modules.network.domain.utils.ovs_manager import OVSManager
 
 LOG = get_logger(__name__)
 

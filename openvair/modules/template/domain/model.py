@@ -11,11 +11,11 @@ Classes:
 import abc
 from typing import Dict, ClassVar, cast
 
-from openvair.modules.template.domain.base import BaseTemplate
+from intakevms.modules.template.domain.base import BaseTemplate
 
-# from openvair.modules.template.adapters.dto.templates import TemplateDomain
-from openvair.modules.template.domain.disk_templates.qcow2 import Qcow2Template
-from openvair.modules.template.adapters.dto.internal.models import (
+# from intakevms.modules.template.adapters.dto.templates import TemplateDomain
+from intakevms.modules.template.domain.disk_templates.qcow2 import Qcow2Template
+from intakevms.modules.template.adapters.dto.internal.models import (
     DomainDTO,
 )
 

@@ -22,8 +22,8 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import Mapped, DeclarativeBase, mapped_column
 
-from openvair.common.orm_types import PathType
-from openvair.modules.template.shared.enums import TemplateStatus
+from intakevms.common.orm_types import PathType
+from intakevms.modules.template.shared.enums import TemplateStatus
 
 
 class Base(DeclarativeBase):

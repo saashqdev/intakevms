@@ -20,7 +20,7 @@ from contextlib import contextmanager
 
 from sqlalchemy.exc import OperationalError
 
-from openvair.libs.log import get_logger
+from intakevms.libs.log import get_logger
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session

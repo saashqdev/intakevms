@@ -8,8 +8,8 @@ input data.
 import abc
 from typing import Dict, ClassVar, cast
 
-from openvair.modules.notification.domain.base import BaseNotification
-from openvair.modules.notification.domain.email_notification import (
+from intakevms.modules.notification.domain.base import BaseNotification
+from intakevms.modules.notification.domain.email_notification import (
     email_notification,
 )
 

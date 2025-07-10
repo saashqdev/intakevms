@@ -30,7 +30,7 @@ from pydantic import (
     field_validator,
 )
 
-from openvair.libs.validation.validators import Validator
+from intakevms.libs.validation.validators import Validator
 
 
 class NfsStorageExtraSpecsCreate(BaseModel):

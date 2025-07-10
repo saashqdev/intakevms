@@ -11,8 +11,8 @@ from typing import List, Optional, cast
 
 from libvirt import libvirtError
 
-from openvair.libs.log import get_logger
-from openvair.libs.libvirt.connection import LibvirtConnection
+from intakevms.libs.log import get_logger
+from intakevms.libs.libvirt.connection import LibvirtConnection
 
 LOG = get_logger(__name__)
 

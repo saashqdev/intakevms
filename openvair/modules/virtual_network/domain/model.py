@@ -13,8 +13,8 @@ Classes:
 import abc
 from typing import Dict, ClassVar, cast
 
-from openvair.modules.virtual_network.domain.base import BaseVirtualNetwork
-from openvair.modules.virtual_network.domain.bridge_network.bridge_net import (
+from intakevms.modules.virtual_network.domain.base import BaseVirtualNetwork
+from intakevms.modules.virtual_network.domain.bridge_network.bridge_net import (
     BridgeNetwork,
 )
 

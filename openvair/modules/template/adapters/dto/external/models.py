@@ -9,7 +9,7 @@ from pydantic import (
     model_validator,
 )
 
-from openvair.common.configs.pydantic_config import (
+from intakevms.common.configs.pydantic_config import (
     lenient_dto_config,
 )
 

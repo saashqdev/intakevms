@@ -6,12 +6,12 @@ The Protocol instance is initialized with specific parameters including the
 queue name and an instance of model.InterfaceFactory() as the manager.
 
 Modules:
-    get_logger: Function to retrieve a logger instance from openvair.libs.log
+    get_logger: Function to retrieve a logger instance from intakevms.libs.log
         module.
     Protocol: Class for handling messaging protocols
-        from openvair.libs.messaging.protocol module.
+        from intakevms.libs.messaging.protocol module.
     SERVICE_LAYER_DOMAIN_QUEUE_NAME: Constant defining the queue name for
-        domain service layer from openvair.modules.block_device.config module.
+        domain service layer from intakevms.modules.block_device.config module.
     model: Module containing the InterfaceFactory class for creating block
         device interfaces.
 
@@ -20,10 +20,10 @@ Usage:
     messages for block device domain management.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.block_device.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
-from openvair.modules.block_device.domain import model
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.block_device.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
+from intakevms.modules.block_device.domain import model
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('domain-manager')
 

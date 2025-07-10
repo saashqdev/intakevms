@@ -23,8 +23,8 @@ import toml
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from openvair.rpc_queues import RPCQueueNames
-from openvair.abstracts.exceptions import ConfigParameterNotSpecifiedError
+from intakevms.rpc_queues import RPCQueueNames
+from intakevms.abstracts.exceptions import ConfigParameterNotSpecifiedError
 
 PROJECT_ROOT = pathlib.Path(__file__).parent.parent
 TMP_DIR = tempfile.gettempdir()

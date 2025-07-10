@@ -10,11 +10,11 @@ Classes:
 from sqlalchemy.exc import NoResultFound
 from sqlalchemy.orm import Session
 
-from openvair.modules.template.adapters.orm import Template
-from openvair.common.repositories.base_sqlalchemy import (
+from intakevms.modules.template.adapters.orm import Template
+from intakevms.common.repositories.base_sqlalchemy import (
     BaseSqlAlchemyRepository,
 )
-from openvair.modules.template.adapters.exceptions import (
+from intakevms.modules.template.adapters.exceptions import (
     TemplateNotFoundException,
 )
 

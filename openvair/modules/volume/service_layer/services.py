@@ -32,45 +32,45 @@ import uuid
 from typing import Dict, List, Optional, cast
 from collections import namedtuple
 
-from openvair.libs.log import get_logger
-from openvair.modules.base_manager import BackgroundTasks, periodic_task
-from openvair.modules.volume.config import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.base_manager import BackgroundTasks, periodic_task
+from intakevms.modules.volume.config import (
     DEFAULT_VOLUME_FORMAT,
     API_SERVICE_LAYER_QUEUE_NAME,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.libs.messaging.exceptions import (
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcCallTimeoutException,
 )
-from openvair.modules.volume.domain.base import BaseVolume
-from openvair.modules.volume.adapters.orm import Volume, VolumeAttachVM
-from openvair.modules.volume.service_layer import exceptions, unit_of_work
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.volume.adapters.serializer import (
+from intakevms.modules.volume.domain.base import BaseVolume
+from intakevms.modules.volume.adapters.orm import Volume, VolumeAttachVM
+from intakevms.modules.volume.service_layer import exceptions, unit_of_work
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.volume.adapters.serializer import (
     DataSerializer,
     VolumeWebSerializer,
     VolumeDomainSerializer,
 )
-from openvair.modules.event_store.entrypoints.crud import EventCrud
-from openvair.modules.volume.adapters.dto.external.models import (
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.modules.volume.adapters.dto.external.models import (
     StorageModelDTO,
     TemplateModelDTO,
 )
-from openvair.modules.volume.adapters.dto.internal.models import (
+from intakevms.modules.volume.adapters.dto.internal.models import (
     CreateVolumeFromTemplateModelDTO,
 )
-from openvair.modules.volume.adapters.dto.internal.commands import (
+from intakevms.modules.volume.adapters.dto.internal.commands import (
     CreateVolumeFromTemplateDomainCommandDTO,
     CreateVolumeFromTemplateServiceCommandDTO,
 )
-from openvair.libs.messaging.clients.rpc_clients.vm_rpc_client import (
+from intakevms.libs.messaging.clients.rpc_clients.vm_rpc_client import (
     VMServiceLayerRPCClient,
 )
-from openvair.libs.messaging.clients.rpc_clients.storage_rpc_client import (
+from intakevms.libs.messaging.clients.rpc_clients.storage_rpc_client import (
     StorageServiceLayerRPCClient,
 )
-from openvair.libs.messaging.clients.rpc_clients.template_prc_client import (
+from intakevms.libs.messaging.clients.rpc_clients.template_prc_client import (
     TemplateServiceLayerRPCClient,
 )
 

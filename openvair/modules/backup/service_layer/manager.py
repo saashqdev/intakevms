@@ -7,7 +7,7 @@ via an RPC interface. It initializes a messaging server using the
 The script is designed to run as a systemd service. During installation,
 a setup script automatically registers and starts the corresponding
 `.service` file located at:
-    /opt/aero/openvair/openvair/modules/backup/service_layer/backup-service-layer.service
+    /opt/aero/intakevms/intakevms/modules/backup/service_layer/backup-service-layer.service
 
 Usage:
     Manual management of the service:
@@ -22,10 +22,10 @@ Usage:
         journalctl -u backup-service-layer.service
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.backup.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingServer
-from openvair.modules.backup.service_layer.services import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.backup.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.backup.service_layer.services import (
     BackupServiceLayerManager,
 )
 

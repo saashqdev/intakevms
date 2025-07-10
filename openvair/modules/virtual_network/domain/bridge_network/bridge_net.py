@@ -13,16 +13,16 @@ from typing import Any, Dict, List, cast
 
 from libvirt import libvirtError
 
-from openvair.libs.log import get_logger
-from openvair.modules.virtual_network.domain.base import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.virtual_network.domain.base import (
     BasePortGroup,
     BaseVirtualNetwork,
 )
-from openvair.modules.virtual_network.domain.exception import (
+from intakevms.modules.virtual_network.domain.exception import (
     PortGroupException,
     VirshDefineNetworkException,
 )
-from openvair.modules.virtual_network.libs.template_rendering.virtual_network_renderer import (  # noqa: E501
+from intakevms.modules.virtual_network.libs.template_rendering.virtual_network_renderer import (  # noqa: E501
     VirtualNetworkRenderer,
 )
 

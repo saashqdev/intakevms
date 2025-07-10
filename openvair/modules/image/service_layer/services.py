@@ -43,29 +43,29 @@ from typing import TYPE_CHECKING, Dict, List, NoReturn, Optional, cast
 from pathlib import Path
 from collections import namedtuple
 
-from openvair.config import TMP_DIR
-from openvair.libs.log import get_logger
-from openvair.modules.base_manager import BackgroundTasks, periodic_task
-from openvair.modules.image.config import (
+from intakevms.config import TMP_DIR
+from intakevms.libs.log import get_logger
+from intakevms.modules.base_manager import BackgroundTasks, periodic_task
+from intakevms.modules.image.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.libs.messaging.exceptions import (
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcCallTimeoutException,
 )
-from openvair.modules.image.domain.base import BaseImage
-from openvair.modules.image.adapters.orm import Image, ImageAttachVM
-from openvair.modules.image.service_layer import exceptions, unit_of_work
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.image.adapters.serializer import DataSerializer
-from openvair.modules.event_store.entrypoints.crud import EventCrud
-from openvair.libs.messaging.clients.rpc_clients.storage_rpc_client import (
+from intakevms.modules.image.domain.base import BaseImage
+from intakevms.modules.image.adapters.orm import Image, ImageAttachVM
+from intakevms.modules.image.service_layer import exceptions, unit_of_work
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.image.adapters.serializer import DataSerializer
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.libs.messaging.clients.rpc_clients.storage_rpc_client import (
     StorageServiceLayerRPCClient,
 )
 
 if TYPE_CHECKING:
-    from openvair.abstracts.base_exception import BaseCustomException
+    from intakevms.abstracts.base_exception import BaseCustomException
 
 LOG = get_logger(__name__)
 

@@ -11,11 +11,11 @@ Classes:
 from typing import Dict
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecutionResult
-from openvair.libs.qemu_img.executor import QemuImgCommandExecutor
-from openvair.libs.qemu_img.exceptions import QemuImgError
-from openvair.libs.data_handlers.json.serializer import deserialize_json
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecutionResult
+from intakevms.libs.qemu_img.executor import QemuImgCommandExecutor
+from intakevms.libs.qemu_img.exceptions import QemuImgError
+from intakevms.libs.data_handlers.json.serializer import deserialize_json
 
 LOG = get_logger(__name__)
 

@@ -28,8 +28,8 @@ from __future__ import annotations
 import abc
 from typing import TYPE_CHECKING, Any
 
-from openvair.modules.block_device.config import DEFAULT_SESSION_FACTORY
-from openvair.modules.block_device.adapters import repository
+from intakevms.modules.block_device.config import DEFAULT_SESSION_FACTORY
+from intakevms.modules.block_device.adapters import repository
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session, sessionmaker

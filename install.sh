@@ -4,8 +4,8 @@
 USER=aero
 OS=$(lsb_release -i | awk '{print tolower($3)}')
 ARCH=$(uname -m)
-PROJECT_NAME=openvair
-DOCS_PROJECT_NAME=openvair-docs
+PROJECT_NAME=intakevms
+DOCS_PROJECT_NAME=intakevms-docs
 USER_PATH=/opt/$USER
 PROJECT_PATH="${USER_PATH}/${PROJECT_NAME}"
 DOCS_PROJECT_PATH="${USER_PATH}/${DOCS_PROJECT_NAME}"
@@ -309,7 +309,7 @@ install_docker() {
 
 # PostgreSQL installation
 # Set the database name
-DATABASE_NAME="openvair"
+DATABASE_NAME="intakevms"
 
 # Set Docker container name and port number
 DOCKER_CONTAINER_NAME="postgres"
@@ -694,7 +694,7 @@ install_restic(){
 }
 
 install_documentation(){
-  local doc_repo="https://github.com/Aerodisk/openvair-docs.git"
+  local doc_repo="https://github.com/saashqdev/intakevms-docs.git"
 
   local clone_docs_repo="git clone $doc_repo"
   local clone_message="Cloning documentation repository..."
@@ -799,7 +799,7 @@ print_final_message() {
 
     print_at_center "CONGRATULATIONS!"
     printf "\n"
-    print_at_center "openvair HAS BEEN INSTALLED"
+    print_at_center "intakevms HAS BEEN INSTALLED"
     printf "\n"
 
     local api_docs_url="https://${IP}:${PORT}/swagger/"

@@ -11,8 +11,8 @@ from typing import TYPE_CHECKING, Any
 from sqlalchemy.orm import sessionmaker
 from typing_extensions import Self
 
-from openvair.modules.backup.config import DEFAULT_SESSION_FACTORY
-from openvair.modules.backup.adapters.repository import SqlAlchemyRepository
+from intakevms.modules.backup.config import DEFAULT_SESSION_FACTORY
+from intakevms.modules.backup.adapters.repository import SqlAlchemyRepository
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session

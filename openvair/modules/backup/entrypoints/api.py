@@ -17,16 +17,16 @@ from typing import List
 from fastapi import Query, Depends, APIRouter
 from fastapi.concurrency import run_in_threadpool
 
-from openvair.libs.log import get_logger
-from openvair.common.schemas import BaseResponse
-from openvair.libs.auth.jwt_utils import get_current_user
-from openvair.modules.backup.schemas import (
+from intakevms.libs.log import get_logger
+from intakevms.common.schemas import BaseResponse
+from intakevms.libs.auth.jwt_utils import get_current_user
+from intakevms.modules.backup.schemas import (
     ResticSnapshot,
     ResticBackupResult,
     ResticDeleteResult,
     ResticRestoreResult,
 )
-from openvair.modules.backup.entrypoints.crud import BackupCrud
+from intakevms.modules.backup.entrypoints.crud import BackupCrud
 
 LOG = get_logger(__name__)
 

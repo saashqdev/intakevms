@@ -7,7 +7,7 @@
 
 После разработки новой ORM модели с использованием SQLAlchemy, например:
 
-Файл: `openvair/modules/block_device/adapters/orm.py`
+Файл: `intakevms/modules/block_device/adapters/orm.py`
 
 ```python
 """ORM models of the block device module"""
@@ -49,12 +49,12 @@ def start_mappers() -> None:
 ```
 
 ## Шаг 2: Добавление модели в конфигурацию Alembic
-Для того чтобы Alembic мог отслеживать изменения в новой модели, необходимо импортировать соответствующий ORM модуль в скрипт openvair/alembic/env.py и добавить его метаданные в target_metadata.
+Для того чтобы Alembic мог отслеживать изменения в новой модели, необходимо импортировать соответствующий ORM модуль в скрипт intakevms/alembic/env.py и добавить его метаданные в target_metadata.
 
 В скрипт env.py добавляем следующие строки:
 
 ```python
-from openvair.modules.block_device.adapters import orm as orm_block_device
+from intakevms.modules.block_device.adapters import orm as orm_block_device
 ```
 Также в массив target_metadata добавляем метаданные нового модуля:
 
@@ -69,14 +69,14 @@ target_metadata = [
 Для создания новой миграции с помощью Alembic, необходимо выполнить следующую команду в терминале, при активированной виртуальной среде проекта:
 
 ```bash
-~/openvair$ alembic revision -m "create_block_device" --rev-id 2 --autogenerate
+~/intakevms$ alembic revision -m "create_block_device" --rev-id 2 --autogenerate
 ```
 
 - Флаг -m отвечает за имя python скрипта создания и удаления таблицы
 - Флаг --rev-id за идентификатор номера миграции. В проекте принято их нумеровать последовательно, начиная с еденицы. Соответственно если актуальный id миграции например 4, то в --rev-id передаём 5.
 - Флаг --autogenerate обеспечивает что Alembic генерирует скрипт для создания и удаления таблицы самостоятельно, сверяясь с orm.py файлами проекта. Без него, функции внутри создаваемого скрипта будут не реалзованы и содержать в своём теле pass
 
-После успешного выполнения команды будет создан файл миграции openvair/alembic/versions/2_create_block_device.py, который будет содержать все изменения в ORM моделях, которые указаны в target_metadata файла env.py. В данном случае изменения касаются только новой таблицы для модуля блочных устройств.
+После успешного выполнения команды будет создан файл миграции intakevms/alembic/versions/2_create_block_device.py, который будет содержать все изменения в ORM моделях, которые указаны в target_metadata файла env.py. В данном случае изменения касаются только новой таблицы для модуля блочных устройств.
 
 Важно убедиться что функции сгенерировались корректно содержат в себе актуальные изменения связанные с таблицей
 
@@ -125,7 +125,7 @@ def downgrade() -> None:
 Для применения новой миграции выполните команду:
 
 ```bash
-~/openvair$ alembic upgrade head
+~/intakevms$ alembic upgrade head
 ```
 
 Эта команда применит все актуальные изменения к базе данных. Alembic обновит идентификатор ревизии в таблице Alembic и выполнит скрипт создания новой таблицы.

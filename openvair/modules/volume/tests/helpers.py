@@ -11,10 +11,10 @@ import uuid
 from fastapi import status
 from fastapi.testclient import TestClient
 
-from openvair.libs.log import get_logger
-from openvair.modules.volume.domain.model import VolumeFactory
-from openvair.modules.volume.adapters.serializer import DataSerializer
-from openvair.modules.volume.service_layer.unit_of_work import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.volume.domain.model import VolumeFactory
+from intakevms.modules.volume.adapters.serializer import DataSerializer
+from intakevms.modules.volume.service_layer.unit_of_work import (
     SqlAlchemyUnitOfWork,
 )
 

@@ -15,42 +15,42 @@ Dependencies:
 from uuid import UUID, uuid4
 from typing import Dict, List, Optional
 
-from openvair.libs.log import get_logger
-from openvair.modules.base_manager import BackgroundTasks
-from openvair.modules.template.config import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.base_manager import BackgroundTasks
+from intakevms.modules.template.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.libs.messaging.exceptions import RpcException
-from openvair.modules.template.domain.base import BaseTemplate
-from openvair.modules.template.adapters.orm import Template
-from openvair.modules.template.shared.enums import TemplateStatus
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.event_store.entrypoints.crud import EventCrud
-from openvair.modules.template.adapters.serializer import (
+from intakevms.libs.messaging.exceptions import RpcException
+from intakevms.modules.template.domain.base import BaseTemplate
+from intakevms.modules.template.adapters.orm import Template
+from intakevms.modules.template.shared.enums import TemplateStatus
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.modules.template.adapters.serializer import (
     ApiSerializer,
     CreateSerializer,
     DomainSerializer,
 )
-from openvair.modules.template.service_layer.exceptions import (
+from intakevms.modules.template.service_layer.exceptions import (
     VolumeRetrievalException,
     StorageRetrievalException,
 )
-from openvair.modules.template.service_layer.unit_of_work import (
+from intakevms.modules.template.service_layer.unit_of_work import (
     TemplateSqlAlchemyUnitOfWork,
 )
-from openvair.modules.template.adapters.dto.external.models import (
+from intakevms.modules.template.adapters.dto.external.models import (
     VolumeDTO,
     StorageDTO,
 )
-from openvair.modules.template.adapters.dto.internal.models import (
+from intakevms.modules.template.adapters.dto.internal.models import (
     CreateDTO,
 )
-from openvair.modules.template.adapters.dto.external.commands import (
+from intakevms.modules.template.adapters.dto.external.commands import (
     GetVolumeCommandDTO,
     GetStorageCommandDTO,
 )
-from openvair.modules.template.adapters.dto.internal.commands import (
+from intakevms.modules.template.adapters.dto.internal.commands import (
     EditTemplateDomainCommandDTO,
     GetTemplateServiceCommandDTO,
     EditTemplateServiceCommandDTO,
@@ -58,10 +58,10 @@ from openvair.modules.template.adapters.dto.internal.commands import (
     CreateTemplateServiceCommandDTO,
     DeleteTemplateServiceCommandDTO,
 )
-from openvair.libs.messaging.clients.rpc_clients.volume_rpc_client import (
+from intakevms.libs.messaging.clients.rpc_clients.volume_rpc_client import (
     VolumeServiceLayerRPCClient,
 )
-from openvair.libs.messaging.clients.rpc_clients.storage_rpc_client import (
+from intakevms.libs.messaging.clients.rpc_clients.storage_rpc_client import (
     StorageServiceLayerRPCClient,
 )
 

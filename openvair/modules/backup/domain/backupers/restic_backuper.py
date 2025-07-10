@@ -9,22 +9,22 @@ to Restic operations.
 from typing import Dict, List, Union
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.modules.backup.schemas import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.backup.schemas import (
     ResticSnapshot,
     ResticBackupResult,
     ResticDeleteResult,
     ResticRestoreResult,
 )
-from openvair.modules.backup.domain.base import FSBackuper
-from openvair.modules.backup.domain.exceptions import (
+from intakevms.modules.backup.domain.base import FSBackuper
+from intakevms.modules.backup.domain.exceptions import (
     BackupResticBackuperError,
     RestoreResticBackuperError,
     InitRepositoryResticBackuperError,
     SnapshotGettingResticBackuperError,
 )
-from openvair.modules.backup.adapters.restic.restic import ResticAdapter
-from openvair.modules.backup.adapters.restic.exceptions import ResticError
+from intakevms.modules.backup.adapters.restic.restic import ResticAdapter
+from intakevms.modules.backup.adapters.restic.exceptions import ResticError
 
 LOG = get_logger(__name__)
 
@@ -74,7 +74,7 @@ class ResticBackuper(FSBackuper):
         Returns:
             Dict[str, Union[str, int]]: Information about the backup result,
                 corresponding to the `ResticBackupResult` model from
-                `openvair.modules.backup.domain.schemas`.
+                `intakevms.modules.backup.domain.schemas`.
 
         Raises:
             BackupResticBackuperError: If the backup operation fails.
@@ -102,7 +102,7 @@ class ResticBackuper(FSBackuper):
         Returns:
             Dict[str, Union[str, int]]: Information about the restore result,
                 corresponding to the `ResticRestoreResult` model from
-                `openvair.modules.backup.domain.schemas`.
+                `intakevms.modules.backup.domain.schemas`.
 
         Raises:
             RestoreResticBackuperError: If the restore operation fails.
@@ -151,7 +151,7 @@ class ResticBackuper(FSBackuper):
         Returns:
             Dict[str, Union[str, int]]: Information about the restore process,
                 corresponding to the `ResticRestoreResult` model from
-                `openvair.modules.backup.domain.schemas`.
+                `intakevms.modules.backup.domain.schemas`.
 
         Raises:
             RestoreResticBackuperError: If the restore operation fails.

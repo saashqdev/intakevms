@@ -7,8 +7,8 @@ from uuid import UUID
 from typing import Optional
 from datetime import datetime
 
-from openvair.modules.template.shared.enums import TemplateStatus
-from openvair.modules.template.entrypoints.schemas.base import (
+from intakevms.modules.template.shared.enums import TemplateStatus
+from intakevms.modules.template.entrypoints.schemas.base import (
     APIConfigResponseModel,
 )
 

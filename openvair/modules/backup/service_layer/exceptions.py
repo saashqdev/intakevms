@@ -5,7 +5,7 @@ Classes:
         service layer of backup module
 """
 
-from openvair.abstracts.base_exception import BaseCustomException
+from intakevms.abstracts.base_exception import BaseCustomException
 
 
 class BackupServiceLayerException(BaseCustomException):

@@ -12,10 +12,10 @@ Classes:
         operations in the service layer. (imported from services module)
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.dashboard.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingServer
-from openvair.modules.dashboard.service_layer import services
+from intakevms.libs.log import get_logger
+from intakevms.modules.dashboard.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.dashboard.service_layer import services
 
 LOG = get_logger('service-layer-manager')
 

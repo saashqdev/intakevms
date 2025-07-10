@@ -26,7 +26,7 @@ from xml.parsers.expat import ExpatError
 
 import xmltodict
 
-from openvair.libs.data_handlers.xml.exceptions import (
+from intakevms.libs.data_handlers.xml.exceptions import (
     XMLSerializationError,
     XMLDeserializationError,
 )

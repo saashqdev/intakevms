@@ -3,7 +3,7 @@
 This module defines exceptions that occur in the service layer.
 """
 
-from openvair.modules.template.shared.base_exceptions import (
+from intakevms.modules.template.shared.base_exceptions import (
     BaseTemplateServiceLayerException,
 )
 

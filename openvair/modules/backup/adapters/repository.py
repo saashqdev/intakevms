@@ -11,7 +11,7 @@ from typing import TYPE_CHECKING
 
 from sqlalchemy import text, create_engine
 
-from openvair.config import database, get_postgres_uri
+from intakevms.config import database, get_postgres_uri
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session
@@ -73,7 +73,7 @@ class SqlAlchemyRepository(AbstractRepository):
         self.engine = create_engine(
             get_postgres_uri().replace(
                 database['db_name'], 'postgres'
-            )  # for connection to 'postgres' db, instead 'openvair'
+            )  # for connection to 'postgres' db, instead 'intakevms'
         )
 
     def terminate_all_connections(self, db_name: str) -> None:

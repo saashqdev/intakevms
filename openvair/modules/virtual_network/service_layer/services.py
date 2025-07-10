@@ -18,31 +18,31 @@ from typing import Dict, List, Literal, Optional, cast
 
 from sqlalchemy.exc import SQLAlchemyError
 
-from openvair.libs.log import get_logger
-from openvair.libs.libvirt.network import LibvirtNetworkAdapter
-from openvair.modules.base_manager import BackgroundTasks, periodic_task
-from openvair.modules.virtual_network.config import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.libvirt.network import LibvirtNetworkAdapter
+from intakevms.modules.base_manager import BackgroundTasks, periodic_task
+from intakevms.modules.virtual_network.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.modules.virtual_network.domain import base
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.libs.data_handlers.xml.serializer import deserialize_xml
-from openvair.modules.virtual_network.entrypoints import schemas
-from openvair.modules.event_store.entrypoints.crud import EventCrud
-from openvair.modules.virtual_network.adapters.orm import (
+from intakevms.modules.virtual_network.domain import base
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.libs.data_handlers.xml.serializer import deserialize_xml
+from intakevms.modules.virtual_network.entrypoints import schemas
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.modules.virtual_network.adapters.orm import (
     PortGroup,
     VirtualNetwork,
 )
-from openvair.modules.virtual_network.service_layer import unit_of_work
-from openvair.modules.virtual_network.adapters.serializer import DataSerializer
-from openvair.modules.virtual_network.service_layer.exceptions import (
+from intakevms.modules.virtual_network.service_layer import unit_of_work
+from intakevms.modules.virtual_network.adapters.serializer import DataSerializer
+from intakevms.modules.virtual_network.service_layer.exceptions import (
     PortGroupException,
     VirtualNetworkAlreadyExist,
     VirtualNetworkDoesNotExist,
     DataBaseVirtualNetworkException,
 )
-from openvair.modules.virtual_network.domain.bridge_network.bridge_net import (
+from intakevms.modules.virtual_network.domain.bridge_network.bridge_net import (
     BridgePortGroup,
 )
 

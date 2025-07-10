@@ -15,9 +15,9 @@ Classes:
 import abc
 from typing import Dict, ClassVar, cast
 
-from openvair.modules.image.domain.base import BaseImage
-from openvair.modules.image.domain.remotefs import nfs
-from openvair.modules.image.domain.physical_fs import localfs
+from intakevms.modules.image.domain.base import BaseImage
+from intakevms.modules.image.domain.remotefs import nfs
+from intakevms.modules.image.domain.physical_fs import localfs
 
 
 class AbstractImageFactory(metaclass=abc.ABCMeta):

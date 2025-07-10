@@ -14,7 +14,7 @@ import uuid
 from fastapi import status
 from fastapi.testclient import TestClient
 
-from openvair.libs.log import get_logger
+from intakevms.libs.log import get_logger
 
 LOG = get_logger(__name__)
 

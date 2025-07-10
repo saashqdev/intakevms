@@ -15,8 +15,8 @@ from __future__ import annotations
 import abc
 from typing import TYPE_CHECKING, Any
 
-from openvair.modules.virtual_network.config import DEFAULT_SESSION_FACTORY
-from openvair.modules.virtual_network.adapters import repository
+from intakevms.modules.virtual_network.config import DEFAULT_SESSION_FACTORY
+from intakevms.modules.virtual_network.adapters import repository
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session, sessionmaker

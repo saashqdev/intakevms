@@ -11,10 +11,10 @@ Classes:
 
 from typing import Dict
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.modules.storage.adapters import exceptions
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.modules.storage.adapters import exceptions
 
 LOG = get_logger(__name__)
 

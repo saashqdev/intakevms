@@ -9,9 +9,9 @@ Classes:
     - TemplateEditSerializer: Applies MethodData to ORM instance
 """
 
-from openvair.modules.template.adapters.orm import Template as TemplateORM
-from openvair.common.serialization.base_serializer import BaseSerializer
-from openvair.modules.template.adapters.dto.internal.models import (
+from intakevms.modules.template.adapters.orm import Template as TemplateORM
+from intakevms.common.serialization.base_serializer import BaseSerializer
+from intakevms.modules.template.adapters.dto.internal.models import (
     ApiDTO,
     CreateDTO,
     DomainDTO,

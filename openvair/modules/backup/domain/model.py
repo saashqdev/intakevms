@@ -13,8 +13,8 @@ Classes:
 from abc import ABCMeta, abstractmethod
 from typing import Dict, Type, ClassVar
 
-from openvair.modules.backup.domain.base import BaseBackuper
-from openvair.modules.backup.domain.backupers.restic_backuper import (
+from intakevms.modules.backup.domain.base import BaseBackuper
+from intakevms.modules.backup.domain.backupers.restic_backuper import (
     ResticBackuper,
 )
 

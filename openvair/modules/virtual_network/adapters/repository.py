@@ -16,8 +16,8 @@ from typing import TYPE_CHECKING, List, Optional
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import joinedload
 
-from openvair.abstracts.exceptions import DBCannotBeConnectedError
-from openvair.modules.virtual_network.adapters.orm import (
+from intakevms.abstracts.exceptions import DBCannotBeConnectedError
+from intakevms.modules.virtual_network.adapters.orm import (
     PortGroup,
     VirtualNetwork,
 )

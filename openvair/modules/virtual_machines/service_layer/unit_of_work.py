@@ -20,8 +20,8 @@ from typing import TYPE_CHECKING, Any
 
 from typing_extensions import Self
 
-from openvair.modules.virtual_machines.config import DEFAULT_SESSION_FACTORY
-from openvair.modules.virtual_machines.adapters import repository
+from intakevms.modules.virtual_machines.config import DEFAULT_SESSION_FACTORY
+from intakevms.modules.virtual_machines.adapters import repository
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session, sessionmaker

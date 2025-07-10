@@ -17,10 +17,10 @@ from fastapi import Depends, APIRouter, status
 from fastapi.responses import StreamingResponse
 from fastapi_pagination import Page, Params, paginate
 
-from openvair.libs.log import get_logger
-from openvair.libs.auth.jwt_utils import get_current_user
-from openvair.modules.event_store.entrypoints import schemas
-from openvair.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.libs.log import get_logger
+from intakevms.libs.auth.jwt_utils import get_current_user
+from intakevms.modules.event_store.entrypoints import schemas
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
 
 LOG = get_logger(__name__)
 

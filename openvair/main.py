@@ -35,9 +35,9 @@ from fastapi.templating import Jinja2Templates
 from fastapi_pagination import add_pagination
 from fastapi.staticfiles import StaticFiles
 
-from openvair.libs.log import get_logger
-from openvair.libs.client.config import get_routes
-from openvair.libs.messaging.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.client.config import get_routes
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcCallTimeoutException,
     RpcClientInitializedException,
@@ -71,22 +71,22 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
-from openvair.modules.user.entrypoints.api import router as user
-from openvair.modules.image.entrypoints.api import router as image
-from openvair.modules.user.entrypoints.auth import router as auth
-from openvair.modules.backup.entrypoints.api import router as backup_router
-from openvair.modules.volume.entrypoints.api import router as volume
-from openvair.modules.network.entrypoints.api import router as network
-from openvair.modules.storage.entrypoints.api import router as storage
-from openvair.modules.template.entrypoints.api import router as tempalte_router
-from openvair.modules.dashboard.entrypoints.api import router as dashboard
-from openvair.modules.event_store.entrypoints.api import router as event_store
-from openvair.modules.block_device.entrypoints.api import router as block_router
-from openvair.modules.notification.entrypoints.api import (
+from intakevms.modules.user.entrypoints.api import router as user
+from intakevms.modules.image.entrypoints.api import router as image
+from intakevms.modules.user.entrypoints.auth import router as auth
+from intakevms.modules.backup.entrypoints.api import router as backup_router
+from intakevms.modules.volume.entrypoints.api import router as volume
+from intakevms.modules.network.entrypoints.api import router as network
+from intakevms.modules.storage.entrypoints.api import router as storage
+from intakevms.modules.template.entrypoints.api import router as tempalte_router
+from intakevms.modules.dashboard.entrypoints.api import router as dashboard
+from intakevms.modules.event_store.entrypoints.api import router as event_store
+from intakevms.modules.block_device.entrypoints.api import router as block_router
+from intakevms.modules.notification.entrypoints.api import (
     router as notification_router,
 )
-from openvair.modules.virtual_network.entrypoints.api import router as vn_router
-from openvair.modules.virtual_machines.entrypoints.api import (
+from intakevms.modules.virtual_network.entrypoints.api import router as vn_router
+from intakevms.modules.virtual_machines.entrypoints.api import (
     router as vm_router,
 )
 
@@ -314,7 +314,7 @@ async def assertion_error_exception_handler(
 if __name__ == '__main__':
     import uvicorn
 
-    from openvair import config
+    from intakevms import config
 
     HOST = config.data['web_app'].get('host')
     PORT = config.data['web_app'].get('port')
@@ -327,6 +327,6 @@ if __name__ == '__main__':
         backlog=65535,
         limit_concurrency=1000,
         limit_max_requests=10000,
-        ssl_keyfile='/opt/aero/openvair/key.pem',
-        ssl_certfile='/opt/aero/openvair/cert.pem',
+        ssl_keyfile='/opt/aero/intakevms/key.pem',
+        ssl_certfile='/opt/aero/intakevms/cert.pem',
     )

@@ -19,23 +19,23 @@ from collections import namedtuple
 
 from sqlalchemy.exc import SQLAlchemyError
 
-from openvair.libs.log import get_logger
-from openvair.modules.network import utils
-from openvair.modules.base_manager import BackgroundTasks, periodic_task
-from openvair.modules.network.config import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.network import utils
+from intakevms.modules.base_manager import BackgroundTasks, periodic_task
+from intakevms.modules.network.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.modules.network.adapters import orm
-from openvair.libs.messaging.exceptions import (
+from intakevms.modules.network.adapters import orm
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcCallTimeoutException,
 )
-from openvair.modules.network.domain.base import BaseBridge, BaseInterface
-from openvair.modules.network.service_layer import exceptions, unit_of_work
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.network.adapters.serializer import DataSerializer
-from openvair.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.modules.network.domain.base import BaseBridge, BaseInterface
+from intakevms.modules.network.service_layer import exceptions, unit_of_work
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.network.adapters.serializer import DataSerializer
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
 
 LOG = get_logger(__name__)
 

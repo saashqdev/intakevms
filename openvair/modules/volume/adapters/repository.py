@@ -18,8 +18,8 @@ from sqlalchemy import update
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import joinedload
 
-from openvair.abstracts.exceptions import DBCannotBeConnectedError
-from openvair.modules.volume.adapters.orm import Volume
+from intakevms.abstracts.exceptions import DBCannotBeConnectedError
+from intakevms.modules.volume.adapters.orm import Volume
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session

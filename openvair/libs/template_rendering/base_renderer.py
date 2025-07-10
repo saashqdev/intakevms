@@ -20,7 +20,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
-from openvair.libs.log import get_logger
+from intakevms.libs.log import get_logger
 
 LOG = get_logger(__name__)
 

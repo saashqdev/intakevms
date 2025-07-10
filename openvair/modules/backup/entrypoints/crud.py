@@ -12,15 +12,15 @@ Classes:
 
 from typing import List
 
-from openvair.modules.backup.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.modules.backup.schemas import (
+from intakevms.modules.backup.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.modules.backup.schemas import (
     ResticSnapshot,
     ResticBackupResult,
     ResticDeleteResult,
     ResticRestoreResult,
 )
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.backup.service_layer.services import (
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.backup.service_layer.services import (
     BackupServiceLayerManager,
 )
 

@@ -14,10 +14,10 @@ Classes:
 import abc
 from typing import Any, Dict, Type, Callable, Optional
 
-from openvair.libs.messaging import exceptions
-from openvair.libs.messaging.config import get_messaging_type_and_transport
-from openvair.libs.messaging.rpc.base import BaseRPCClient, BaseRPCServer
-from openvair.libs.messaging.rpc.rabbit_rpc import (
+from intakevms.libs.messaging import exceptions
+from intakevms.libs.messaging.config import get_messaging_type_and_transport
+from intakevms.libs.messaging.rpc.base import BaseRPCClient, BaseRPCServer
+from intakevms.libs.messaging.rpc.rabbit_rpc import (
     RabbitRPCClient,
     RabbitRPCServer,
 )

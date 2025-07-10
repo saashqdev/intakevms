@@ -14,10 +14,10 @@ Entrypoints:
     Volume Service Layer Manager and RPC server.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.volume.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.modules.volume.service_layer import services
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.volume.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.modules.volume.service_layer import services
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('service-layer-manager')
 

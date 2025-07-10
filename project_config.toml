@@ -3,7 +3,7 @@ user = 'aero'
 password = 'aero'
 host = '0.0.0.0'
 port = 5432
-db_name = 'openvair'
+db_name = 'intakevms'
 
 [rabbitmq]
 user = 'guest'
@@ -15,7 +15,7 @@ port = 5672
 db_container = 'postgres'
 
 [storage]
-data_path = '/opt/aero/openvair/data'
+data_path = '/opt/aero/intakevms/data'
 
 [jwt]
 algorithm = 'HS256'

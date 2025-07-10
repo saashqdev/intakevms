@@ -17,8 +17,8 @@ from typing import Any, Dict, Callable, Optional
 
 import pika
 
-from openvair.libs.messaging import config
-from openvair.libs.messaging.rpc.base import BaseRPCClient, BaseRPCServer
+from intakevms.libs.messaging import config
+from intakevms.libs.messaging.rpc.base import BaseRPCClient, BaseRPCServer
 
 
 class BaseRabbitRPC:

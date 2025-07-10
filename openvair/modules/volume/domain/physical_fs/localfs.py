@@ -11,13 +11,13 @@ Classes:
 from typing import Any, Dict
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.libs.qemu_img.adapter import QemuImgAdapter
-from openvair.modules.volume.domain.base import BaseVolume
-from openvair.modules.volume.adapters.dto.internal.commands import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.libs.qemu_img.adapter import QemuImgAdapter
+from intakevms.modules.volume.domain.base import BaseVolume
+from intakevms.modules.volume.adapters.dto.internal.commands import (
     CreateVolumeFromTemplateDomainCommandDTO,
 )
 

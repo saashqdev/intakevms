@@ -168,7 +168,7 @@ allow-multiline = false
 
 # Do not lint calling this functions in args of another function.
 [lint.flake8-bugbear]
-extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.File", "openvair.libs.cli.models.ExecuteParams"]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.File", "intakevms.libs.cli.models.ExecuteParams"]
 
 # isort configuration
 [lint.isort]
@@ -195,6 +195,6 @@ max-complexity = 5
 max-nested-blocks = 5
 
 [lint.per-file-ignores]
-"openvair/modules/network/tests/domain/bridges/utils/test_ovs_lib.py" = ["ALL"]
-"openvair/alembic/**.py" = ["ALL"]
-"openvair/modules/__init__.py" = ["ALL"]
+"intakevms/modules/network/tests/domain/bridges/utils/test_ovs_lib.py" = ["ALL"]
+"intakevms/alembic/**.py" = ["ALL"]
+"intakevms/modules/__init__.py" = ["ALL"]

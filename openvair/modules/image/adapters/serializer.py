@@ -13,8 +13,8 @@ from typing import Dict, Type, Union, cast
 from sqlalchemy import inspect
 from sqlalchemy.orm.mapper import Mapper
 
-from openvair.abstracts.serializer import AbstractDataSerializer
-from openvair.modules.image.adapters.orm import Image, ImageAttachVM
+from intakevms.abstracts.serializer import AbstractDataSerializer
+from intakevms.modules.image.adapters.orm import Image, ImageAttachVM
 
 
 class DataSerializer(AbstractDataSerializer):

@@ -12,12 +12,12 @@ Functions:
     main: Starts the RPC server for virtual machine management.
 """
 
-from openvair.libs.log import get_logger
-from openvair.libs.messaging.messaging_agents import MessagingServer
-from openvair.modules.virtual_machines.config import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.virtual_machines.config import (
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.modules.virtual_machines.domain import model
+from intakevms.modules.virtual_machines.domain import model
 
 LOG = get_logger('domain-manager')
 

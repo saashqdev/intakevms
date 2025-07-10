@@ -107,7 +107,7 @@ disallow_untyped_defs = True
 no_implicit_optional = True
 show_error_codes = True
 warn_unused_ignores = True
-exclude = venv|data|openvair/libs/messaging/protocol\.py
+exclude = venv|data|intakevms/libs/messaging/protocol\.py
 ```
 
 ### Описание основных опций
@@ -131,7 +131,7 @@ exclude = venv|data|openvair/libs/messaging/protocol\.py
 
 **warn_unused_ignores** = True: Предупреждает, если комментарии # type: ignore используются без необходимости. Это помогает поддерживать чистоту в коде и избегать ненужных исключений из проверки типов.
 
-**exclude = venv|data|openvair/libs/messaging/protocol\.py:** Исключает из проверки определенные файлы и каталоги, такие как виртуальное окружение (venv), данные (data) и конкретный файл (openvair/libs/messaging/protocol.py). Это позволяет сосредоточиться на проверке только тех частей кода, которые имеют значение для проекта и исключить проверку, частей, требующих рефакторинга или где динамическая типизация оправдана.
+**exclude = venv|data|intakevms/libs/messaging/protocol\.py:** Исключает из проверки определенные файлы и каталоги, такие как виртуальное окружение (venv), данные (data) и конкретный файл (intakevms/libs/messaging/protocol.py). Это позволяет сосредоточиться на проверке только тех частей кода, которые имеют значение для проекта и исключить проверку, частей, требующих рефакторинга или где динамическая типизация оправдана.
 
 ### Запуск mypy
 
@@ -250,8 +250,8 @@ import os, sys
 Исключения из текущего слоя (например, сервисного) импортируются как просто exceptions. Исключения из пакетов иного слоя или отдельной библиотеки должны получать псевдоним с суффиксом _exc:
 
 
-from openvair.libs.messaging import exceptions as msg_exc
-from openvair.modules.storage.service_layer import exceptions
+from intakevms.libs.messaging import exceptions as msg_exc
+from intakevms.modules.storage.service_layer import exceptions
 
 ### Импорт множества классов
 

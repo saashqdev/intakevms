@@ -17,7 +17,7 @@ from typing import Dict
 
 import libvirt
 
-from openvair.libs.libvirt.connection import LibvirtConnection
+from intakevms.libs.libvirt.connection import LibvirtConnection
 
 CONNECTION = LibvirtConnection()
 

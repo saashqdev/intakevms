@@ -4,16 +4,16 @@ Provides a structured interface to run `qemu-img` commands and process their
 results, with logging and optional environment control.
 
 Dependencies:
-    - openvair.libs.log
-    - openvair.libs.cli.models (ExecuteParams, ExecutionResult)
-    - openvair.libs.cli.executor (execute)
+    - intakevms.libs.log
+    - intakevms.libs.cli.models (ExecuteParams, ExecutionResult)
+    - intakevms.libs.cli.executor (execute)
 """
 
 from typing import Optional
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams, ExecutionResult
-from openvair.libs.cli.executor import execute
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams, ExecutionResult
+from intakevms.libs.cli.executor import execute
 
 LOG = get_logger(__name__)
 

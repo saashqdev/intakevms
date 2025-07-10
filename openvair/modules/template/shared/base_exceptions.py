@@ -8,7 +8,7 @@ Classes:
     - BaseTemplateDomainException: Base exception for domain-level errors.
 """
 
-from openvair.abstracts.base_exception import BaseCustomException
+from intakevms.abstracts.base_exception import BaseCustomException
 
 
 class BaseTemplateServiceLayerException(BaseCustomException):

@@ -18,8 +18,8 @@ import abc
 from typing import Any, Dict
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.modules.image.domain import exceptions
+from intakevms.libs.log import get_logger
+from intakevms.modules.image.domain import exceptions
 
 LOG = get_logger(__name__)
 

@@ -11,12 +11,12 @@ import uuid
 from fastapi import status
 from fastapi.testclient import TestClient
 
-from openvair.libs.log import get_logger
-from openvair.modules.volume.tests.helpers import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.volume.tests.helpers import (
     wait_for_status,
     generate_volume_name,
 )
-from openvair.modules.volume.entrypoints.schemas import CreateVolume
+from intakevms.modules.volume.entrypoints.schemas import CreateVolume
 
 LOG = get_logger(__name__)
 

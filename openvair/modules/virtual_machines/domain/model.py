@@ -14,9 +14,9 @@ Classes:
 import abc
 from typing import Dict, ClassVar, cast
 
-from openvair.modules.virtual_machines.config import VM_DRIVER
-from openvair.modules.virtual_machines.domain.base import BaseVMDriver
-from openvair.modules.virtual_machines.domain.libvirt2.driver import (
+from intakevms.modules.virtual_machines.config import VM_DRIVER
+from intakevms.modules.virtual_machines.domain.base import BaseVMDriver
+from intakevms.modules.virtual_machines.domain.libvirt2.driver import (
     LibvirtDriver,
 )
 

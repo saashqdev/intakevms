@@ -7,10 +7,10 @@ Attributes:
     LOG (Logger): Logger instance for logging events in the module.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.network.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
-from openvair.modules.network.domain import model
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.network.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
+from intakevms.modules.network.domain import model
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('domain-manager')
 

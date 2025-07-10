@@ -18,8 +18,8 @@ from typing import TYPE_CHECKING, Any
 
 from typing_extensions import Self
 
-from openvair.modules.storage.config import DEFAULT_SESSION_FACTORY
-from openvair.modules.storage.adapters import repository
+from intakevms.modules.storage.config import DEFAULT_SESSION_FACTORY
+from intakevms.modules.storage.adapters import repository
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session, sessionmaker

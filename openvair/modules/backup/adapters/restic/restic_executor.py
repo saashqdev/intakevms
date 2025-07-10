@@ -5,9 +5,9 @@ while handling errors. It includes logging, command formatting, and result
 validation functionalities.
 
 Dependencies:
-    - openvair.libs.log: For logging command execution.
-    - openvair.libs.cli.models: For execution parameters and results.
-    - openvair.libs.cli.executor: For command execution logic.
+    - intakevms.libs.log: For logging command execution.
+    - intakevms.libs.cli.models: For execution parameters and results.
+    - intakevms.libs.cli.executor: For command execution logic.
 
 Typical usage example:
     executor = ResticCommandExecutor('/path/to/repo', 'password')
@@ -16,9 +16,9 @@ Typical usage example:
 
 from typing import Optional
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams, ExecutionResult
-from openvair.libs.cli.executor import execute
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams, ExecutionResult
+from intakevms.libs.cli.executor import execute
 
 LOG = get_logger(__name__)
 

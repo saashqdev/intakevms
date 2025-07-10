@@ -13,14 +13,14 @@ import abc
 from typing import Any, Dict, cast
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams, ExecutionResult
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.modules.volume.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams, ExecutionResult
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.modules.volume.domain.exceptions import (
     VolumeDoesNotExistOnStorage,
 )
-from openvair.libs.data_handlers.json.serializer import deserialize_json
+from intakevms.libs.data_handlers.json.serializer import deserialize_json
 
 LOG = get_logger(__name__)
 

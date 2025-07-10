@@ -23,8 +23,8 @@ import abc
 import time
 from typing import Any, Dict
 
-from openvair.libs.log import get_logger
-from openvair.libs.client.prometheus_client import PrometheusClient
+from intakevms.libs.log import get_logger
+from intakevms.libs.client.prometheus_client import PrometheusClient
 
 LOG = get_logger(__name__)
 

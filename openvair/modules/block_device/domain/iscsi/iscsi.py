@@ -16,12 +16,12 @@ Classes:
 
 from typing import Any, Dict
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.modules.block_device.domain.base import BaseISCSI
-from openvair.modules.block_device.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.modules.block_device.domain.base import BaseISCSI
+from intakevms.modules.block_device.domain.exceptions import (
     ISCSILoginError,
     ISCSILogoutError,
     ISCSIDiscoveryError,

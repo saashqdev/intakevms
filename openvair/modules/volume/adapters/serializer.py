@@ -13,10 +13,10 @@ from typing import Dict, Type, Union, ClassVar, cast
 from sqlalchemy import inspect
 from sqlalchemy.orm.mapper import Mapper
 
-from openvair.abstracts.serializer import AbstractDataSerializer
-from openvair.modules.volume.adapters.orm import Volume, VolumeAttachVM
-from openvair.common.serialization.base_serializer import BaseSerializer
-from openvair.modules.volume.adapters.dto.internal.models import (
+from intakevms.abstracts.serializer import AbstractDataSerializer
+from intakevms.modules.volume.adapters.orm import Volume, VolumeAttachVM
+from intakevms.common.serialization.base_serializer import BaseSerializer
+from intakevms.modules.volume.adapters.dto.internal.models import (
     ApiVolumeModelDTO,
     ApiAttachmentModelDTO,
     DomainVolumeManagerDTO,

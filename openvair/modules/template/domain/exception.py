@@ -4,7 +4,7 @@ This module defines exceptions related to file-level operations on templates
 within the domain layer.
 """
 
-from openvair.modules.template.shared.base_exceptions import (
+from intakevms.modules.template.shared.base_exceptions import (
     BaseTemplateDomainException,
 )
 

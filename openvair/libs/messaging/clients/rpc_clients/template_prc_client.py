@@ -1,8 +1,8 @@
 from typing import Dict, List  # noqa: D100
 
-from openvair.rpc_queues import RPCQueueNames
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.libs.messaging.service_interfaces.template import (
+from intakevms.rpc_queues import RPCQueueNames
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.libs.messaging.service_interfaces.template import (
     TemplateServiceLayerProtocolInterface,
 )
 

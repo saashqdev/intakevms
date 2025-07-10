@@ -8,7 +8,7 @@ Classes:
     QemuImgError: Base exception for all qemu-img-related failures.
 """
 
-from openvair.abstracts.base_exception import BaseCustomException
+from intakevms.abstracts.base_exception import BaseCustomException
 
 
 class QemuImgError(BaseCustomException):

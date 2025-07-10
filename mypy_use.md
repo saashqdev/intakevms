@@ -1,5 +1,5 @@
 Перейти в директорию проекта
-``` cd /opt/aero/openvair```
+``` cd /opt/aero/intakevms```
 
 Активировать venv
 ```source venv/biv/activate```

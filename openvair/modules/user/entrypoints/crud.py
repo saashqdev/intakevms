@@ -24,10 +24,10 @@ Methods:
 from uuid import UUID
 from typing import Dict, List
 
-from openvair.libs.log import get_logger
-from openvair.modules.user.config import USER_SERVICE_LAYER_QUEUE_NAME
-from openvair.modules.user.service_layer import services
-from openvair.libs.messaging.messaging_agents import MessagingClient
+from intakevms.libs.log import get_logger
+from intakevms.modules.user.config import USER_SERVICE_LAYER_QUEUE_NAME
+from intakevms.modules.user.service_layer import services
+from intakevms.libs.messaging.messaging_agents import MessagingClient
 
 LOG = get_logger(__name__)
 

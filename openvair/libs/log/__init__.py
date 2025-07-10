@@ -12,8 +12,8 @@ Functions:
 import logging
 from pathlib import Path
 
-from openvair.libs.log.setup import setup_logging
-from openvair.libs.client.config import get_sentry_dsn
+from intakevms.libs.log.setup import setup_logging
+from intakevms.libs.client.config import get_sentry_dsn
 
 toml_path = Path(__file__).parent / 'logging_config.toml'
 

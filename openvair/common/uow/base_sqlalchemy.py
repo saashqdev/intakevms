@@ -15,7 +15,7 @@ from typing import TYPE_CHECKING, Type, Optional
 from sqlalchemy.orm import sessionmaker
 from typing_extensions import Self
 
-from openvair.common.uow.abstract import AbstractUnitOfWork
+from intakevms.common.uow.abstract import AbstractUnitOfWork
 
 if TYPE_CHECKING:
     from sqlalchemy.orm import Session

@@ -12,9 +12,9 @@ import os
 from typing import Dict, List
 from subprocess import PIPE, Popen, TimeoutExpired
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams, ExecutionResult
-from openvair.libs.cli.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams, ExecutionResult
+from intakevms.libs.cli.exceptions import (
     UnsuccessReturnCodeError,
     ExecuteTimeoutExpiredError,
 )

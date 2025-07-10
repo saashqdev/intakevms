@@ -11,13 +11,13 @@ Classes:
 
 from typing import Any, Dict
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.modules.virtual_machines.config import SERVER_IP
-from openvair.modules.virtual_machines.domain.base import BaseLibvirtDriver
-from openvair.modules.virtual_machines.domain.exceptions import VNCSessionError
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.modules.virtual_machines.config import SERVER_IP
+from intakevms.modules.virtual_machines.domain.base import BaseLibvirtDriver
+from intakevms.modules.virtual_machines.domain.exceptions import VNCSessionError
 
 LOG = get_logger(__name__)
 
@@ -135,7 +135,7 @@ class LibvirtDriver(BaseLibvirtDriver):
                 '-D',
                 '--run-once',
                 '--web',
-                '/opt/aero/openvair/openvair/libs/noVNC/',
+                '/opt/aero/intakevms/intakevms/libs/noVNC/',
                 vnc_port,
                 f'localhost:{port}',
                 params=ExecuteParams(  # noqa: S604

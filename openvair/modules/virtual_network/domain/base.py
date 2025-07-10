@@ -12,7 +12,7 @@ Classes:
 import abc
 from typing import Any, Dict, List
 
-from openvair.libs.libvirt.network import LibvirtNetworkAdapter
+from intakevms.libs.libvirt.network import LibvirtNetworkAdapter
 
 
 class BasePortGroup(metaclass=abc.ABCMeta):

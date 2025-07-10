@@ -23,15 +23,15 @@ from fastapi import Depends, APIRouter, status
 from fastapi_pagination import Page, Params, paginate
 from starlette.concurrency import run_in_threadpool
 
-from openvair.libs.log import get_logger
-from openvair.common.schemas import BaseResponse
-from openvair.libs.auth.jwt_utils import get_current_user
-from openvair.modules.template.entrypoints.crud import TemplateCrud
-from openvair.modules.template.entrypoints.schemas.requests import (
+from intakevms.libs.log import get_logger
+from intakevms.common.schemas import BaseResponse
+from intakevms.libs.auth.jwt_utils import get_current_user
+from intakevms.modules.template.entrypoints.crud import TemplateCrud
+from intakevms.modules.template.entrypoints.schemas.requests import (
     RequestEditTemplate,
     RequestCreateTemplate,
 )
-from openvair.modules.template.entrypoints.schemas.responses import (
+from intakevms.modules.template.entrypoints.schemas.responses import (
     TemplateResponse,
 )
 

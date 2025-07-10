@@ -16,8 +16,8 @@ from datetime import datetime, timezone, timedelta
 import jwt
 from fastapi import Depends, HTTPException, security
 
-from openvair import config
-from openvair.libs.log import get_logger
+from intakevms import config
+from intakevms.libs.log import get_logger
 
 oauth2schema = security.OAuth2PasswordBearer('/auth/')
 JWT_SECRET = config.data['jwt'].get('secret')

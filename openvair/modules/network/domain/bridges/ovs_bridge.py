@@ -9,9 +9,9 @@ Classes:
 
 from typing import Any, Dict
 
-from openvair.libs.log import get_logger
-from openvair.modules.network.domain.base import BaseOVSBridge
-from openvair.modules.network.domain.utils.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.network.domain.base import BaseOVSBridge
+from intakevms.modules.network.domain.utils.exceptions import (
     OVSManagerException,
 )
 

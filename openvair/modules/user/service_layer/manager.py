@@ -9,10 +9,10 @@ Usage:
     Run this script to start the service layer manager for the user service.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.user.config import USER_SERVICE_LAYER_QUEUE_NAME
-from openvair.modules.user.service_layer import services
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.user.config import USER_SERVICE_LAYER_QUEUE_NAME
+from intakevms.modules.user.service_layer import services
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('service-layer-manager')
 

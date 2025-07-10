@@ -8,10 +8,10 @@ Classes:
     - None (Script only)
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.notification.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.messaging.messaging_agents import MessagingServer
-from openvair.modules.notification.service_layer import services
+from intakevms.libs.log import get_logger
+from intakevms.modules.notification.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.messaging.messaging_agents import MessagingServer
+from intakevms.modules.notification.service_layer import services
 
 LOG = get_logger('service-layer-manager')
 

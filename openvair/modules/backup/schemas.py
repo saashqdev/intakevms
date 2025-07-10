@@ -10,7 +10,7 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-from openvair.modules.backup.config import (
+from intakevms.modules.backup.config import (
     RESTIC_DIR,
     STORAGE_DATA,
     RESTIC_PASSWORD,

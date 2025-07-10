@@ -1,7 +1,7 @@
 # noqa: D100
 # in current moment this module is unused. It need to be adopted with actual rpc
 # client functionality
-from openvair.libs.client.base_client import BaseClient
+from intakevms.libs.client.base_client import BaseClient
 
 
 # Unuse in current version need to be implemented from service interfaces and

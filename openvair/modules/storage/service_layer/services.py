@@ -24,33 +24,33 @@ from __future__ import annotations
 import enum
 from typing import Dict, List, cast
 
-from openvair.libs.log import get_logger
-from openvair.modules.base_manager import BackgroundTasks, periodic_task
-from openvair.libs.context_managers import synchronized_session
-from openvair.modules.storage.config import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.base_manager import BackgroundTasks, periodic_task
+from intakevms.libs.context_managers import synchronized_session
+from intakevms.modules.storage.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.modules.storage.domain import base
-from openvair.modules.storage.adapters import orm
-from openvair.libs.messaging.exceptions import (
+from intakevms.modules.storage.domain import base
+from intakevms.modules.storage.adapters import orm
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcCallTimeoutException,
 )
-from openvair.modules.storage.libs.utils import (
+from intakevms.modules.storage.libs.utils import (
     is_system_disk,
     get_system_disks,
     is_system_partition,
     get_local_partitions,
 )
-from openvair.modules.storage.service_layer import exceptions, unit_of_work
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.storage.adapters.serializer import DataSerializer
-from openvair.modules.event_store.entrypoints.crud import EventCrud
-from openvair.libs.messaging.clients.rpc_clients.image_rpc_client import (
+from intakevms.modules.storage.service_layer import exceptions, unit_of_work
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.storage.adapters.serializer import DataSerializer
+from intakevms.modules.event_store.entrypoints.crud import EventCrud
+from intakevms.libs.messaging.clients.rpc_clients.image_rpc_client import (
     ImageServiceLayerRPCClient,
 )
-from openvair.libs.messaging.clients.rpc_clients.volume_rpc_client import (
+from intakevms.libs.messaging.clients.rpc_clients.volume_rpc_client import (
     VolumeServiceLayerRPCClient,
 )
 

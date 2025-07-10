@@ -17,15 +17,15 @@ Classes:
 import abc
 from typing import Dict, Optional
 
-from openvair.libs.log import get_logger
-from openvair.libs.libvirt.connection import LibvirtConnection
-from openvair.libs.data_handlers.xml.exceptions import XMLDeserializationError
-from openvair.libs.data_handlers.xml.serializer import deserialize_xml
-from openvair.modules.virtual_machines.domain.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.libvirt.connection import LibvirtConnection
+from intakevms.libs.data_handlers.xml.exceptions import XMLDeserializationError
+from intakevms.libs.data_handlers.xml.serializer import deserialize_xml
+from intakevms.modules.virtual_machines.domain.exceptions import (
     GraphicPortNotFoundInXmlException,
     GraphicTypeNotFoundInXmlException,
 )
-from openvair.modules.virtual_machines.libs.template_rendering.vm_renderer import (  # noqa: E501
+from intakevms.modules.virtual_machines.libs.template_rendering.vm_renderer import (  # noqa: E501
     VMRenderer,
 )
 

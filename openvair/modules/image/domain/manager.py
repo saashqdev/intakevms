@@ -8,10 +8,10 @@ Usage:
     Run this script to start the domain-layer manager.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.image.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
-from openvair.modules.image.domain import model
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.image.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
+from intakevms.modules.image.domain import model
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('domain-manager')
 

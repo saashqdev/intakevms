@@ -8,7 +8,7 @@ Classes:
         in the database.
 """
 
-from openvair.abstracts.base_exception import BaseCustomException
+from intakevms.abstracts.base_exception import BaseCustomException
 
 
 class TemplateNotFoundException(BaseCustomException):

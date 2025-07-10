@@ -17,10 +17,10 @@ Classes:
 import re
 from typing import Any, Dict, List, Optional
 
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.abstracts.base_exception import BaseCustomException
-from openvair.libs.data_handlers.json.serializer import deserialize_json
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.abstracts.base_exception import BaseCustomException
+from intakevms.libs.data_handlers.json.serializer import deserialize_json
 
 
 class GettingSystemInfoError(BaseCustomException):

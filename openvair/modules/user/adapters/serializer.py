@@ -12,8 +12,8 @@ from typing import Dict, Type
 
 from sqlalchemy import inspect
 
-from openvair.abstracts.serializer import AbstractDataSerializer
-from openvair.modules.user.adapters.orm import User
+from intakevms.abstracts.serializer import AbstractDataSerializer
+from intakevms.modules.user.adapters.orm import User
 
 
 class DataSerializer(AbstractDataSerializer):

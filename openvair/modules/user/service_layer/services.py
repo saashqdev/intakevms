@@ -23,13 +23,13 @@ from passlib import hash
 from sqlalchemy import exc
 from passlib.exc import MissingDigestError
 
-from openvair.libs.log import get_logger
-from openvair.modules.base_manager import BackgroundTasks
-from openvair.modules.user.service_layer import exceptions, unit_of_work
-from openvair.modules.user.adapters.serializer import DataSerializer
+from intakevms.libs.log import get_logger
+from intakevms.modules.base_manager import BackgroundTasks
+from intakevms.modules.user.service_layer import exceptions, unit_of_work
+from intakevms.modules.user.adapters.serializer import DataSerializer
 
 if TYPE_CHECKING:
-    from openvair.modules.user.adapters.orm import User
+    from intakevms.modules.user.adapters.orm import User
 
 LOG = get_logger(__name__)
 

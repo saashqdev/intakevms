@@ -20,21 +20,21 @@ from fastapi import status
 from fastapi.testclient import TestClient
 from fastapi_pagination import add_pagination
 
-from openvair.main import app
-from openvair.libs.log import get_logger
-from openvair.libs.auth.jwt_utils import oauth2schema, get_current_user
-from openvair.modules.volume.adapters.orm import VolumeAttachVM
-from openvair.modules.volume.tests.config import settings
-from openvair.modules.volume.tests.helpers import (
+from intakevms.main import app
+from intakevms.libs.log import get_logger
+from intakevms.libs.auth.jwt_utils import oauth2schema, get_current_user
+from intakevms.modules.volume.adapters.orm import VolumeAttachVM
+from intakevms.modules.volume.tests.config import settings
+from intakevms.modules.volume.tests.helpers import (
     cleanup_all_volumes,
     generate_volume_name,
 )
-from openvair.modules.volume.entrypoints.schemas import CreateVolume
-from openvair.modules.storage.entrypoints.schemas import (
+from intakevms.modules.volume.entrypoints.schemas import CreateVolume
+from intakevms.modules.storage.entrypoints.schemas import (
     CreateStorage,
     LocalFSStorageExtraSpecsCreate,
 )
-from openvair.modules.volume.service_layer.unit_of_work import (
+from intakevms.modules.volume.service_layer.unit_of_work import (
     SqlAlchemyUnitOfWork,
 )
 

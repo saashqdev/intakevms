@@ -12,14 +12,14 @@ Classes:
 
 from typing import Any, Dict, Optional
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecuteParams
-from openvair.libs.cli.executor import execute
-from openvair.libs.cli.exceptions import ExecuteError
-from openvair.modules.storage.domain import exception as exc
-from openvair.modules.storage.domain.base import BasePartition, LocalFSStorage
-from openvair.modules.storage.domain.utils import DiskSizeValueObject
-from openvair.modules.storage.domain.physical_fs.exceptions import UnmountError
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecuteParams
+from intakevms.libs.cli.executor import execute
+from intakevms.libs.cli.exceptions import ExecuteError
+from intakevms.modules.storage.domain import exception as exc
+from intakevms.modules.storage.domain.base import BasePartition, LocalFSStorage
+from intakevms.modules.storage.domain.utils import DiskSizeValueObject
+from intakevms.modules.storage.domain.physical_fs.exceptions import UnmountError
 
 LOG = get_logger(__name__)
 

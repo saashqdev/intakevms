@@ -10,10 +10,10 @@ Entry Point:
     This module should be run as the main module to start the RPC server.
 """
 
-from openvair.libs.log import get_logger
-from openvair.modules.volume.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
-from openvair.modules.volume.domain import model
-from openvair.libs.messaging.messaging_agents import MessagingServer
+from intakevms.libs.log import get_logger
+from intakevms.modules.volume.config import SERVICE_LAYER_DOMAIN_QUEUE_NAME
+from intakevms.modules.volume.domain import model
+from intakevms.libs.messaging.messaging_agents import MessagingServer
 
 LOG = get_logger('domain-manager')
 

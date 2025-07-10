@@ -12,12 +12,12 @@ Classes:
 from uuid import UUID
 from typing import Dict, List
 
-from openvair.libs.log import get_logger
-from openvair.modules.storage.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.libs.validation.validators import Validator
-from openvair.modules.storage.entrypoints import schemas
-from openvair.modules.storage.service_layer import services
-from openvair.libs.messaging.messaging_agents import MessagingClient
+from intakevms.libs.log import get_logger
+from intakevms.modules.storage.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.libs.validation.validators import Validator
+from intakevms.modules.storage.entrypoints import schemas
+from intakevms.modules.storage.service_layer import services
+from intakevms.libs.messaging.messaging_agents import MessagingClient
 
 LOG = get_logger(__name__)
 

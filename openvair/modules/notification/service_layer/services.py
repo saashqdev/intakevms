@@ -18,24 +18,24 @@ from typing import TYPE_CHECKING, Dict
 
 from sqlalchemy.exc import SQLAlchemyError
 
-from openvair.libs.log import get_logger
-from openvair.modules.base_manager import BackgroundTasks
-from openvair.modules.notification import config
-from openvair.libs.messaging.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.base_manager import BackgroundTasks
+from intakevms.modules.notification import config
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcCallTimeoutException,
 )
-from openvair.modules.notification.config import (
+from intakevms.modules.notification.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
     SERVICE_LAYER_DOMAIN_QUEUE_NAME,
 )
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.notification.domain.base import BaseNotification
-from openvair.modules.notification.service_layer import unit_of_work
-from openvair.modules.notification.adapters.serializer import DataSerializer
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.notification.domain.base import BaseNotification
+from intakevms.modules.notification.service_layer import unit_of_work
+from intakevms.modules.notification.adapters.serializer import DataSerializer
 
 if TYPE_CHECKING:
-    from openvair.modules.notification.adapters.orm import Notification
+    from intakevms.modules.notification.adapters.orm import Notification
 
 LOG = get_logger(__name__)
 

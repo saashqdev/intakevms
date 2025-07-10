@@ -11,14 +11,14 @@ from typing import TYPE_CHECKING
 from fastapi import status
 from fastapi.testclient import TestClient
 
-from openvair.libs.log import get_logger
-from openvair.modules.volume.tests.helpers import wait_for_status
-from openvair.modules.volume.service_layer.unit_of_work import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.volume.tests.helpers import wait_for_status
+from intakevms.modules.volume.service_layer.unit_of_work import (
     SqlAlchemyUnitOfWork,
 )
 
 if TYPE_CHECKING:
-    from openvair.modules.volume.adapters.orm import Volume as ORMVolume
+    from intakevms.modules.volume.adapters.orm import Volume as ORMVolume
 LOG = get_logger(__name__)
 
 

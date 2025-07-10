@@ -15,7 +15,7 @@ from typing import Any, Optional
 
 from typing_extensions import Self
 
-from openvair.modules.dashboard.adapters import repository
+from intakevms.modules.dashboard.adapters import repository
 
 
 class AbstractUnitOfWork(metaclass=abc.ABCMeta):

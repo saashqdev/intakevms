@@ -14,9 +14,9 @@ Classes:
 import abc
 from typing import Dict, ClassVar, cast
 
-from openvair.modules.block_device.domain.base import BaseBlockInterface
-from openvair.modules.block_device.domain.iscsi import iscsi
-from openvair.modules.block_device.domain.fibre_channel import fibre_channel
+from intakevms.modules.block_device.domain.base import BaseBlockInterface
+from intakevms.modules.block_device.domain.iscsi import iscsi
+from intakevms.modules.block_device.domain.fibre_channel import fibre_channel
 
 
 class AbstractInterfaceFactory(metaclass=abc.ABCMeta):

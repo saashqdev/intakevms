@@ -11,14 +11,14 @@ Classes:
 
 from typing import Dict, List
 
-from openvair.libs.log import get_logger
-from openvair.libs.validation.validators import Validator
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.virtual_machines.config import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.validation.validators import Validator
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.virtual_machines.config import (
     API_SERVICE_LAYER_QUEUE_NAME,
 )
-from openvair.modules.virtual_machines.entrypoints import schemas
-from openvair.modules.virtual_machines.service_layer import services
+from intakevms.modules.virtual_machines.entrypoints import schemas
+from intakevms.modules.virtual_machines.service_layer import services
 
 LOG = get_logger(__name__)
 

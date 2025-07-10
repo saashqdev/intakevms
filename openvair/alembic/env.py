@@ -2,19 +2,19 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config, pool
 
-from openvair.modules.event_store.adapters.orm import Base as EventBase
-from openvair.modules.image.adapters.orm import Base as ImageBase
-from openvair.modules.network.adapters.orm import Base as NetworkBase
-from openvair.modules.storage.adapters.orm import Base as StorageBase
-from openvair.modules.user.adapters.orm import Base as UserBase
-from openvair.modules.virtual_machines.adapters.orm import Base as VMBase
-from openvair.modules.volume.adapters.orm import Base as VolumeBase
-from openvair.modules.notification.adapters.orm import Base as NotificationBase
-from openvair.modules.virtual_network.adapters.orm import (
+from intakevms.modules.event_store.adapters.orm import Base as EventBase
+from intakevms.modules.image.adapters.orm import Base as ImageBase
+from intakevms.modules.network.adapters.orm import Base as NetworkBase
+from intakevms.modules.storage.adapters.orm import Base as StorageBase
+from intakevms.modules.user.adapters.orm import Base as UserBase
+from intakevms.modules.virtual_machines.adapters.orm import Base as VMBase
+from intakevms.modules.volume.adapters.orm import Base as VolumeBase
+from intakevms.modules.notification.adapters.orm import Base as NotificationBase
+from intakevms.modules.virtual_network.adapters.orm import (
     Base as VirtualNetworkBase,
 )
-from openvair.modules.block_device.adapters.orm import Base as BlockDeviceBase
-from openvair.modules.template.adapters.orm import Base as TemplateBase
+from intakevms.modules.block_device.adapters.orm import Base as BlockDeviceBase
+from intakevms.modules.template.adapters.orm import Base as TemplateBase
 from alembic import context
 
 # this is the Alembic Config object, which provides

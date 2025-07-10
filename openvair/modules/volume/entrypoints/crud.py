@@ -11,15 +11,15 @@ Classes:
 from uuid import UUID
 from typing import Dict, List, Optional
 
-from openvair.libs.log import get_logger
-from openvair.modules.volume.config import API_SERVICE_LAYER_QUEUE_NAME
-from openvair.modules.volume.service_layer import services
-from openvair.libs.messaging.messaging_agents import MessagingClient
-from openvair.modules.volume.entrypoints.schemas import (
+from intakevms.libs.log import get_logger
+from intakevms.modules.volume.config import API_SERVICE_LAYER_QUEUE_NAME
+from intakevms.modules.volume.service_layer import services
+from intakevms.libs.messaging.messaging_agents import MessagingClient
+from intakevms.modules.volume.entrypoints.schemas import (
     Volume,
     CreateVolumeFromTemplate,
 )
-from openvair.modules.volume.adapters.dto.internal.commands import (
+from intakevms.modules.volume.adapters.dto.internal.commands import (
     CreateVolumeFromTemplateServiceCommandDTO,
 )
 

@@ -11,7 +11,7 @@ Functions:
 
 from typing import Tuple
 
-from openvair import config
+from intakevms import config
 
 
 def get_rabbitmq_url() -> str:

@@ -1,4 +1,4 @@
-# Open vAIR
+# inTakevms
 
 ## 🌍 Translations
 
@@ -6,7 +6,7 @@
 
 ## 📖 Project Description
 
-**Open vAIR** is a lightweight solution based on the **vAIR** project,
+**inTakevms** is a lightweight solution based on the **vAIR** project,
 designed for use as a development environment and virtualization system. The
 program operates in interactive mode, providing a flexible and convenient
 tool for managing virtual infrastructure.
@@ -29,7 +29,7 @@ tool for managing virtual infrastructure.
 
 ## 📦 Installation
 
-To install **Open vAIR** on a clean Linux system, follow these steps. It is
+To install **inTakevms** on a clean Linux system, follow these steps. It is
 recommended to use **Ubuntu 20.04**, which is the most tested version.
 **Ubuntu 22.04** is also supported.
 
@@ -48,53 +48,44 @@ recommended to use **Ubuntu 20.04**, which is the most tested version.
     1. Create a user:
 
         ```shell
-        sudo useradd -s /bin/bash -d /opt/aero -m aero
+        sudo useradd -s /bin/bash -d /opt/virtman -m virtman
         ```
 
     2. Assign necessary permissions:
 
         ```shell
-        sudo chmod +x /opt/aero
+        sudo chmod +x /opt/virtman
         ```
 
     3. Add the user to the superuser list:
 
         ```shell
-        echo "aero ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/aero
+        echo "virtman ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/virtman
         ```
 
     4. Switch to the new user:
 
         ```shell
-        sudo -u aero -i
+        sudo -u virtman -i
         ```
 
 3. Download the project repository:
 
     ```shell
     # GitHub
-    git clone https://github.com/Aerodisk/openvair.git
-
-    # GitFlic
-    git clone https://gitflic.ru/project/aerodisk_open_vair/openvair.git
-
-    # GitVerse
-    git clone https://gitverse.ru/Aerodisk/openvair.git
-
-    # GitLab
-    git clone https://git.aerodisk.ru/openvair/openvair.git
+    git clone https://github.com/saashqdev/intakevms.git
     ```
 
 4. Configure the configuration file:
 
     ```shell
-    nano ~/openvair/project_config.toml
+    nano ~/intakevms/project_config.toml
     ```
 
 ### ⚙️ Project Configuration
 
-Before installing **Open vAIR**, you need to set the login and password in
-the `/opt/aero/openvair/project_config.toml` file. This data is required for
+Before installing **inTakevms**, you need to set the login and password in
+the `/opt/virtman/intakevms/project_config.toml` file. This data is required for
 system authorization and access to all application functions.
 
 Configuration example:
@@ -128,16 +119,16 @@ port = 8000
 ### 🚀 Starting the Installation
 1. Run the installation script:
 ```bash
-./openvair/install.sh
+./intakevms/install.sh
 ```
 
 Upon completion of the installation, you will receive a message with the
 current application address, login, and password for working with the system.
 
 ### 🗑️ Uninstallation
-To remove Open vAIR, run the uninstallation script:
+To remove inTakevms, run the uninstallation script:
 ```bash
-./openvair/uninstall.sh
+./intakevms/uninstall.sh
 ```
 
 ### 📚 Documentation
@@ -197,17 +188,17 @@ sudo systemctl status storage-domain.service
 * Code convention: [code-convention](CODE_CONVENTION.md).
 
 ### 🔗 Frontend of the project
-* To work with the user interface (Frontend), use the repository [Open vAIR UI](https://github.com/Aerodisk/Open-vAIR-UI).
+* To work with the user interface (Frontend), use the repository [inTakevms UI](https://github.com/saashqdev/Open-vAIR-UI).
 
 ### 🔗 Documentation of the project
-* To work with the documentation, use the repository [Open vAIR docs](https://github.com/Aerodisk/Open-vAIR-docs).
+* To work with the documentation, use the repository [inTakevms docs](https://github.com/saashqdev/Open-vAIR-docs).
 
 ### 🔗 Useful Links
-* [Telegram-channel](https://t.me/Open_vAIR_AERODISK)
-* [Open vAIR website](https://openvair.ru/)
+* [Telegram-channel](https://t.me/inTakevms)
+* [inTakevms website](https://gointake.ca/)
 
 ### Statistics (including documentation and frontend projects)
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=aerodisk&show_icons=true&locale=en&layout=compact" alt="aerodisk" /></p> <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=aerodisk&show_icons=true&locale=en" alt="aerodisk" /></p>
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=virtmandisk&show_icons=true&locale=en&layout=compact" alt="virtmandisk" /></p> <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=virtmandisk&show_icons=true&locale=en" alt="virtmandisk" /></p>
 
 ---
 

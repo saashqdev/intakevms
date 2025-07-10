@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 USER=aero
-DOCS_PROJECT_NAME=openvair-docs
+DOCS_PROJECT_NAME=intakevms-docs
 USER_PATH=/opt/$USER
 FOLDER_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOCS_PROJECT_PATH="${USER_PATH}/${DOCS_PROJECT_NAME}"
@@ -41,25 +41,25 @@ check_existence() {
 
 # ========= Check Volume existence =========
 check_volume_existence() {
-  local volume_count=$(sudo docker exec postgres psql -U $USER -d openvair -t -c "SELECT COUNT(*) FROM volumes;")
+  local volume_count=$(sudo docker exec postgres psql -U $USER -d intakevms -t -c "SELECT COUNT(*) FROM volumes;")
   check_existence "виртуальные диски" $volume_count
 }
 
 # ========= Check Image existence =========
 check_image_existence() {
-  local image_count=$(sudo docker exec postgres psql -U $USER -d openvair -t -c "SELECT COUNT(*) FROM images;")
+  local image_count=$(sudo docker exec postgres psql -U $USER -d intakevms -t -c "SELECT COUNT(*) FROM images;")
   check_existence "виртуальные образы" $image_count
 }
 
 # ========= Check Storage existence =========
 check_storage_existence() {
-  local storage_count=$(sudo docker exec postgres psql -U $USER -d openvair -t -c "SELECT COUNT(*) FROM storages;")
+  local storage_count=$(sudo docker exec postgres psql -U $USER -d intakevms -t -c "SELECT COUNT(*) FROM storages;")
   check_existence "хранилища" $storage_count
 }
 
 # ========= Check VM existence =========
 check_vm_existence() {
-  local vm_count=$(sudo docker exec postgres psql -U $USER -d openvair -t -c "SELECT COUNT(*) FROM virtual_machines;")
+  local vm_count=$(sudo docker exec postgres psql -U $USER -d intakevms -t -c "SELECT COUNT(*) FROM virtual_machines;")
   check_existence "виртуальные машины" $vm_count
 }
 
@@ -96,7 +96,7 @@ restart_service(){
   printf ">>>>>> ${GREEN}SUCCESSFULLY RESTARTED SERVICE ${1}${NC}\n"
 }
 
-for file in $(sudo find /opt/$USER/openvair/ -name *.service)
+for file in $(sudo find /opt/$USER/intakevms/ -name *.service)
 do
   stop_service `basename $file`
   disable_service `basename $file`
@@ -105,14 +105,14 @@ done
 
 # Removing venv
 remove_venv(){
-  yes | sudo rm -rf /opt/$USER/openvair/venv || { printf ">>>>>> ${RED}FAILURE IN REMOVING VENV${NC}\n"; return; }
+  yes | sudo rm -rf /opt/$USER/intakevms/venv || { printf ">>>>>> ${RED}FAILURE IN REMOVING VENV${NC}\n"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY REMOVED VENV${NC}\n"
 }
 remove_venv
 
 # Removing built docs
 remove_docs(){
-  yes | sudo rm -rf /opt/$USER/openvair/docs/build || { printf ">>>>>> ${RED}FAILURE IN REMOVING DOCS${NC}\n"; return; }
+  yes | sudo rm -rf /opt/$USER/intakevms/docs/build || { printf ">>>>>> ${RED}FAILURE IN REMOVING DOCS${NC}\n"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY REMOVED DOCS${NC}\n"
 }
 remove_docs
@@ -173,7 +173,7 @@ disable_service "node_exporter.service"
 remove_service "node_exporter.service"
 
 remove_novnc_folder(){
-  sudo rm -rf /opt/aero/openvair/openvair/libs/noVNC || { printf ">>>>>> ${RED}FAILURE IN REMOVING NOVNC FOLDER${NC}\n"; return; }
+  sudo rm -rf /opt/aero/intakevms/intakevms/libs/noVNC || { printf ">>>>>> ${RED}FAILURE IN REMOVING NOVNC FOLDER${NC}\n"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY REMOVED NOVNC FOLDER${NC}\n"
 }
 remove_novnc_folder
@@ -199,7 +199,7 @@ remove_nodejs_folders
 
 # ========= Unmount directories =========
 umount_project_paths(){
-  sudo umount -l /opt/aero/openvair/data/mnt/*
+  sudo umount -l /opt/aero/intakevms/data/mnt/*
 }
 umount_project_paths
 

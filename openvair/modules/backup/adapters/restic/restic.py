@@ -10,18 +10,18 @@ Classes:
 from typing import Dict, List, Union
 from pathlib import Path
 
-from openvair.libs.log import get_logger
-from openvair.libs.cli.models import ExecutionResult
-from openvair.libs.context_managers import change_directory
-from openvair.libs.data_handlers.json.serializer import deserialize_json
-from openvair.modules.backup.adapters.restic.exceptions import (
+from intakevms.libs.log import get_logger
+from intakevms.libs.cli.models import ExecutionResult
+from intakevms.libs.context_managers import change_directory
+from intakevms.libs.data_handlers.json.serializer import deserialize_json
+from intakevms.modules.backup.adapters.restic.exceptions import (
     ResticError,
     ResticBackupError,
     ResticRestoreError,
     ResticInitRepoError,
 )
-from openvair.modules.backup.adapters.restic.return_codes import ReturnCode
-from openvair.modules.backup.adapters.restic.restic_executor import (
+from intakevms.modules.backup.adapters.restic.return_codes import ReturnCode
+from intakevms.modules.backup.adapters.restic.restic_executor import (
     ResticCommandExecutor,
 )
 

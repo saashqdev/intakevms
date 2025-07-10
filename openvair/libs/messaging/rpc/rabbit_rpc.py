@@ -40,16 +40,16 @@ import pika
 from pika.spec import Basic
 from pika.adapters.blocking_connection import BlockingChannel
 
-from openvair.libs.messaging.exceptions import (
+from intakevms.libs.messaging.exceptions import (
     RpcCallException,
     RpcCallTimeoutException,
     RpcDeserializeMessageException,
 )
-from openvair.libs.messaging.rpc.rabbit_base import (
+from intakevms.libs.messaging.rpc.rabbit_base import (
     BaseRabbitRPCClient,
     BaseRabbitRPCServer,
 )
-from openvair.libs.data_handlers.json.serializer import (
+from intakevms.libs.data_handlers.json.serializer import (
     serialize_json,
     deserialize_json,
 )
