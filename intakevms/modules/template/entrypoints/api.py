@@ -41,7 +41,7 @@ router = APIRouter(
     tags=['templates'],
     dependencies=[
         Depends(get_current_user)
-    ],  # Глобальная авторизация для всех эндпоинтов
+    ],  # Global authorization for all endpoints
     responses={404: {'description': 'Not found!'}},
 )
 
@@ -177,12 +177,12 @@ async def delete_template(
 
 # @router.post(
 #     '/{template_id}/volumes',
-#     response_model=BaseResponse,  # TODO Определить модель
+#     response_model=BaseResponse,  # TODO Define model
 #     status_code=status.HTTP_201_CREATED,
 # )
 # async def create_volume_from_template(
 #     template_id: UUID,
-#     data: RequetsCreateVolumeFromTemplate,
+#     data: RequestsCreateVolumeFromTemplate,
 #     user_info: Dict = Depends(get_current_user),
 #     crud: TemplateCrud = Depends(TemplateCrud),
 # ) -> BaseResponse:

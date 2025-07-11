@@ -78,7 +78,7 @@ from intakevms.modules.backup.entrypoints.api import router as backup_router
 from intakevms.modules.volume.entrypoints.api import router as volume
 from intakevms.modules.network.entrypoints.api import router as network
 from intakevms.modules.storage.entrypoints.api import router as storage
-from intakevms.modules.template.entrypoints.api import router as tempalte_router
+from intakevms.modules.template.entrypoints.api import router as template_router
 from intakevms.modules.dashboard.entrypoints.api import router as dashboard
 from intakevms.modules.event_store.entrypoints.api import router as event_store
 from intakevms.modules.block_device.entrypoints.api import router as block_router
@@ -104,7 +104,7 @@ app.include_router(notification_router)
 app.include_router(block_router)
 app.include_router(vn_router)
 app.include_router(backup_router)
-app.include_router(tempalte_router)
+app.include_router(template_router)
 
 project_dir = Path(__file__).parent
 templates = Jinja2Templates(directory=project_dir / 'dist')

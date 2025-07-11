@@ -1,8 +1,8 @@
-VAIR-RAM DEFINITIONS ::= BEGIN
+DELL-RAM DEFINITIONS ::= BEGIN
 
-AERODISK OBJECT IDENTIFIER ::= { iso(1) org(3) dod(6) internet(1) private(4) enterprises(1) 54641 }
+DELL OBJECT IDENTIFIER ::= { iso(1) org(3) dod(6) internet(1) private(4) enterprises(1) 674 }
 
-ram   OBJECT IDENTIFIER ::= {AERODISK 53}
+ram   OBJECT IDENTIFIER ::= {DELL 53}
 
 
 -- RAM

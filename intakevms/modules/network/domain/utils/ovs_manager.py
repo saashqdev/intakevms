@@ -107,12 +107,12 @@ class OVSManager:
             ),
         )
         if exec_res.stderr:
-            messsage = (
+            message = (
                 f'Bridge {bridge_name} not found or could not be deleted: '
                 '{stderr}'
             )
-            LOG.error(messsage)
-            raise BridgeNotFoundException(messsage)
+            LOG.error(message)
+            raise BridgeNotFoundException(message)
 
     def add_interface(
         self, bridge_name: str, iface_name: str, tag: Optional[int] = None

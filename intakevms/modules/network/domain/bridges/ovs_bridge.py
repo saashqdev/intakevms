@@ -131,7 +131,7 @@ class OVSInterface(BaseOVSBridge):
         self.ip_manager.set_default_gateway(self.default_route)
 
     def _restart_port(self, iface_name: str) -> None:
-        LOG.info(f'Restatring interface {iface_name}...')
+        LOG.info(f'Restarting interface {iface_name}...')
         self.ip_manager.turn_off_interface(iface_name)
         self.ip_manager.turn_on_interface(iface_name)
 

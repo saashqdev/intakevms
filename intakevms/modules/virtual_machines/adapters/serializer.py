@@ -88,7 +88,7 @@ class DataSerializer(AbstractDataSerializer):
         return orm_class(**orm_dict)
 
     @classmethod
-    def to_web(  # noqa: C901 because all checking is needed here may be will need be to refact
+    def to_web(  # noqa: C901 because all checking is needed here maybe will need be to refactored
         cls,
         orm_object: Union[
             orm.VirtualMachines,

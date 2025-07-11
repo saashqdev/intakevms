@@ -121,7 +121,7 @@ class MetaBackgroundTasks(type):
         for method in cls.__dict__.values():
             if callable(method) and hasattr(method, '_periodic'):
                 cls._background_tasks.append(
-                    Task(method._interval, method, cls)  # noqa: SLF001 becasue it only way with Dynamic working for getting interval arg
+                    Task(method._interval, method, cls)  # noqa: SLF001 because it's the only way with Dynamic working for getting interval arg
                 )
 
 

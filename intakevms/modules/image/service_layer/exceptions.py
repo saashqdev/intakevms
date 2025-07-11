@@ -160,8 +160,8 @@ class ImageDeletingError(BaseCustomException):
 
 
 class ImageUnvailableError(BaseCustomException):
-    """Raised when checking existance image by ist path"""
+    """Raised when checking existence image by ist path"""
 
     def __init__(self, message: str, *args: Any) -> None:  # noqa: ANN401 # TODO need to parameterize the arguments correctly, in accordance with static typing
-        """Initialize the ImageUnvailableError exception."""
+        """Initialize the ImageUnavailableError exception."""
         super().__init__(message, *args)

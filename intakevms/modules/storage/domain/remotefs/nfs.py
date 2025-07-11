@@ -20,7 +20,7 @@ from intakevms.libs.cli.exceptions import ExecuteError
 from intakevms.modules.storage.domain.base import RemoteFSStorage
 from intakevms.modules.storage.domain.remotefs.exceptions import (
     NFSCantBeMountError,
-    GettinStorageInfoError,
+    GettingStorageInfoError,
     NfsIpIsNotAvailableError,
     NfsPathDoesNotExistOnShareError,
 )
@@ -201,7 +201,7 @@ class NfsStorage(RemoteFSStorage):
             and available space.
 
         Raises:
-            GettinStorageInfoError: If the storage information cannot be
+            GettingStorageInfoError: If the storage information cannot be
             retrieved.
         """
         LOG.info('Starting _get_capacity_info method.')
@@ -218,7 +218,7 @@ class NfsStorage(RemoteFSStorage):
         )
         if exec_res.stderr:
             msg = "Can't get info about storage."
-            raise GettinStorageInfoError(msg)
+            raise GettingStorageInfoError(msg)
         out = exec_res.stdout.splitlines()[1]
 
         self.size = int(out.split()[1])

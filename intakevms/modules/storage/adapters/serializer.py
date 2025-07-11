@@ -29,7 +29,7 @@ class DataSerializer(AbstractDataSerializer):
         cls,
         orm_object: Storage,
     ) -> Dict:
-        """Its get dictonary of data about the storage
+        """Its get dictionary of data about the storage
 
         This method takes a storage object and a list of extra specs, and
         returns a dictionary of the storage object with the extra specs added

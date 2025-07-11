@@ -57,7 +57,7 @@ class SNMPFactory(AbstractSNMPFactory):
             BaseSNMP: An SNMP agent object of the specified type.
 
         Raises:
-            SNMPAgenTypeError: If the specified SNMP agent type is not found.
+            SNMPAgentTypeError: If the specified SNMP agent type is not found.
         """
         try:
             snmp_class = self._snmp_classes[snmp_type]

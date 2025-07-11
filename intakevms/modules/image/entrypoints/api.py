@@ -163,7 +163,7 @@ async def upload_image(  # noqa: PLR0913 need create a schema for arguments
     filename_length = 40
     try:
         if len(name) > filename_length:
-            message = 'Длина имени файла должна быть меньше 40 символов.'
+            message = 'The file name length must be less than 40 characters..'
             LOG.error(message)
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,

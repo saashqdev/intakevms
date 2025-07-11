@@ -137,7 +137,7 @@ class ImageServiceLayerManager(BackgroundTasks):
             domain layer.
         service_layer_rpc (RabbitRPCClient): RPC client for communicating
             with the API of service layer.
-        storage_serviece_rpc (RabbitRPCClient): RPC client for communicating
+        storage_service_rpc (RabbitRPCClient): RPC client for communicating
             with the storage service layer.
         event_store (EventCrud): Event store for logging image-related events.
 

@@ -168,14 +168,14 @@ class TemplateCrud:
     # def create_volume_from_template(
     #     self,
     #     template_id: UUID,
-    #     volume_data: RequetsCreateVolumeFromTemplate,
+    #     volume_data: RequestsCreateVolumeFromTemplate,
     #     user_info: Dict,
     # ) -> None:
     #     """Create a volume based on the specified template via RPC.
 
     #     Args:
     #         template_id (UUID): The ID of the template to use.
-    #         volume_data (RequetsCreateVolumeFromTemplate): Parameters for the
+    #         volume_data (RequestsCreateVolumeFromTemplate): Parameters for the
     #             volume creation.
     #         user_info (Dict): Authenticated user information.
 

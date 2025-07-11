@@ -4,13 +4,13 @@ This module defines custom exceptions used in the network domain layer
 for handling errors related to network interface and bridge operations.
 
 Classes:
-    BridgeAllreadyExistOnNetplanConfigError: Raised when bridge name exist in
+    BridgeAlreadyExistOnNetplanConfigError: Raised when bridge name exist in
         current netplan config.
     PortNetplanFileNotFoundError: Raised when file with port name config not
         found
     NoYAMLContentFoundFromNetplanGetError: Raised when not found network yaml
         info in 'netplan get'
-    ErrorYamlParsinError: Raised when getting error while parsing yaml string
+    ErrorYamlParsingError: Raised when getting error while parsing yaml string
 """
 
 from typing import Any
@@ -34,11 +34,11 @@ class NoYAMLContentFoundFromNetplanGetError(BaseCustomException):
         super().__init__(message, *args)
 
 
-class YamlParsinError(BaseCustomException):
+class YamlParsingError(BaseCustomException):
     """Raised when getting error while parsing yaml string"""
 
     def __init__(self, message: str, *args: Any) -> None:  # noqa: ANN401 # TODO need to parameterize the arguments correctly, in accordance with static typing
-        """Initialize ErrorYamlParsinError"""
+        """Initialize ErrorYamlParsingError"""
         super().__init__(message, *args)
 
 

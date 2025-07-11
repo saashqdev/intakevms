@@ -69,7 +69,7 @@ class NetplanInterface(BaseOVSBridge):
             data['addresses'] = [f"{data.pop('ip', [])}/24"]
 
         if self.interfaces:
-            LOG.info('Need to prepair interfaces...')
+            LOG.info('Need to prepare interfaces...')
             self._prepare_ifaces_for_creating(data)
             data['interfaces'] = [iface['name'] for iface in data['interfaces']]
 
@@ -101,7 +101,7 @@ class NetplanInterface(BaseOVSBridge):
         Args:
             bridge_data (Dict): The data of the bridge.
         """
-        LOG.info('Prepairing interfaces...')
+        LOG.info('Preparing interfaces...')
         for interface in self.interfaces:
             iface_name: str = interface['name']
             try:
@@ -115,7 +115,7 @@ class NetplanInterface(BaseOVSBridge):
                 iface_file,
             )
             if self.main_port == iface_name:
-                LOG.info(f'Bridge containing main inetrface: {iface_name}')
+                LOG.info(f'Bridge containing main interface: {iface_name}')
                 self._move_main_port_params_into_bridge(bridge_data, iface_data)
 
             self.netplan_manager.change_iface_yaml_file(
@@ -123,7 +123,7 @@ class NetplanInterface(BaseOVSBridge):
                 iface_file,
                 iface_data,
             )
-        LOG.info('Interfaces prepaired!')
+        LOG.info('Interfaces prepared!')
 
     def _prepare_ifaces_for_deleting(self, bridge_data: Dict) -> None:
         """Restore the network interfaces before bridge deletion.
@@ -137,8 +137,8 @@ class NetplanInterface(BaseOVSBridge):
         for iface_name in bridge_data['interfaces']:
             try:
                 # I think it will be necessary to work on stability in this bloc
-                # May be need to check if file have another ifaces and check
-                # configuration for this iface in antoher files
+                # Maybe need to check if file has other ifaces and check
+                # configuration for this iface in other files
                 LOG.info(f'Restoring backup file for {iface_name}')
                 iface_file = self.netplan_manager.get_path_yaml(iface_name)
             except NetplanFileNotFoundException as err:
@@ -186,7 +186,7 @@ class NetplanInterface(BaseOVSBridge):
             )
         except NetplanFileNotFoundException:
             LOG.info(f'File for {iface_name} not found and will be create')
-            iface_file = self.netpidge configuration data.
+            iface_file = self.netbridge configuration data.
             main_iface_data (Dict): The main interface configuration data.
         """
         LOG.info('Start moving params into bridge config...')
@@ -254,7 +254,7 @@ class NetplanInterface(BaseOVSBridge):
 
     def _is_main_port_file_exist(self) -> bool:
         """Check exist of main_port netpan file and return bool"""
-        LOG.info('Checking netplan file existense for main port...')
+        LOG.info('Checking netplan file existence for main port...')
         try:
             file = self.netplan_manager.get_path_yaml(self.main_port)
         except NetplanFileNotFoundException:

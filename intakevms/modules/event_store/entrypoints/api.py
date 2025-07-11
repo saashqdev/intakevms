@@ -84,11 +84,11 @@ async def download_events(
         result, params=Params(page=1, size=len(result))
     )
 
-    # Создаем CSV файл в памяти
+    # Create a CSV file in memory
     output = io.StringIO()
     writer = csv.writer(output)
 
-    # Записываем заголовки
+    # We write down the headings
     writer.writerow(
         [
             'id',
@@ -101,7 +101,7 @@ async def download_events(
         ]
     )
 
-    # Записываем данные
+    # Recording data
     for event in events_page.items:
         writer.writerow(
             [

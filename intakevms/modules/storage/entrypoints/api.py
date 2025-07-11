@@ -224,7 +224,7 @@ async def create_storage(
     Args:
         data (schemas.CreateStorage): schemas.CreateStorage - this is the data
         that will be passed to the function.
-        user_data: The dependency that check user was authorised
+        user_data: The dependency that check user was authorized
         crud: StorageCrud - this is the dependency that we will inject into the
         function.
 
@@ -256,7 +256,7 @@ async def delete_storage(
 
     Args:
         storage_id (str): str = Query(None, description="Storage id")
-        user_data: The dependency that check user was authorised
+        user_data: The dependency that check user was authorized
         crud: Depends(StorageCrud)
 
     Returns:

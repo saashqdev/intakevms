@@ -206,7 +206,7 @@ class NetplanManager:
         Args:
             bkp_file (Path): Path to file for restore
         """
-        LOG.info(f'Restorting file: {bkp_file} into {self.netplan_dir}')
+        LOG.info(f'Restoring file: {bkp_file} into {self.netplan_dir}')
         shutil.move(
             str(bkp_file), self.netplan_dir / bkp_file.name.rstrip('.BKP')
         )
@@ -228,7 +228,7 @@ class NetplanManager:
         return self._find_iface_yaml_file(iface_name, self.netplan_dir)
 
     def get_bkp_path_yaml(self, iface_name: str) -> Path:
-        """Find backup netplan YAML file in backup dirrectory
+        """Find backup netplan YAML file in backup directory
 
         Args:
             iface_name (str): The name of the network interface to search for.
@@ -255,7 +255,7 @@ class NetplanManager:
         LOG.info(f'Main port file is: {iface_file}')
 
         self._check_file_existence(iface_file)
-        LOG.info('File for main port succesfull rnamed')
+        LOG.info('File for main port successfully renamed')
         return iface_file
 
     def _check_file_existence(self, iface_file: Path) -> None:
@@ -311,7 +311,7 @@ class NetplanManager:
         Returns:
             Path: The path to the file containing the interface configuration.
         """
-        # TODO Подумать, а если файла 2  # noqa: RUF003
+        # TODO Think about it, what if there are 2 files?  # noqa: RUF003
         file_with_iface = None
         for filename in os.listdir(directory):
             input_file = directory / filename

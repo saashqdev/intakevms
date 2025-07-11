@@ -164,7 +164,7 @@ class UserManager(BackgroundTasks):
             raise exceptions.NotSuperUser(message)
 
     @staticmethod
-    def _verificate_user_id(data: Dict) -> None:
+    def _verify_user_id(data: Dict) -> None:
         """Verify if the provided user ID matches the current user ID.
 
         Args:
@@ -211,7 +211,7 @@ class UserManager(BackgroundTasks):
         """
         LOG.info('Start creating user in db.')
         self._check_is_super_user(data)
-        self._verificate_user_id(data)
+        self._verify_user_id(data)
         user_info: UserInfo = self._prepare_user_info(data)
         with self.uow:
             db_user: User = DataSerializer.to_db(user_info._asdict())
@@ -276,7 +276,7 @@ class UserManager(BackgroundTasks):
             UserDoesNotExist: If the user does not exist.
         """
         LOG.info('Start deleting user from db.')
-        self._verificate_user_id(data)
+        self._verify_user_id(data)
         user_id = data.get('user_id', '')
         with self.uow:
             try:

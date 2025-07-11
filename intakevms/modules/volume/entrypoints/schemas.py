@@ -104,7 +104,7 @@ class CreateVolumeFromTemplate(BaseModel):  # noqa: D101
     description: str = Field(max_length=255)
     storage_id: UUID
     template_id: UUID
-    # берем из Template
+    # take from Template
     # format: Literal['qcow2', 'raw']
     # size: int = Field(0, ge=1)
     read_only: Optional[bool] = False

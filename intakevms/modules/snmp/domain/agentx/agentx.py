@@ -26,7 +26,7 @@ from intakevms.modules.snmp.domain.agentx.modules.disks import Disks
 from intakevms.modules.snmp.domain.agentx.modules.network import Networks
 
 LOG = get_logger('domain-manager')
-BASE_OID = '1.3.6.1.4.1.54641'
+BASE_OID = '1.3.6.1.4.1.674'
 UPDATE_FREQ = 10
 
 

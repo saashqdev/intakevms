@@ -865,7 +865,7 @@ class VMServiceLayerManager(BackgroundTasks):
                     str(db_vm.id),
                     user_info.get('id'),
                     self._delete_vm.__name__,
-                    f'VM {db_vm.name} was succesfully deleted.',
+                    f'VM {db_vm.name} was successfully deleted.',
                 )
                 LOG.info('Response on _delete_vm was successfully processed.')
             except exceptions.UnexpectedDataArguments as err:

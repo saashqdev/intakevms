@@ -10,7 +10,7 @@ Classes:
         does not exist on the share.
     NfsIpIsNotAvailableError: Raised when the specified NFS IP address
         is not available.
-    GettinStorageInfoError: Raised when an error occurs while retrieving
+    GettingStorageInfoError: Raised when an error occurs while retrieving
         storage information.
 """
 
@@ -35,11 +35,11 @@ class NfsIpIsNotAvailableError(BaseCustomException):
         super().__init__(message, *args)
 
 
-class GettinStorageInfoError(BaseCustomException):
+class GettingStorageInfoError(BaseCustomException):
     """Raised when an error occurs while retrieving storage information."""
 
     def __init__(self, message: str, *args: Any) -> None:  # noqa: ANN401 # TODO need to parameterize the arguments correctly, in accordance with static typing
-        """Initialize GettinStorageInfoError with optional arguments."""
+        """Initialize GettingStorageInfoError with optional arguments."""
         super().__init__(message, *args)
 
 

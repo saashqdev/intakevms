@@ -133,7 +133,7 @@ class TemplateServiceLayerManager(BackgroundTasks):
             creating_data
         )
 
-        # 2. Получаем volume и storage
+        # 2. We get volume and storage
         volume = self._get_volume_info(input_dto.base_volume_id)
         storage = self._get_storage_info(input_dto.storage_id)
         create_dto = CreateDTO(
@@ -287,7 +287,7 @@ class TemplateServiceLayerManager(BackgroundTasks):
             self._update_and_log_event(
                 orm_template,
                 TemplateStatus.ERROR,
-                'TemplateEditingFaild',
+                'TemplateEditingFailed',
                 str(err),
             )
             LOG.error('Error while editing template', exc_info=True)
@@ -320,7 +320,7 @@ class TemplateServiceLayerManager(BackgroundTasks):
             self._update_and_log_event(
                 orm_template,
                 TemplateStatus.ERROR,
-                'TemplateDeletingFaild',
+                'TemplateDeletingFailed',
                 str(err),
             )
             LOG.error('Error while deleting template', exc_info=True)
@@ -354,13 +354,13 @@ class TemplateServiceLayerManager(BackgroundTasks):
             uow.templates.update(orm_template)
             uow.commit()
 
-        # TODO типизировать event
+        # TODO type event
         event = {
             'object_id': str(orm_template.id),
-            'user_id': str(uuid4()),  # TODO предавать user_id
+            'user_id': str(uuid4()),  # TODO transmit user_id
             'event': event_type,
             'information': f'Status: {status.value}. message: {message}',
-            # 'status': status.value, # TODO передавать статус и убрать его из сообщения  # noqa: E501, RUF003, W505
+            # 'status': status.value, # TODO pass status and remove it from message  # noqa: E501, RUF003, W505
         }
         self.event_store.add_event(**event)
 
@@ -399,7 +399,7 @@ class TemplateServiceLayerManager(BackgroundTasks):
     def _get_related_volumes(
         self, template_id: UUID, storage_id: UUID
     ) -> List[str]:
-        LOG.info(f'Filtering volumes with reff on template {template_id}...')
+        LOG.info(f'Filtering volumes by ref on template {template_id}...')
         related_volumes = list(
             filter(
                 lambda x: x.template_id == template_id,

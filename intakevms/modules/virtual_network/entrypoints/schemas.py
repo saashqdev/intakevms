@@ -61,8 +61,8 @@ class PortGroup(BaseModel):
         # tags = values.get('tags')
         # is_trunk = values.get('is_trunk')
 
-        # It will be return input dict withoth needed value and then pydantic
-        # raise standart pydantic validation error for fields
+        # It will be return input dict with needed value and then pydantic
+        # raises standard pydantic validation error for fields
         if not self.tags or not self.is_trunk:
             return self
 

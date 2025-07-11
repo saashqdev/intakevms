@@ -86,7 +86,7 @@ class Qcow2Template(BaseTemplate):
             )
             raise TemplateFileCreatingException(str(self.path)) from err
 
-        LOG.info(f'Template {self.name} successfull created')
+        LOG.info(f'Template {self.name} successfully created')
         return self._to_json_dict()
 
     def edit(self, editing_data: Dict) -> Dict[str, Any]:
@@ -110,7 +110,7 @@ class Qcow2Template(BaseTemplate):
             LOG.info('Changing description')
             self.description = dto.description
 
-        LOG.info('Template successfull edited')
+        LOG.info('Template successfully edited')
         return self._to_json_dict()
 
     def delete(self) -> None:
@@ -125,7 +125,7 @@ class Qcow2Template(BaseTemplate):
         except OSError as err:
             message = f'Failed to delete template file: {err}'
             raise TemplateFileDeletingException(message) from err
-        LOG.info(f'Template {self.name} successfull deleted')
+        LOG.info(f'Template {self.name} successfully deleted')
 
     def ensure_not_in_use(self) -> None:
         """Check the template not in use by volumes"""
@@ -152,4 +152,4 @@ class Qcow2Template(BaseTemplate):
             message = f'{self.name}. Error: f{err}'
             raise TemplateFileEditingException(message) from err
         LOG.info(f'New name: {new_name}. New path: {new_path}')
-        LOG.info('Templaed name susccessfull edited.')
+        LOG.info('Template name successfully edited.')

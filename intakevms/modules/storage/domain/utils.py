@@ -18,7 +18,7 @@ from intakevms.libs.log import get_logger
 from intakevms.modules.storage.domain.exception import (
     PartitionTableInfoNotFound,
     UnsupportedPartitionTableTypeError,
-    NotFoundDataInPartitonInfoException,
+    NotFoundDataInPartitionInfoException,
 )
 
 LOG = get_logger(__name__)
@@ -157,7 +157,7 @@ class PartedParser:
             List[str]: Data rows extracted from the output.
         """
         LOG.info("Extracting data rows from the 'parted' command output.")
-        partition_table_type = self._get_partiton_table_type(
+        partition_table_type = self._get_partition_table_type(
             parted_print_output
         )
         start_index = self._get_start_index_of_partition_table(
@@ -166,7 +166,7 @@ class PartedParser:
 
         return parted_print_output[start_index:].strip().splitlines()
 
-    def _get_partiton_table_type(self, parted_print_output: str) -> str:
+    def _get_partition_table_type(self, parted_print_output: str) -> str:
         """Find and return type of partition table"""
         partition_table_str = re.compile('Partition Table:').search(
             parted_print_output
@@ -193,13 +193,13 @@ class PartedParser:
 
         part_info = re.compile(headers).search(parted_print_output)
         if not part_info:
-            error = NotFoundDataInPartitonInfoException(str(part_info))
+            error = NotFoundDataInPartitionInfoException(str(part_info))
             LOG.error(str(error))
             raise error
         return part_info.start()
 
     def _get_headers(self, partition_table_type: str) -> str:
-        """Find and return headers of partiton table"""
+        """Find and return headers of partition table"""
         if 'gpt' in partition_table_type:
             headers = self.HEADER_TMP_GPT
         elif 'msdos' in partition_table_type:

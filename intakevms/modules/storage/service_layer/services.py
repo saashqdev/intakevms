@@ -739,7 +739,7 @@ class StorageServiceLayerManager(BackgroundTasks):
         domain_storage = DataSerializer.to_domain(db_storage)
         web_storage = DataSerializer.to_web(db_storage)
         LOG.debug('Serialized db storage for web: %s.' % web_storage)
-        LOG.info('Cast service layer on _create_storage asynchron.')
+        LOG.info('Cast service layer on _create_storage asynchronous.')
         self.service_layer_rpc.cast(
             self._create_storage.__name__, data_for_method=domain_storage
         )

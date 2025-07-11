@@ -55,7 +55,7 @@ CreateInterfaceInfo = namedtuple(
 
 
 class InterfaceStatus(enum.Enum):
-    """Enumeration for interface status.fastork interfaces,
+    """Enumeration for interface status.fastwork interfaces,
 
     including 'new', 'creating', 'available', 'error', and 'deleting'.
     """
@@ -210,7 +210,7 @@ class NetworkServiceLayerManager(BackgroundTasks):
             Dict: A serialized dictionary representing the created bridge's
                 data.
         """
-        self._check_existance_and_port_compabilities(data)
+        self._check_existence_and_port_compatibilities(data)
         create_iface_info = self._validate_create_interface_info(data)
         try:
             with self.uow:
@@ -519,10 +519,10 @@ class NetworkServiceLayerManager(BackgroundTasks):
 
             return DataSerializer.to_web(db_interface)
 
-    def _check_existance_and_port_compabilities(self, data: Dict) -> None:
+    def _check_existence_and_port_compatibilities(self, data: Dict) -> None:
         interfaces = self.get_all_interfaces(data)
         if data['name'] in [bridge['name'] for bridge in interfaces]:
-            error = exceptions.InerfaceAllreadyExistException(data['name'])
+            error = exceptions.InterfaceAlreadyExistException(data['name'])
             LOG.error(error)
             raise error
 

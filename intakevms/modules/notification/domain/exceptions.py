@@ -18,7 +18,7 @@ class NoRecipientsSpecifiedForEmailNotification(BaseCustomException):
 
 
 class NotificationSMTPException(BaseCustomException):
-    """Raised when getting erro while smtp using."""
+    """Raised when getting error while using smtp."""
 
     def __init__(self, message: str, *args: Any) -> None:  # noqa: ANN401 # TODO need to parameterize the arguments correctly, in accordance with static typing
         """Initialize the NotificationSMTPException."""

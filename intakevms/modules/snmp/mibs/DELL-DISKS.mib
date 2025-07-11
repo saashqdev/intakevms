@@ -1,0 +1,8 @@
+DELL-DISKS DEFINITIONS ::= BEGIN
+
+DELL OBJECT IDENTIFIER ::= { iso(1) org(3) dod(6) internet(1) private(4) enterprises(1) 674 }
+
+disks   OBJECT IDENTIFIER ::= {DELL 52}
+
+END
+

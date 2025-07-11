@@ -172,7 +172,7 @@ def test_create_volume_with_too_large_size(
         'description': 'Should fail due to size',
         'storage_id': test_storage['id'],
         'format': 'qcow2',
-        'size': 100**12,  # заведомо превышает допустимое
+        'size': 100**12,  # obviously exceeds the permissible limit
         'read_only': False,
     }
     response = client.post('/volumes/create/', json=volume_data)
@@ -188,7 +188,7 @@ def test_create_volume_with_nonexistent_storage(client: TestClient) -> None:
     volume_data = {
         'name': 'nonexistent-storage-volume',
         'description': 'Attempt to use bad storage_id',
-        'storage_id': str(uuid.uuid4()),  # Нереальный UUID
+        'storage_id': str(uuid.uuid4()),  # Unreal UUID
         'format': 'qcow2',
         'size': 1024,
         'read_only': False,
@@ -198,4 +198,4 @@ def test_create_volume_with_nonexistent_storage(client: TestClient) -> None:
     assert response.status_code == status.HTTP_500_INTERNAL_SERVER_ERROR
     assert (
         'storage' in response.text.lower()
-    )  # Сообщение о несуществующем хранилище  # noqa: RUF003
+    )  # Message about non-existent storage  # noqa: RUF003

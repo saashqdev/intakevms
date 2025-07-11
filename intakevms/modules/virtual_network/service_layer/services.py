@@ -457,7 +457,7 @@ class VirtualNetworkServiceLayerManager(BackgroundTasks):
 
     @periodic_task(interval=30)
     def monitoring(self) -> None:
-        """Check virtual netwok in system and append to db for manipulating
+        """Check virtual network in system and append to db for manipulating
 
         This method get list of virsh virtual networks, compare their with
         db list of virsh network and if network not exit in db, append this
@@ -480,7 +480,7 @@ class VirtualNetworkServiceLayerManager(BackgroundTasks):
         LOG.info('End monitoring')
 
     def _collect_virsh_virt_net_data(self, net_name: str) -> Dict:
-        """Collectin virtual network info from virhs
+        """Collection virtual network info from virsh
 
         For collecting port group info this method use xml_to_jsonable from
         tools.utils
@@ -493,12 +493,12 @@ class VirtualNetworkServiceLayerManager(BackgroundTasks):
         autostart = self.virsh_net_adapter.get_network_autostart(uuid)
         persistent = self.virsh_net_adapter.get_network_persistent(uuid)
 
-        virhs_network_data = cast(
+        virsh_network_data = cast(
             Dict, deserialize_xml(xml, attr_prefix='', cdata_key='')
         )
-        pg_info = virhs_network_data['network'].get('portgroup', [])
+        pg_info = virsh_network_data['network'].get('portgroup', [])
         if isinstance(pg_info, Dict):
-            pg_info = [virhs_network_data['network']['portgroup']]
+            pg_info = [virsh_network_data['network']['portgroup']]
         port_groups = self._prepare_port_groups(pg_info)
 
         return {

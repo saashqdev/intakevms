@@ -54,7 +54,7 @@ class IPManager:
             ),
         )
         if exec_res.stderr:
-            message = f'Failure while gettin interfaces info: {exec_res.stderr}'
+            message = f'Failure while getting interfaces info: {exec_res.stderr}'
             LOG.error(message)
             raise IPManagerException(message)
         interfaces: List[Dict] = deserialize_json(exec_res.stdout)
@@ -141,7 +141,7 @@ class IPManager:
         return exec_res.stdout.strip()
 
     def set_alias(self, iface_name: str, alias: str) -> None:
-        """Sertting alias for interface"""
+        """Setting alias for interface"""
         command = f'ip link set {iface_name} alias "{alias}"'
         exec_res = execute(
             command,
@@ -250,7 +250,7 @@ class IPManager:
 
     @staticmethod
     def check_interface_state(
-        iface_name: str, expected_states: tuple = ('UP', 'DOWN', 'UNKNOW')
+        iface_name: str, expected_states: tuple = ('UP', 'DOWN', 'UNKNOWN')
     ) -> bool:
         """Check the state of the given interface.
 
@@ -313,7 +313,7 @@ class IPManager:
 
         return exec_res.stdout.strip().split('\n')
 
-    # need replce by get_addresses
+    # need replace by get_addresses
     @staticmethod
     def get_iface_ip(port_name: str) -> str:
         """Get a port's IP address.
@@ -426,7 +426,7 @@ class IPManager:
         )
         addresses: Tuple = tuple(dr.get('gateway') for dr in default_routes)
 
-        self._check_defaoult_gateways(addresses)
+        self._check_default_gateways(addresses)
         LOG.info(f'Default route is: {addresses[0]}')
         return str(addresses[0])
 
@@ -465,7 +465,7 @@ class IPManager:
         """Get network interfaces in JSON format.
 
         This method retrieves the list of network interfaces using the IP
-        commandand returns it as a Dict.
+        command returns it as a Dict.
 
         Returns:
             Dict: JSON object representing network interfaces.
@@ -487,7 +487,7 @@ class IPManager:
         ifaces: Dict = deserialize_json(exec_res.stdout)
         return ifaces
 
-    def _check_defaoult_gateways(self, addresses: Tuple) -> None:
+    def _check_default_gateways(self, addresses: Tuple) -> None:
         if len(addresses) == 1:
             return
 

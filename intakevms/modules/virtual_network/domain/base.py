@@ -109,7 +109,7 @@ class BaseVirtualNetwork(metaclass=abc.ABCMeta):
         """Abstract method to delete a port group from virtual network by name.
 
         Args:
-            data (Dict): Dictopnary woth the name of the port group to delete.
+            data (Dict): Dictionary with the name of the port group to delete.
         """
         raise NotImplementedError
 
