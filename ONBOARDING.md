@@ -1,116 +1,95 @@
 OnBoarding
 ----------
 
-Прежде чем начать работу над *intakevms*, мы рекомендуем 
-ознакомиться с материалом по *Domain Driven Design (DDD)*, который
-мы использовали при разработке.
+Before you start working on *inTakevms*, we recommend that you read the material on *Domain Driven Design (DDD)*, which we used during development.
 
-### Книги
-* "Domain-Driven Design: Tackling Complexity in the Heart 
-of Software" Эрика Эванса - классический ресурс, который 
-представляет общие принципы *DDD*.
-* "Паттерны разработки на Python: TDD, DDD и 
-событийно-ориентированная архитектура." Гарри Персиваля и 
-Боба Грегори - отличный материал, который представляет
-примеры паттернов реализованных на python.
+### Books
+* "Domain-Driven Design: Tackling Complexity in the Heart of Software" Eric Evans is a classic resource that introduces the general principles of *DDD*.
+* "Python Development Patterns: TDD, DDD, and Event-Driven Architecture" by Harry Percival and Bob Gregory is a great resource that presents examples of patterns implemented in python.
 
-### Технологии
-* [RabbitMQ](https://www.rabbitmq.com/tutorials/tutorial-one-python.html) - очереди сообщений.
-* [PostgreSQL](https://www.postgresql.org/docs/current/) - база данных.
-* [FastAPI](https://fastapi.tiangolo.com/) - фреймворк веб приложения.
+### Technologies
+* [RabbitMQ](https://www.rabbitmq.com/tutorials/tutorial-one-python.html) - message queues.
+* [PostgreSQL](https://www.postgresql.org/docs/current/) - database.
+* [FastAPI](https://fastapi.tiangolo.com/) - web application framework.
 
-### Паттерны
-* [RPC](https://www.rabbitmq.com/tutorials/tutorial-six-python.html) - способ 
-общения между разными уровнями модуля.
-* [AbstractFactory](https://habr.com/ru/post/465835/) - используется
-для унифицированного выбора домена.
-* [Repository](https://learn.microsoft.com/ru-ru/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
-* [UnitOfWork](https://learn.microsoft.com/ru-ru/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
+### Patterns
+* [RPC](https://www.rabbitmq.com/tutorials/tutorial-six-python.html) - a way of communicating between different levels of a module.
+* [AbstractFactory](https://habr.com/ru/post/465835/) - used for unified domain selection.
+* [Repository](https://learn.microsoft.com/en-en/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
+* [UnitOfWork](https://learn.microsoft.com/en-en/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 
-### Библиотеки
+### Libraries
 * [Toml](https://toml.io/en/)
 * [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 * [Requests](https://requests.readthedocs.io/en/latest/)
 * [Pydantic](https://docs.pydantic.dev/)
 
-### Структура модуля
-- adapters - реализация работы с базой данных.
-  - orm.py - реализация таблиц модуля в
-    [императивном стиле](https://docs.sqlalchemy.org/en/20/orm/mapping_styles.html#imperative-mapping).
-  - repository.py - абстракция хранения данных.
-  - serializer.py - сериализатор данных из одного слоя в другой.
-- domain - реализация работы с системой в той или иной области.
-  - base.py - базовая модель работы домена.
-  - manager.py - запуск rpc сервера для прослушивания задач.
-  - model.py - реализация абстрактной фабрики, которая выбирает
-    какой домен будет выполнять задачу, в зависимости от
-    пришедшей задачи.
-- entrypoints - реализация интерфейса модуля.
-  - api.py - fastapi router в котором реализованы
-    обработчики запросов.
-  - crud.py - реализация класса общения между слоями, который
-    вызывает rpc запросы и ожидает ответа.
-  - schemas.py - pydantic модели для валидации данных.
-- service layer - слой в котором реализована бизнес логика.
-  - manager.py - запуск rpc сервера для прослушивания задач.
-  - service_layer.py - реализация бизнес логики.
-  - unit_of_work.py - абстракция идеи атомарных операций.
-- config.py - конфигурация и константы необходимые в работе модуля.
-- <имя_модуля>-service-layer.service - демон для запуска сервисного слоя.
-- <имя_модуля>-domain.service - демон для запуска доменного слоя.
+### Module structure
+- adapters - implementation of work with the database.
+  - orm.py - implementation of module tables in [imperative style](https://docs.sqlalchemy.org/en/20/orm/mapping_styles.html#imperative-mapping).
+  - repository.py - data storage abstraction.
+  - serializer.py - serializer of data from one layer to another.
+- domain - implementation of work with the system in a particular area.
+  - base.py - basic model of domain operation.
+  - manager.py - Starting an rpc server to listen for tasks.
+  - model.py - implementation of an abstract factory that selects which domain will perform a task, depending on the incoming task.
+- entrypoints - module interface implementation.
+  - api.py - fastapi router in which request handlers are implemented.
+  - crud.py - implementation of a class for communication between layers, which calls rpc requests and waits for a response.
+  - schemas.py - pydantic models for data validation.
+- service layer - the layer in which business logic is implemented.
+  - manager.py - Starting an rpc server to listen for tasks.
+  - service_layer.py - implementation of business logic.
+  - unit_of_work.py - abstraction of the idea of ​​atomic operations.
+- config.py - configuration and constants required for the module to operate.
+- <module_name>-service-layer.service - daemon to run the service layer.
+- <module_name>-domain.service - daemon for running the domain layer.
 
-### Архитектура работы модуля
+### Module operation architecture
 ![](module_architecture.png)
 
 
-### Таблица, что реализовано в проекте
-##### Модуль Storage
-| Функционал |  NFS   | LocalFS |
+### Table of what is implemented in the project
+##### Module Storage
+| Functional |  NFS   | LocalFS |
 |:-----------|:------:|--------:|
-| Создание   |   ✓    |       ✓ |
-| Удаление   |   ✓    |       ✓ |
-| Мониторинг |   ✓    |       ✓ |
+| Creation   |   ✓    |       ✓ |
+| Removal    |   ✓    |       ✓ |
+| Monitoring |   ✓    |       ✓ |
 
-##### Модуль Volume
-| Функционал |  NFS   | LocalFS |
+##### Module Volume
+| Functional |  NFS   | LocalFS |
 |:-----------|:------:|--------:|
-| Создание   |   ✓    |       ✓ |
-| Удаление   |   ✓    |       ✓ |
-| Расширить  |   ✓    |       ✓ |
-| Изменить   |   ✓    |       ✓ |
-| Мониторинг |   ✓    |       ✓ |
+| Creation   |   ✓    |       ✓ |
+| Removal    |   ✓    |       ✓ |
+| Expand     |   ✓    |       ✓ |
+| Change     |   ✓    |       ✓ |
+| Monitoring |   ✓    |       ✓ |
 
-##### Модуль Image
-| Функционал |  NFS   | LocalFS |
+##### Module Image
+| Functional |  NFS   | LocalFS |
 |:-----------|:------:|--------:|
-| Создание   |   ✓    |       ✓ |
-| Удаление   |   ✓    |       ✓ |
-| Изменить   |   ✓    |       ✓ |
-| Мониторинг |   ✓    |       ✓ |
+| Creation   |   ✓    |       ✓ |
+| Removal    |   ✓    |       ✓ |
+| Change     |   ✓    |       ✓ |
+| Monitoring |   ✓    |       ✓ |
 
-##### Модуль Virtual Machines
-| Функционал     | Libvirt |
+##### Module Virtual Machines
+| Functional     | Libvirt |
 |:---------------|--------:|
-| Создание       |       ✓ |
-| Удаление       |       ✓ |
-| Редактирование |       ✓ |
-| Запуск         |       ✓ |
-| Остановка      |       ✓ |
-| Мониторинг     |       ✓ |
+| Creation       |       ✓ |
+| Removal        |       ✓ |
+| Editing        |       ✓ |
+| Launch         |       ✓ |
+| Stop           |       ✓ |
+| Monitoring     |       ✓ |
 
-### [Как внести свой вклад в проект](CONTRIBUTING.md)
+### [How to contribute to the project](CONTRIBUTING.md)
 
-### Скоро здесь будет документация API
+### API documentation coming soon
 
-### Терминология
+### Terminology
 
-- Repository (Хранилище) - это механизм для сохранения и 
-извлечения сущностей из базы данных или другого хранилища. 
-Репозиторий обеспечивает инкапсуляцию доступа к данным и скрывает
-детали хранения данных от других компонентов системы.
+- Repository (Storage) - is a mechanism for storing and retrieving entities from a database or other storage. A repository provides encapsulation of data access and hides the details of data storage from other components of the system.
 
-- Service (Сервис) - это объект, который выполняет операции в 
-предметной области, которые не могут быть выполнены с помощью 
-сущностей или значений. Сервисы используются для моделирования
-бизнес-процессов или для выполнения действий, которые не 
-относятся к определенной сущности.
+- Service (Service) - is an object that performs operations in the subject area that cannot be performed by entities or values. Services are used to model business processes or to perform actions that do not belong to a specific entity.

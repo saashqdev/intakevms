@@ -1,8 +1,8 @@
-Перейти в директорию проекта
+Go to the project directory
 ``` cd /opt/virtman/intakevms```
 
-Активировать venv
+Activate venv
 ```source venv/biv/activate```
 
-Запустить проверку mypy
+Run mypy check
 ```mypy .```

@@ -27,7 +27,7 @@ log() {
 
     # show message
     echo -e "${timestamp} ${log_color}${log_message}${NC}"
-    # wright into log file
+    # write into log file
     echo "${timestamp} ${log_message}" >> "$LOG_FILE"
 }
 
@@ -140,20 +140,20 @@ verify_user_data() {
         if [[ ${#PASSWORD} -lt $MIN_PASSWORD_LENGTH ]]; then
             stop_script "User password is too short. Minimum length is $MIN_PASSWORD_LENGTH characters. Current length: ${#PASSWORD}"
         else
-            stop_script "User password is not valid or not specified. Installation script stoped"
+            stop_script "User password is not valid or not specified. Installation script stopped"
         fi
     fi
 }
 
 # Generate SSL self-signed certificate
 generate_certificate() {
-    # Параметры
+    # Options
     local days=36500
     local key_file="$PROJECT_PATH/key.pem"
     local cert_file="$PROJECT_PATH/cert.pem"
     local config_file="$PROJECT_PATH/openssl.cnf"
 
-    # Проверка наличия конфигурационного файла
+    # Checking for the presence of a configuration file
     if [ ! -f "$config_file" ]; then
         stop_script "Configuration file $config_file not found!"
     fi
@@ -276,7 +276,7 @@ install_multipath(){
     check_or_install "multipath-tools"
 }
 
-# Функция для определения переменной ARCH
+# Function for defining ARCH variable
 set_arch() {
     log $CYAN "Setting architecture"
     if [ "$ARCH" = "aarch64" ]; then
@@ -297,13 +297,13 @@ install_docker() {
         return
     fi
 
-    # Устанавливаем необходимые зависимости
+    # Install the necessary dependencies
     execute "sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y" "Installing necessary dependencies for Docker"
-    # Добавляем ключ GPG для репозитория Docker
+    # Adding a GPG key for the Docker repository
     execute "curl -fsSL https://download.docker.com/linux/$OS_TYPE/gpg | sudo apt-key add -" "Adding GPG key for Docker repository"
-    # Добавляем репозиторий Docker
+    # Adding a Docker Repository
     execute "echo 'deb [arch=$PROC] https://download.docker.com/linux/$OS_TYPE $(lsb_release -cs) stable' | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null" "Adding Docker repository"
-    # Обновляем информацию о пакетах и устанавливаем Docker
+    # Update package information and install Docker
     execute "sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io -y" "Installing Docker"
 }
 
@@ -556,7 +556,7 @@ WantedBy=multi-user.target
   printf ">>>>>> ${GREEN}Successfully added service to systemd/system${NC}\n"
 }
 
-# Installng prometheus
+# Installing prometheus
 install_prometheus() {
   local DEPENDENCY="prometheus"
   local VERSION=$(grep "^${DEPENDENCY}==" "${DEPENDENCIES_FILE}" | sed "s/^${DEPENDENCY}==//")
@@ -717,7 +717,7 @@ install_documentation(){
 process_services() {
   go_to_home_dir
 
-  # Поиск всех файлов с расширением .service в заданной директории и выполнение команд для каждого из них
+  # Search for all files with the .service extension in a given directory and execute commands for each of them
   for file in $(sudo find $PROJECT_PATH/ -name *.service); do
     add_service "$file"
     enable_service `basename $file`
@@ -742,7 +742,7 @@ print(hash)
 
 # Create default user
 create_default_user() {
-    local message="Createing default user"
+    local message="Creating default user"
     local command="sudo docker exec -it $DOCKER_CONTAINER_NAME \
         psql -U $USER -d $DATABASE_NAME -c \"INSERT INTO users \
         (id, username, password) \
@@ -753,7 +753,7 @@ create_default_user() {
 }
 
 # ============ Printing the final message =================
-# Функция для централизованного вывода текста
+# Function for centralized text output
 print_at_center() {
     local text=$1
     local color=${2:-"GREEN"}
@@ -769,7 +769,7 @@ print_at_center() {
     esac
 }
 
-# Функция для вывода текста с отступом
+# Function for outputting text with indentation
 print_with_padding() {
     local text=$1
     local padding=$2
@@ -777,13 +777,13 @@ print_with_padding() {
     printf "%*s%s\n" "$padding" "" "$text"
 }
 
-# Функция для извлечения значения из конфигурационного файла
+# Function to retrieve value from configuration file
 extract_value_from_config() {
     local key=$1
     grep -A 2 "web_app" "$PROJECT_PATH/project_config.toml" | grep "$key" | cut -d "=" -f2 | tr -d " '"
 }
 
-# Основная функция для вывода итогового сообщения
+# The main function for outputting the final message
 print_final_message() {
     local IP=$(extract_value_from_config "host")
     local PORT=$(extract_value_from_config "port")
@@ -799,7 +799,7 @@ print_final_message() {
 
     print_at_center "CONGRATULATIONS!"
     printf "\n"
-    print_at_center "intakevms HAS BEEN INSTALLED"
+    print_at_center "inTakevms HAS BEEN INSTALLED"
     printf "\n"
 
     local api_docs_url="https://${IP}:${PORT}/swagger/"
