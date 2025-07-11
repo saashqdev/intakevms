@@ -39,7 +39,7 @@ class UnsupportedPartitionTableTypeError(BaseCustomException):
 
 
 class PartitionTableInfoNotFound(BaseCustomException):
-    """Exception raised when an partition table not foun in parted output."""
+    """Exception raised when an partition table not found in parted output."""
 
     def __init__(self, message: str, *args: Any) -> None:  # noqa: ANN401 # TODO need to parameterize the arguments correctly, in accordance with static typing
         """Initialize the UnsupportedPartitionTableTypeError."""

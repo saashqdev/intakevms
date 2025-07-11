@@ -97,7 +97,7 @@ def execute(
         >>> print(result.stdout)
     """
     cmd: List[str] = list(args)
-    if params.run_as_root and hasattr(os, 'geteuid') and os.geteuid() != 0:
+    if params.run_as_root and hasattr(os, 'getuid') and os.getuid() != 0:
         cmd = [params.root_helper, *cmd]
 
     cmd_str = ' '.join(cmd)

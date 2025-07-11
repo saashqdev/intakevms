@@ -64,7 +64,7 @@ class FSBackuper(BaseBackuper):
         """Retrieve a list of snapshots.
 
         This abstract method should be implemented by subclasses to fetch
-        metadatafor available snapshots in the repository.
+        metadata for available snapshots in the repository.
 
         Returns:
             List[Dict]: A list of snapshot metadata, where each snapshot is

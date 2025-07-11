@@ -116,7 +116,7 @@ class PrometheusBaseClient:
     service and configures retries for failed requests.
 
     Attributes:
-        adpter (HTTPAdapter): Adapter for configuring retries on HTTP requests.
+        adapter (HTTPAdapter): Adapter for configuring retries on HTTP requests.
         session (requests.Session): Session object for making HTTP requests.
         source_url (str): Base URL of the Prometheus service.
     """
@@ -128,6 +128,6 @@ class PrometheusBaseClient:
             retries (int): The number of retries for failed HTTP requests.
                 Defaults to 3.
         """
-        self.adpter = HTTPAdapter(max_retries=retries)
+        self.adapter = HTTPAdapter(max_retries=retries)
         self.session = requests.Session()
         self.source_url = get_prometheus_url()

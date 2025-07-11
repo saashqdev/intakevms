@@ -114,7 +114,7 @@ class BaseRabbitRPCClient(BaseRabbitRPC, BaseRPCClient):
         *,
         priority: int = 1,
         time_limit: int = 100,
-    ) -> Any:  # noqa: ANN401 TODO need to spicify response by pydantic
+    ) -> Any:  # noqa: ANN401 TODO need to specify response by pydantic
         """Send a request to the RPC server and wait for a response.
 
         Args:

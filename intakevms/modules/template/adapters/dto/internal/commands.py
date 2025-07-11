@@ -44,6 +44,6 @@ class EditTemplateDomainCommandDTO(BaseModel):  # noqa: D101
     description: Optional[str]
 
 
-class DeleteTemplateDomaiCommandDTO(BaseModel):  # noqa: D101
+class DeleteTemplateDomainCommandDTO(BaseModel):  # noqa: D101
     id: UUID
 

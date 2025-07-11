@@ -56,7 +56,7 @@ class RequestEditTemplate(APIConfigRequestModel):
     description: Optional[str] = Field(None, max_length=255)
 
 
-class RequetsCreateVolumeFromTemplate(APIConfigRequestModel):
+class RequestsCreateVolumeFromTemplate(APIConfigRequestModel):
     """Schema for creating a volume from a template.
 
     Attributes:
