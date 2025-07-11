@@ -1,5 +1,5 @@
 # Python version
-target-version = "py38"
+target-version = "py312"
 
 # Not linting and formatting files from .gitignore
 respect-gitignore = true
@@ -17,7 +17,7 @@ indent-style = "space"
 # Automatically detect the appropriate line ending.
 line-ending = "auto"
 
-# Not formattin in one line list of variables
+# Not formatting in one line list of variables
 skip-magic-trailing-comma = false
 
 # Enable docstring formatting
@@ -27,7 +27,7 @@ docstring-code-line-length = 88
 
 # Linter configuration
 [lint]
-# Adding lineter rules
+# Adding linter rules
 select = [
     "F",     # pyflakes
     "E",     # pycodestyle errors 
@@ -108,16 +108,16 @@ ignore = [
 
     # DISABLED WHILE UNUSE THIS CHECKING FOR PROJECT
     "UP",  # pyupgrade DISABLE WHILE WE DON'T USE pyupgrade
-    "YTT", # flake8-2020 (YTT) DISABEL WHILE WE DON'T USE python version >= 3.10
-    "DTZ", # flake8-datetimez DISABEL WHILE WE DON'T NEED WORKING WITH TIME ZONE
+    "YTT", # flake8-2020 (YTT) DISABLE WHILE WE DON'T USE python version >= 3.10
+    "DTZ", # flake8-datetimez DISABLE WHILE WE DON'T NEED WORKING WITH TIME ZONE
     "T10", # flake8-debugger
     "DJ",  # flake8-django WE DON'T USE DJANGO
     "PT",  # flake8-pytest-style WHILE WE DO NOT USE PYTEST
     "PD",  # pandas-vet WE DON'T USE PANDAS
     "NPY", # NumPy-specific rules WE DON'T USE NumPy
-    "FA",  # flake8-future-annotations. It will be usefull for migratiom to new python versions
+    "FA",  # flake8-future-annotations. It will be useful for migration to new python versions
 
-    "FA",  # flake8-future-annotations. It will be usefull for migratiom to new python versions
+    "FA",  # flake8-future-annotations. It will be useful for migration to new python versions
 
 
     # DISABLE WHILE NOT DISCUSS ABOUT ENABLING THIS RULE OR NOT HAVE UNDERSTANDING THIS RULE

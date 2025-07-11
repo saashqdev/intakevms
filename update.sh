@@ -17,30 +17,30 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 #===================== GIT MANAGER =================
-# Проверка наличия утилиты jq
+# Checking for jq utility availability
 if ! command -v jq &> /dev/null; then
-    echo "Утилита jq не установлена. Установите ее для работы скрипта."
+    echo "The jq utility is not installed. Install it for the script to work.."
     exit 1
 fi
 
-# Установите переменные для репозитория и API GitHub
+# Set up variables for the GitHub repository and API
 REPO_OWNER="OWNER_NAME"
 REPO_NAME="REPO_NAME"
 API_URL="https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/branches"
 
-# Получение списка веток с помощью API GitHub
+# Getting a list of branches using the GitHub API
 branches=$(curl -s "$API_URL")
 version_branches=()
 
-# Функция для проверки соответствия имени ветки маске x.x.x
+# Function to check if a branch name matches the x.x.x mask
 function is_version_branch {
     [[ $1 =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
 }
 
-# Функция для обновления миграций alembic
+# Function to update alembic migrations
 update_migrations(){
   message="FAILURE IN UPDATING ALEMBIC MIGRATIONS"
-  sudo alembic upgrade head || { show_allert_message "$message"; return; }
+  sudo alembic upgrade head || { show_alert_message "$message"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY UPDATED ALEMBIC MIGRATIONS${NC}\n"
 }
 
@@ -50,25 +50,25 @@ while IFS= read -r branch; do
     fi
 done < <(echo "$branches" | jq -r '.[].name')
 
-# Подтягиваем новые ветки, если есть
+# We pull up new branches, if there are any
 git pull
 
-# Вывод списка подходящих имен веток
-echo "Доступные версии для обновления:"
+# List matching branch names
+echo "Available versions for update:"
 
 select branch in "${version_branches[@]}"; do
     if [ -n "$branch" ]; then
-        echo "Вы выбрали ветку: $branch"
+        echo "You have selected a branch: $branch"
         git checkout "$branch"
-        echo "Применение миграций Alembic для новой ветки: $branch"
+        echo "Applying Alembic Migrations to a New Branch: $branch"
         update_migrations
         break
     else
-        echo "Неверный выбор. Пожалуйста, выберите номер ветки из списка."
+        echo "Invalid selection. Please select a branch number from the list."
     fi
 done
 
-show_allert_message() {
+show_alert_message() {
   local message=$1
   
   printf ">>>>>> ${RED}$message${NC}\n"
@@ -78,7 +78,7 @@ show_allert_message() {
 # Go to home dir of new user
 go_to_home_dir(){
   message="FAILURE IN GOING TO HOME DIR"
-  cd $USER_PATH || { show_allert_message "$message"; return; }
+  cd $USER_PATH || { show_alert_message "$message"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY WENT TO HOME DIR${NC}\n"
 }
 
@@ -86,25 +86,25 @@ go_to_home_dir(){
 
 add_service(){
   message="FAILURE IN ADDING SERVICE ${1} TO SYSTEMD/SYSTEM"
-  sudo cp "$1" /etc/systemd/system/ || { show_allert_message "$message"; return; }
+  sudo cp "$1" /etc/systemd/system/ || { show_alert_message "$message"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY ADDED SERVICE ${1} TO SYSTEMD/SYSTEM${NC}\n"
 }
 
 enable_service(){
   message="FAILURE IN ENABLING SERVICE ${1}"
-  sudo systemctl enable "$1" || { show_allert_message "$message"; return; }
+  sudo systemctl enable "$1" || { show_alert_message "$message"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY ENABLED SERVICE ${1}${NC}\n"
 }
 
 start_service(){
   message="FAILURE IN STARTING SERVICE ${1}"
-  sudo systemctl start "$1" || { show_allert_message "$message"; return; }
+  sudo systemctl start "$1" || { show_alert_message "$message"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY STARTED SERVICE ${1}${NC}\n"
 }
 
 restart_service(){
   message="FAILURE IN RESTARTING SERVICE ${1}"
-  sudo systemctl restart "$1" || { show_allert_message "$message"; return; }
+  sudo systemctl restart "$1" || { show_alert_message "$message"; return; }
   printf ">>>>>> ${GREEN}SUCCESSFULLY RESTARTED SERVICE ${1}${NC}\n"
 }
 

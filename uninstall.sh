@@ -18,49 +18,49 @@ check_existence() {
   local entity_count=$2
 
   if [ $entity_count -gt 0 ]; then
-    printf ">>>>>> ${CYAN}В вашей системе есть созданные $entity_name.${NC}\n"
-    printf "${CYAN}Продолжение удаления приведет к потере всех данных.${NC}\n"
-    printf "${CYAN}Что вы хотите сделать дальше?\n"
-    printf "${CYAN}1. Продолжить удаление.\n"
-    printf "${CYAN}2. Остановить процесс удаления.\n${NC}"
+    printf ">>>>>> ${CYAN}There are existing entities in your system $entity_name.${NC}\n"
+    printf "${CYAN}Continuing to delete will result in loss of all data.${NC}\n"
+    printf "${CYAN}What do you want to do next?\n"
+    printf "${CYAN}1. Continue deletion.\n"
+    printf "${CYAN}2. Stop the removal process.\n${NC}"
 
     choice=""
     while [ "$choice" != "1" ] && [ "$choice" != "2" ]; do
-      read -p "Выберите действие (введите 1 или 2): " choice
+      read -p "Select action (enter 1 or 2): " choice
 
       case $choice in
-        1) printf "Продолжение удаления...\n";;
-        2) printf "Процесс удаления остановлен.\n"; exit 1;;
-        *) printf "${RED}Некорректный ввод. Пожалуйста, введите 1 или 2.${NC}\n";;
+        1) printf "Continue deletion...\n";;
+        2) printf "The removal process has stopped.\n"; exit 1;;
+        *) printf "${RED}Incorrect input. Please enter 1 or 2.${NC}\n";;
       esac
     done
   else
-    printf ">>>>>> ${CYAN}В вашей системе отсутствуют созданные $entity_name.${NC}\n"
+    printf ">>>>>> ${CYAN}There are no created files in your system. $entity_name.${NC}\n"
   fi
 }
 
 # ========= Check Volume existence =========
 check_volume_existence() {
   local volume_count=$(sudo docker exec postgres psql -U $USER -d intakevms -t -c "SELECT COUNT(*) FROM volumes;")
-  check_existence "виртуальные диски" $volume_count
+  check_existence "virtual disks" $volume_count
 }
 
 # ========= Check Image existence =========
 check_image_existence() {
   local image_count=$(sudo docker exec postgres psql -U $USER -d intakevms -t -c "SELECT COUNT(*) FROM images;")
-  check_existence "виртуальные образы" $image_count
+  check_existence "virtual images" $image_count
 }
 
 # ========= Check Storage existence =========
 check_storage_existence() {
   local storage_count=$(sudo docker exec postgres psql -U $USER -d intakevms -t -c "SELECT COUNT(*) FROM storages;")
-  check_existence "хранилища" $storage_count
+  check_existence "storage" $storage_count
 }
 
 # ========= Check VM existence =========
 check_vm_existence() {
   local vm_count=$(sudo docker exec postgres psql -U $USER -d intakevms -t -c "SELECT COUNT(*) FROM virtual_machines;")
-  check_existence "виртуальные машины" $vm_count
+  check_existence "virtual machines" $vm_count
 }
 
 check_image_existence
@@ -134,17 +134,17 @@ remove_requirements_for_libvirt
 
 # Removing PostgreSQL Docker
 remove_postgresql_docker(){
-  sudo docker stop postgres || { printf ">>>>>> ${RED}FAILURE IN STOPING POSTGRESQL DOCKER${NC}\n"; return; }
+  sudo docker stop postgres || { printf ">>>>>> ${RED}FAILURE IN STOPPING POSTGRESQL DOCKER${NC}\n"; return; }
   sudo docker rm postgres || { printf ">>>>>> ${RED}FAILURE IN REMOVING POSTGRESQL DOCKER${NC}\n"; return; }
-  printf ">>>>>> ${GREEN}SUCCESSFULLY REMOVED POSTGRESQL DOCER${NC}\n"
+  printf ">>>>>> ${GREEN}SUCCESSFULLY REMOVED POSTGRESQL DOCKER${NC}\n"
 }
 remove_postgresql_docker
 
 # Removing RabbitMQ Docker
 remove_rabbitmq_docker(){
-  sudo docker stop rabbit || { printf ">>>>>> ${RED}FAILURE IN STOPING RABBITMQ DOCKER${NC}\n"; return; }
+  sudo docker stop rabbit || { printf ">>>>>> ${RED}FAILURE IN STOPPING RABBITMQ DOCKER${NC}\n"; return; }
   sudo docker rm rabbit || { printf ">>>>>> ${RED}FAILURE IN REMOVING RABBITMQ DOCKER${NC}\n"; return; }
-  printf ">>>>>> ${GREEN}SUCCESSFULLY REMOVED RABBITMQ DOCER${NC}\n"
+  printf ">>>>>> ${GREEN}SUCCESSFULLY REMOVED RABBITMQ DOCKER${NC}\n"
 }
 remove_rabbitmq_docker
 
@@ -205,13 +205,13 @@ umount_project_paths
 
 # ========= Remove project folder =========
 remove_project_folder(){
-  # Проверка наличия папки
+  # Checking if a folder exists
   if [ -d "$FOLDER_PATH" ]; then
-      # Выполнение команды удаления папки
+      # Executing the command to delete a folder
       sudo rm -rf "$FOLDER_PATH"
-      echo "Папка $FOLDER_PATH успешно удалена."
+      echo "Folder $FOLDER_PATH successfully deleted."
   else
-      echo "Папка $FOLDER_PATH не найдена."
+      echo "Folder $FOLDER_PATH not found."
   fi
 }
 remove_project_folder
@@ -219,9 +219,9 @@ remove_project_folder
 remove_documentation_repository(){
   if [ -d "$DOCS_PROJECT_PATH" ]; then
       sudo rm -rf "$DOCS_PROJECT_PATH"
-      echo "Папка $DOCS_PROJECT_PATH успешно удалена."
+      echo "Folder $DOCS_PROJECT_PATH successfully deleted."
   else
-      echo "Папка $DOCS_PROJECT_PATH не найдена."
+      echo "Folder $DOCS_PROJECT_PATH not found."
   fi
 }
 remove_documentation_repository

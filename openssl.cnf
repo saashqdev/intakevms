@@ -4,12 +4,12 @@ x509_extensions = v3_req
 prompt = no
 
 [req_distinguished_name]
-C = RU
-ST = Moscow
-L = Moscow
-O = AERODISK
-OU = vAIR
-CN = My Server
+C = CA
+ST = Ontario
+L = Fort Erie
+O = INTAKEVMS
+OU = SaasHQ
+CN = intakevms
 
 [v3_req]
 keyUsage = critical, digitalSignature, keyEncipherment
