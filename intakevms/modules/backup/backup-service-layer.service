@@ -1,5 +1,5 @@
 [Unit]
-Description=Backuo service layer for manipulating backup domain
+Description=Backup service layer for manipulating backup domain
 Requires=docker.service
 After=network.target docker.service 
 

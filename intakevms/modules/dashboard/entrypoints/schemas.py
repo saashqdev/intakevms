@@ -128,7 +128,7 @@ class NodeInfo(BaseModel):
         storage (StoragesData): Storage usage data.
         iops (IopsData): IOPS data.
         io_latency (IOLatency): IO latency data.
-        bandwith_data (BandWithData): Bandwidth usage data.
+        bandwidth_data (BandWithData): Bandwidth usage data.
         disk_data (DiskInfo): Disk read/write data.
     """
 
@@ -137,5 +137,5 @@ class NodeInfo(BaseModel):
     storage: StoragesData
     iops: IopsData
     io_latency: IOLatency
-    bandwith_data: BandWithData
+    bandwidth_data: BandWithData
     disk_data: DiskInfo

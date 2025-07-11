@@ -108,7 +108,7 @@ class SqlAlchemyRepository(AbstractRepository):
         """
         with self.engine.connect().execution_options(
             isolation_level='AUTOCOMMIT'
-        ) as conn:  # connect withot transaction
+        ) as conn:  # connect without transaction
             # Stop all connections
             conn.execute(
                 text("""

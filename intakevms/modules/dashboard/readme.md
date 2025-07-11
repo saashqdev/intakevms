@@ -1,64 +1,64 @@
 # Prometheus install
 
-1. Скачть tar.gz файл с [сайта](https://prometheus.io/download/)
+1. Download tar.gz file from [Prometheus](https://prometheus.io/download/)
 
-        Пример: prometheus-2.37.4.linux-amd64.tar.gz
+        An example: prometheus-2.37.4.linux-amd64.tar.gz
 
-2. Распаковать скаченный архив
+2. Unzip the downloaded archive
     ```bash
 	tar -xvf prometheus-2.37.4.linux-amd64.tar.gz 
     ```
 
-3. Создать два каталога:
-    - в папке `/var/db/prometheus` будет храниться база данных prometheus
-    - в папке `/etc/prometheus` будут храниться конфигурационные файлы prometheus
+3. Create two directories:
+    - folder1 `/var/db/prometheus` the prometheus database will be stored
+    - folder2 `/etc/prometheus` prometheus configuration files will be stored
 
     ```bash
     sudo mkdir -p /var/db/prometheus /etc/prometheus
     ```
 
-4. Переходим в папку с распакованным прометеем:
+4. Go to the folder with the unpacked Prometheus:
     ```bash
     cd prometheus-2.37.4.linux-amd64
     ```
 
-5. перемещаем файлы prometheus и promtool в /usr/lib/bin
+5. Move prometheus and promtool files to /usr/lib/bin
     ```bash
     sudo mv prometheus promtool /usr/local/bin/
     ```
 
-6. Перемещаем папки console/ console_libraries/ в /etc/prometheus/
+6. Moving folders console/ console_libraries/ to /etc/prometheus/
     ```bash
     sudo mv consoles console_libraries /etc/prometheus/
     ```
 
-7. Перемещаем файл prometheus.yaml в /etc/prometheus/
+7. Move the prometheus.yaml file to /etc/prometheus/
     ```bash
     sudo mv prometheus.yml /etc/prometheus/
     ```
 
-8. Добавляем права на папку для нашего юзера virtman
+8. Adding rights to the folder for our user virtman
     ```bash
     sudo chown -R virtman:virtman /etc/prometheus/ /var/db/prometheus 
     ```
 
-9. Архив и распакованную папку можно удалить:
+9. The archive and the unpacked folder can be deleted:
     ```bash
     cd ..
     rm -rf prometheus*
     ```
 
-10. Проверяем версию прометея:
+10. Checking the Prometheus version:
     ```bash
     prometheus --version
     ```
 
-11. Создадим демона для прометея:
+11. Let's create a demon for Prometheus:
     ```bash
     sudo vim /etc/systemd/system/prometheus.service
     ```
 
-    и записываем туда даные:
+    and write the data there:
 ```
 [Unit]
 Description=Prometheus
@@ -83,60 +83,60 @@ ExecStart=/usr/local/bin/prometheus \
   --web.enable-lifecycle
 
 [Install]
-WantedBy=multy-user.target
+WantedBy=multi-user.target
 ```
 
-12. Добавляем автозапуск демона:
+12. Adding autostart daemon:
     ```bash
     sudo systemctl enable prometheus.service
     ```
 
-13. Запускаем сервис:
+13. Launching the service:
     ```bash
     sudo systemctl start prometheus.service
     ```
 
-14. Проверяем что все сработало:
+14. Let's check that everything worked.:
     ```bash
     sudo systemctl status prometheus.service
     ```
 
-    так же проверим вебку: [0.0.0.0:9090](http://0.0.0.0:9090)
+    We'll also check the webcam: [0.0.0.0:9090](http://0.0.0.0:9090)
 
 ---
 
 # Node_exporter install
 
-1. Скачиваем node_exporter с того же [сайта](https://prometheus.io/download/)
+1. Download node_exporter from the same [site](https://prometheus.io/download/)
         
-        Пример: node_exporter-1.4.0.linux-amd64.tar.gz
+        An example: node_exporter-1.4.0.linux-amd64.tar.gz
 
-2. Распаковываем скачанный архив:
+2. Unpack the downloaded archive:
     ```bash
     tar -xvf node_exporter-1.4.0.linux-amd64.tar.gz
     ```
 
-3. Заходим в распакованную папку
+3. Go to the unpacked folder
     ```bash
     cd node_exporter-1.4.0.linux-amd64
     ```
 
-4. Перемещаем папку node_exporter в /etc/local/bin/
+4. Moving the folder node_exporter в /etc/local/bin/
     ```bash
     sudo mv node_exporter /usr/local/bin 
     ```
 
-5. Проверяем что все заработало:
+5. Let's check that everything works:
     ```bash
     node_exporter --help
     ```
 
-6. Создадим демона для данного сервиса:
+6. Let's create a daemon for this service:
     ```bash
     sudo vim /etc/systemd/system/node_exporter.service
     ```
 
-    и запишем туда:
+    and we'll write it there:
 ```
 [Unit]
 Description=Node Exporter
@@ -156,44 +156,43 @@ ExecStart=/usr/local/bin/node_exporter \
   --collector.logind
 
 [Install]
-WantedBy=multy-user.target
+WantedBy=multi-user.target
 ```
 
-7. Добавляем сервис в автозапуск:
+7. Adding a service to startup:
     ```bash
     sudo systemctl enable node_exporter.service
     ```
 
-8. Стартуем сервис:
+8. We start a service:
     ```bash
     sudo systemctl start node_exporter.service
     ```
 
-9. Добавляем job_name в прометей:
+9. Add job_name to prometheus:
     ```bash
     sudo vim /etc/prometheus/prometheus.yml
     ```
 
-    дописываем в конце файла новый job_name:
+    we add a new job_name at the end of the file:
 ```bash
   - job_name: "node_exporter"
     static_configs:
       - targets: ["localhost:9100"]
 ```
 
-10. Проверяем что prometheus.yaml конфиг рабочий:
+10. Check that prometheus.yaml config is working:
     ```bash
     promtool check config /etc/prometheus/prometheus.yml
     
     # SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax
     ```
 
-11. Перезагружаем прометей:
+11. Rebooting Prometheus:
     ```bash
     curl -X POST http://localhost:9090/-/reload
     ```
     
-    теперь в Status->Targets прометея будет, помимо стандартного, node_exporter,
-    который будет отдавать метрики.
+    Now in Status \-\> Targets Prometheus will have, in addition to the standard, node_exporter, which will return metrics.
 
 

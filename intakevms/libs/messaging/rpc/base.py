@@ -16,12 +16,12 @@ class BaseRPCClient(metaclass=ABCMeta):
     """Base class for implementing an RPC client."""
 
     @abstractmethod
-    def __init__(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401 # casue its base class
+    def __init__(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401 # canuse its base class
         """Initialize RPC Client"""
         pass
 
     @abstractmethod
-    def on_response(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401 # casue its base class
+    def on_response(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401 # canuse its base class
         """Handles incoming responses from the RPC server."""
         ...
 
@@ -31,7 +31,7 @@ class BaseRPCClient(metaclass=ABCMeta):
         method_name: str,
         data_for_method: Optional[Dict] = None,
         data_for_manager: Optional[Dict] = None,
-    ) -> Any:  # noqa: ANN401 TODO need to spicify response by pydantic
+    ) -> Any:  # noqa: ANN401 TODO need to specify response by pydantic
         """Sends a request to the RPC server and wait for a response."""
         ...
 
@@ -50,12 +50,12 @@ class BaseRPCServer(metaclass=ABCMeta):
     """Base class for implementing an RPC server."""
 
     @abstractmethod
-    def __init__(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401 # casue its base class
+    def __init__(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401 # canuse its base class
         """Initialize RPC Server"""
         pass
 
     @abstractmethod
-    def on_request(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401 # casue its base class
+    def on_request(self, *args: Any, **kwargs: Any) -> None:  # noqa: ANN401 # canuse its base class
         """Handles incoming requests from the RPC client."""
         ...
 

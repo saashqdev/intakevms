@@ -80,12 +80,12 @@ class ResticBackuper(FSBackuper):
             BackupResticBackuperError: If the backup operation fails.
         """
         try:
-            LOG.info(f'Backuping data from `{self.source_path}`...')
+            LOG.info(f'Backing up data from `{self.source_path}`...')
             bkp_data = self.restic.backup(self.source_path)
-            LOG.info(f'Backup `{self.source_path}` cimplete')
+            LOG.info(f'Backup `{self.source_path}` complete')
             return ResticBackupResult.model_validate(bkp_data).model_dump()
         except ResticError as err:
-            message = f'Error while backuping: {err!s}'
+            message = f'Error while backing up: {err!s}'
             LOG.error(message)
             raise BackupResticBackuperError(message)
 
@@ -132,7 +132,7 @@ class ResticBackuper(FSBackuper):
         try:
             LOG.info(f'Initializing repository `{self.restic_path}`...')
             self.restic.init_repository()
-            LOG.info(f'Repository successful `{self.restic_path}` initilized')
+            LOG.info(f'Repository successful `{self.restic_path}` initialized')
         except ResticError as err:
             message = f'Error while creating repository: {err!s}'
             LOG.error(message)

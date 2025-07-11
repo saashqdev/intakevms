@@ -49,7 +49,7 @@ class Validator:
 
         Args:
             value (str): The string to be validated.
-            allow_slash (bool): Paramether for exclude slash character for
+            allow_slash (bool): Parameter for exclude slash character for
                 validate path
         Returns:
             str: The original string if no special characters are present.

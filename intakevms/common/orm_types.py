@@ -9,7 +9,7 @@ from typing import Union, Optional
 from pathlib import Path
 
 from sqlalchemy.types import String, TypeDecorator
-from sqlalchemy.engine import Dialect  # тип для параметра dialect
+from sqlalchemy.engine import Dialect  # type for parameter dialect
 
 
 class PathType(TypeDecorator):

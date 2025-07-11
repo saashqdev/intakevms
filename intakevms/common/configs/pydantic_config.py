@@ -16,13 +16,13 @@ from pydantic import ConfigDict
 
 api_request_config = ConfigDict(
     from_attributes=True,
-    extra='forbid',  # более строгая проверка для входящих данных
+    extra='forbid',  # stricter validation for incoming data
     use_enum_values=True,
 )
 
 api_response_config = ConfigDict(
     from_attributes=True,
-    extra='ignore',  # более мягкая — для отдачи наружу
+    extra='ignore',  # softer - for outward recoil
     use_enum_values=True,
 )
 

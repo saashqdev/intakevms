@@ -171,8 +171,8 @@ class MessagingClient:
         method_name: str,
         data_for_method: Optional[Dict] = None,
         data_for_manager: Optional[Dict] = None,
-        **kwargs: Any,  # noqa: ANN401 if income spicific args like timout for Rabbit
-    ) -> Any:  # noqa: ANN401 TODO need to spicify response by pydantic
+        **kwargs: Any,  # noqa: ANN401 if income specific args like timeout for Rabbit
+    ) -> Any:  # noqa: ANN401 TODO need to specify response by pydantic
         """Call a method on the RPC server and wait for a response.
 
         Args:
@@ -197,7 +197,7 @@ class MessagingClient:
         method_name: str,
         data_for_method: Optional[Dict] = None,
         data_for_manager: Optional[Dict] = None,
-        **kwargs: Any,  # noqa: ANN401 if income spicific args like timout for Rabbit
+        **kwargs: Any,  # noqa: ANN401 if income specific args like timeout for Rabbit
     ) -> None:
         """Send a method to the RPC server without waiting for a response.
 

@@ -40,7 +40,7 @@ class AbstractRepository(metaclass=abc.ABCMeta):
         """Abstract public method to add a new ISCSI interface
 
         Args:
-            interface (ISCSIInterface): orm object of the ISCSCI interface
+            interface (ISCSIInterface): orm object of the ISCSI interface
         """
         self._add(interface)
 
@@ -48,7 +48,7 @@ class AbstractRepository(metaclass=abc.ABCMeta):
         """Abstract public method to get an ISCSI interface by id
 
         Args:
-            interface_id (str): database id of the ISCSCI interface
+            interface_id (str): database id of the ISCSI interface
 
         Returns:
             ISCSIInterface: orm object of the ISCSI interface
@@ -59,7 +59,7 @@ class AbstractRepository(metaclass=abc.ABCMeta):
         """Abstract public method to get an ISCSI interface by ip
 
         Args:
-            interface_ip (str): ip address of the ISCSCI interface
+            interface_ip (str): ip address of the ISCSI interface
 
         Returns:
             ISCSIInterface: orm object of the ISCSI interface

@@ -83,7 +83,7 @@ class BackupServiceLayerManager(BackgroundTasks):
             FSBackuper.backup.__name__,
             data_for_manager=self.__create_data_for_domain_manager(),
         )
-        LOG.info('Backup successfull created')
+        LOG.info('Backup successfully created')
         return result
 
     def delete_snapshot(
@@ -132,7 +132,7 @@ class BackupServiceLayerManager(BackgroundTasks):
             data_for_manager=self.__create_data_for_domain_manager(),
             data_for_method={'snapshot_id': data.get('snapshot_id', 'latest')},
         )
-        LOG.info('Restoring successfull complete')
+        LOG.info('Restoring successfully completed')
         return result
 
     def get_snapshots(self) -> List[Dict]:
@@ -150,7 +150,7 @@ class BackupServiceLayerManager(BackgroundTasks):
             data_for_manager=self.__create_data_for_domain_manager(),
             data_for_method={},
         )
-        LOG.info('Snpashots successfull collected')
+        LOG.info('Snapshots successfully collected')
         return result
 
     def initialize_backup_repository(self) -> None:
@@ -165,7 +165,7 @@ class BackupServiceLayerManager(BackgroundTasks):
             data_for_manager=self.__create_data_for_domain_manager(),
             data_for_method={},
         )
-        LOG.info('Initializing repository successfull complete')
+        LOG.info('Initializing repository successfully completed')
 
     def __dump_database(
         self,
@@ -201,7 +201,7 @@ class BackupServiceLayerManager(BackgroundTasks):
                 )
                 LOG.info('Database dump complete success')
             except (ExecuteError, OSError) as err:
-                LOG.error(f'Error while backuping DB: {err!s}')
+                LOG.error(f'Error while backing up DB: {err!s}')
                 raise
             else:
                 return dump_result.stdout
@@ -220,7 +220,7 @@ class BackupServiceLayerManager(BackgroundTasks):
         backup_file = Path(TMP_DIR) / self.backup_file_name
         with backup_file.open('w') as f:
             f.write(dump)
-        LOG.info('Dump seccuessfull written into tmp')
+        LOG.info('Dump successfully written into tmp')
 
         LOG.info('Moving dump file into project data dir...')
         move_cmd = f'mv {backup_file} {STORAGE_DATA}'
@@ -232,7 +232,7 @@ class BackupServiceLayerManager(BackgroundTasks):
                 raise_on_error=True,
             ),
         )
-        LOG.info('Dump successfuul moved into project data folder')
+        LOG.info('Dump successfully moved into project data folder')
 
     def __restore_db(self) -> None:
         """Restore the PostgreSQL database from a backup file.

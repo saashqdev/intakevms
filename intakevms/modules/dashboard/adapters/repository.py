@@ -174,7 +174,7 @@ class PrometheusRepository(AbstractRepository):
         Returns:
             Dict: A dictionary containing the read and write IOPS data.
         """
-        LOG.info('Getting iops dsta from node.')
+        LOG.info('Getting iops data from node.')
         iops_read = {
             'input': int(self.prometheus_client.get_node_info('io-read-ps')),
             'output': int(self.prometheus_client.get_node_info('io-write-ps')),
@@ -189,7 +189,7 @@ class PrometheusRepository(AbstractRepository):
         Returns:
             Dict: A dictionary containing the latency information.
         """
-        LOG.info('Getting iops dsta from node.')
+        LOG.info('Getting iops data from node.')
         io_latency = {
             'wait': self.prometheus_client.get_node_info('latency'),
             'date': round(time.time() * 1000),
@@ -254,7 +254,7 @@ class PrometheusRepository(AbstractRepository):
                 and write IOPS data.
                 - 'io_latency': A dictionary with latency information, including
                 the I/O wait time.
-                - 'bandwith_data': A dictionary with network bandwidth
+                - 'bandwidth_data': A dictionary with network bandwidth
                 information, including the read and write bandwidth.
                 - 'disk_data': A dictionary with disk metrics, including the
                 read and write speeds in mb per second, and the timestamp of
@@ -270,7 +270,7 @@ class PrometheusRepository(AbstractRepository):
         storage = self._get_storage_info()
         iops = self._get_iops_info()
         io_latency = self._get_latency()
-        bandwith_data = self._get_network_bandwidth()
+        bandwidth_data = self._get_network_bandwidth()
         disk_data = self._get_disk_data()
         data.update(
             {
@@ -279,7 +279,7 @@ class PrometheusRepository(AbstractRepository):
                 'storage': storage,
                 'iops': iops,
                 'io_latency': io_latency,
-                'bandwith_data': bandwith_data,
+                'bandwidth_data': bandwidth_data,
                 'disk_data': disk_data,
             }
         )
