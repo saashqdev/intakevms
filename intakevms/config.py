@@ -1,4 +1,4 @@
-"""Configuration settings and utility functions for the OpenVair project.
+"""Configuration settings and utility functions for the inTakevms project.
 
 This module handles the loading of configuration from a TOML file and provides
 utility functions to generate PostgreSQL database URIs and SQLAlchemy session

@@ -1,4 +1,4 @@
-"""Main entry point for the OpenVair application.
+"""Main entry point for the inTakevms application.
 
 This module sets up the FastAPI application, including routing, middleware,
 and exception handling. It also configures the CORS settings and initializes
