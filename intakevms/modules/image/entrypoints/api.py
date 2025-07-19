@@ -18,7 +18,7 @@ Endpoints:
 
 from uuid import UUID
 from typing import Dict, Optional, cast
-from pathlib import Path as Path_lib
+from pathlib import Path
 
 import aiofiles
 from fastapi import (
@@ -122,13 +122,17 @@ async def get_image(
     response_model=schemas.Image,
     status_code=status.HTTP_200_OK,
 )
-async def upload_image(  # noqa: PLR0913 need create a schema for arguments
+async def upload_image(  # noqa: PLR0913 It is not possible to pass arguments as Pydantic schema or Dict,
+    # because the request is in multipart/form-data format due to the use of
+    # File(...) to download a file. FastAPI can't parse it automatically.
+    # Pydantic model or Dict from the request body if the request is multipart/form-data.
     storage_id: UUID,
     description: str = Query(
         default='',
         description='Image description',
     ),
     name: str = Query(
+        max_size=40,
         description='Image name',
     ),
     image: UploadFile = File(..., description='Upload image.'),
@@ -159,17 +163,8 @@ async def upload_image(  # noqa: PLR0913 need create a schema for arguments
         the file extension is unsupported.
     """
     LOG.info(f'Api start uploading image: {name}')
-    tmp_path = Path_lib(TMP_DIR, name)
-    filename_length = 40
+    tmp_path = Path(TMP_DIR, name)
     try:
-        if len(name) > filename_length:
-            message = 'The file name length must be less than 40 characters..'
-            LOG.error(message)
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=message,
-            )
-
         async with aiofiles.open(tmp_path, 'wb') as f:
             while chunk := await image.read(CHUNK_SIZE):
                 await f.write(chunk)
@@ -189,7 +184,6 @@ async def upload_image(  # noqa: PLR0913 need create a schema for arguments
         )
     else:
         return schemas.Image(**upload_info)
-
 
 @router.delete(
     '/{image_id}/',

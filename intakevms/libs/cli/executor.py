@@ -97,7 +97,7 @@ def execute(
         >>> print(result.stdout)
     """
     cmd: List[str] = list(args)
-    if params.run_as_root and hasattr(os, 'getuid') and os.getuid() != 0:
+    if params.run_as_root and hasattr(os, 'geteuid') and os.geteuid() != 0:
         cmd = [params.root_helper, *cmd]
 
     cmd_str = ' '.join(cmd)
@@ -123,7 +123,9 @@ def execute(
                 if params.raise_on_error and returncode != 0:
                     message = (
                         f"Command '{cmd_str}' failed with return code "
-                        f'{returncode}'
+                        f'{returncode}\n'
+                        f"stdout: {stdout.rstrip()}\n"
+                        f"stderr: {stderr.rstrip()}"
                     )
                     LOG.error(message)
                     raise UnsuccessReturnCodeError(message)

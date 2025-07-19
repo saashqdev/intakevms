@@ -71,6 +71,7 @@ class Volume(BaseModel):
     read_only: Optional[bool] = False
     template_id: Optional[UUID]
 
+
 class CreateVolume(BaseModel):
     """Schema for creating a new volume.
 
@@ -99,12 +100,11 @@ class CreateVolume(BaseModel):
 
 
 class CreateVolumeFromTemplate(BaseModel):  # noqa: D101
-
     name: str = Field(min_length=1, max_length=40)
     description: str = Field(max_length=255)
     storage_id: UUID
     template_id: UUID
-    # take from Template
+    # берем из Template
     # format: Literal['qcow2', 'raw']
     # size: int = Field(0, ge=1)
     read_only: Optional[bool] = False
@@ -115,6 +115,7 @@ class CreateVolumeFromTemplate(BaseModel):  # noqa: D101
     validate_description = field_validator('description')(
         Validator.special_characters_validate
     )
+
 
 class ExtendVolume(BaseModel):
     """Schema for extending an existing volume.

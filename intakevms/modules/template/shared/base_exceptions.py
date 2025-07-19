@@ -13,8 +13,11 @@ from intakevms.abstracts.base_exception import BaseCustomException
 
 class BaseTemplateServiceLayerException(BaseCustomException):
     """Exception raised for errors occurring in the service layer."""
+
     ...
+
 
 class BaseTemplateDomainException(BaseCustomException):
     """Base exception for errors occurring in the template domain."""
+
     ...

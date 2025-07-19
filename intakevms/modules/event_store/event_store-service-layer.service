@@ -1,0 +1,17 @@
+[Unit]
+Description=Event_store service layer
+Requires=docker.service
+After=network.target docker.service 
+
+[Service]
+Environment="PATH=/opt/virtman/intakevms/venv/bin/:/usr/sbin/:/usr/bin/"
+Environment="PYTHONPATH=:/opt/virtman/intakevms/"
+Environment=PYTHONUNBUFFERED=1
+
+WorkingDirectory=/opt/virtman/intakevms/intakevms/modules/event_store/service_layer/
+ExecStart=/opt/virtman/intakevms/venv/bin/python3 -u /opt/virtman/intakevms/intakevms/modules/event_store/service_layer/manager.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
