@@ -94,7 +94,7 @@ def configure_pagination() -> None:
 #     devices = get_block_devices_info()
 #     for device in devices:
 #         mount_point = device.get('mountpoint') or ''
-#         if '/opt/aero/intakevms/data/mnt' in mount_point:
+#         if '/opt/virtman/intakevms/data/mnt' in mount_point:
 #             try:
 #                 execute(
 #                     'umount',

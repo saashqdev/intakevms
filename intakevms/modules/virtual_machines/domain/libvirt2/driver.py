@@ -226,7 +226,7 @@ class LibvirtDriver(BaseLibvirtDriver):
                 '-D',
                 '--run-once',
                 '--web',
-                '/opt/aero/intakevms/intakevms/libs/noVNC/',
+                '/opt/virtman/intakevms/intakevms/libs/noVNC/',
                 vnc_port,
                 f'localhost:{port}',
                 params=ExecuteParams(  # noqa: S604
