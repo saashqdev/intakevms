@@ -36,8 +36,8 @@ host = 'localhost'
 port = 9090
 
 [default_user]
-login = ''
-password = ''
+login = 'admin'
+password = 'admin'
 
 [os_data]
 os_type = ''
